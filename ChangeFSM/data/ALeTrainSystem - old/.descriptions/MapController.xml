@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="MapController" 
+    uuid="_M3eiYILoEeW-IY1wb01b1A" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="b0" uuid="_UtDysoLyEeWAAZdL8L4_Qw"/>
+    </required>
+</block>

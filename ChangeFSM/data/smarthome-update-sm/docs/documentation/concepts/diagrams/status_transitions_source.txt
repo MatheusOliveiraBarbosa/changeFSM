@@ -1,0 +1,29 @@
+' State diagram for Thing Status Concept
+@startuml
+skinparam state {
+  BackgroundColor White
+  BorderColor Grey
+  ArrowColor #01324D
+  StartColor #01324D
+  EndColor #01324D
+}
+[*] -up-> UNINITIALIZED
+UNINITIALIZED -right-> INITIALIZING
+INITIALIZING -left-> UNINITIALIZED
+INITIALIZING -right-> initialized
+
+state initialized {
+ UNKNOWN --> ONLINE
+ UNKNOWN --> OFFLINE
+ ONLINE --> OFFLINE
+ OFFLINE --> ONLINE
+}
+
+initialized -left-> UNINITIALIZED
+
+state removal {
+ [*] --> REMOVING
+ REMOVING --> REMOVED
+ REMOVED --> [*]  
+}
+@enduml

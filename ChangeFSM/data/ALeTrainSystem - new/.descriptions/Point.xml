@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Point" 
+    uuid="_lVF5AJNmEeWQW4a8LHZMPw" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <library path="lib/ev3/dbusjava.jar"/>
+        <library path="lib/ev3/ev3classes.jar"/>
+        <resource path="resources/pointswitchcontroller.properties"/>
+        <block name="b0" uuid="_YSE8s2E0EeWMfJ_mysFnuA"/>
+        <block name="b1" uuid="_XAfIYXNQEeWwSc-b3mUj5g"/>
+        <block name="b2" uuid="_cAiZ4aWJEeGtcaXYz8RSig"/>
+        <block name="b3" uuid="_fl1soaWJEeGtcaXYz8RSig"/>
+        <block name="b4" uuid="_00G2840fEeWhyqPFGZmtAQ"/>
+    </required>
+</block>

@@ -1,0 +1,9 @@
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;	    Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+
+DoorControl doorcontrol.cf doorcontrol_test1.mf
+DriveControl drivecontrol.cf drivecontrol.mf drivecontrol2.mf 
+HallButtonControl hallbuttoncontrol.cf hallbuttoncontrol.mf
+CarButtonControl carbuttoncontrol.cf carbuttoncontrol.mf
+LanternControl lanterncontrl.cf lanterncontrol.mf

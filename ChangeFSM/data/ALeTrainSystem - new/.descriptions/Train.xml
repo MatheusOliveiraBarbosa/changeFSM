@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Train" 
+    uuid="__px68XM_EeWNAdm5YAmirg" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <package name="aletrainsystem.train.component"/>
+        <block name="b0" uuid="_CsC_0XNFEeWNAdm5YAmirg"/>
+        <block name="b1" uuid="_00G2840fEeWhyqPFGZmtAQ"/>
+        <block name="b2" uuid="_GrqrMI0cEeWhyqPFGZmtAQ"/>
+        <block name="b4" uuid="_OUgmUFeJEd-6BOcoDEhEvw"/>
+        <block name="b5" uuid="_cAiZ4aWJEeGtcaXYz8RSig"/>
+        <block name="b6" uuid="_fl1soaWJEeGtcaXYz8RSig"/>
+        <block name="b7" uuid="_XAfIYXNQEeWwSc-b3mUj5g"/>
+    </required>
+</block>

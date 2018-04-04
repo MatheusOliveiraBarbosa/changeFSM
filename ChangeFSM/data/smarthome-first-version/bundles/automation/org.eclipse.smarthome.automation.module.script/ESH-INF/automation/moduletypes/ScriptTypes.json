@@ -1,0 +1,67 @@
+{  
+   "conditions":[  
+      {  
+         "uid":"ScriptCondition",
+         "label":"Script condition",
+         "description":"allows the definition of a condition through a script",
+         "configDescriptions":[  
+            {  
+               "name":"type",
+               "type":"TEXT",
+               "description":"the scripting language to use (as mime-type, i.e. 'application/javascript')",
+               "required":true,
+               "options":[
+                    {
+                        "label": "Javascript",
+                        "value": "application/javascript"
+                    }
+                ]
+            },
+            {  
+               "name":"script",
+               "type":"TEXT",
+               "description":"the script to execute",
+               "required":true,
+               "context":"script"
+            }
+         ]
+      }
+   ],
+   "actions":[  
+      {  
+         "uid":"ScriptAction",
+         "label":"Script action",
+         "description":"allows the execution of a user-defined script",
+         "configDescriptions":[  
+            {  
+               "name":"type",
+               "type":"TEXT",
+               "description":"the scripting language to use (as mime-type, i.e. 'application/javascript')",
+               "required":true,
+               "options":[
+                    {
+                        "label": "Javascript",
+                        "value": "application/javascript"
+                    }
+                ]
+            },
+            {  
+               "name":"script",
+               "type":"TEXT",
+               "description":"the script to execute",
+               "required":true,
+               "context":"script"
+            }
+         ],
+         "outputs":[  
+            {  
+               "name":"result",
+               "type":"java.lang.Object",
+               "label":"result",
+               "description":"the script result.",
+               "reference":""
+            }
+         ]
+      }
+   ]
+}

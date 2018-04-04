@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="ClientCommunication" 
+    uuid="_6oFSsGBnEeWy7qLurfNp3g" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <package name="aletrainsystem.clientcommunication"/>
+        <package name="com.bitreactive.library.amqp"/>
+        <package name="com.bitreactive.library.amqp.brokeredamqpclient"/>
+        <package name="ntnu.no.aletrainsystem.clientcommunication"/>
+        <block name="b0" uuid="_SrT4IVtUEeGtaPY7WHS-jQ"/>
+        <block name="b1" uuid="_eOnYsVtTEeGtaPY7WHS-jQ"/>
+        <block name="b2" uuid="_FIKBk-j7EeSNq-4fvozafQ"/>
+    </required>
+</block>

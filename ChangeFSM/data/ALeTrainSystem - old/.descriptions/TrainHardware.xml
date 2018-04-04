@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="TrainHardware" 
+    uuid="_Ywqq0oFtEeW-IY1wb01b1A" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="b0" uuid="_z-ge8Xv4EeWoPI4aagTCRw"/>
+        <block name="b1" uuid="_jm2UAXv4EeWoPI4aagTCRw"/>
+        <block name="b2" uuid="_gLluEXv4EeWoPI4aagTCRw"/>
+    </required>
+</block>

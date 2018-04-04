@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="LockCoordinator" 
+    uuid="_EYZIwIeYEeWRLfKAue1ERQ" 
+    status="under construction" 
+    session="multi_session" 
+    type="block" 
+    >
+    <required>
+        <block name="b0" uuid="_GmoWkSe8EeCFqLJOnGCEfA"/>
+    </required>
+</block>

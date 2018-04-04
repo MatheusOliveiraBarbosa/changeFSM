@@ -1,0 +1,30 @@
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;	    Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+
+Simulator Parameters:
+Command line = -cf sd5b.cf -mf sd5b.mf -head header.txt
+RandomSeed = 1386646713570
+CanNetworkBitTime = 0 ns
+Effective Can Bitrate = Infinity
+Run Time = null
+Real time rate = null
+Message File = sd5b.mf
+Controller File = sd5b.cf
+
+Assertion Results:
+@0.2s:  PASSED simulator.payloads.DoorMotorPayload$ReadableDoorMotorPayload@11492ed :: command ?== CLOSE PASSED
+@0.2s:  PASSED simulator.payloads.CanMailbox$ReadableCanMailbox@a5d7f2 :: getDoorCommand ?== CLOSE PASSED
+@0.8s:  PASSED DoorControl[FRONT][LEFT]::checkState(STATE) ?== STATE_OPEN PASSED
+@0.8s:  PASSED simulator.payloads.DoorMotorPayload$ReadableDoorMotorPayload@115e166 :: command ?== OPEN PASSED
+@0.8s:  PASSED simulator.payloads.CanMailbox$ReadableCanMailbox@ce4dda :: getDoorCommand ?== OPEN PASSED
+@1.7s:  PASSED DoorControl[FRONT][LEFT]::checkState(STATE) ?== STATE_STOP_OPENING PASSED
+@1.7s:  PASSED simulator.payloads.DoorMotorPayload$ReadableDoorMotorPayload@1ec0b :: command ?== STOP PASSED
+@1.7s:  PASSED simulator.payloads.CanMailbox$ReadableCanMailbox@1ccb1ae :: getDoorCommand ?== STOP PASSED
+
+
+******************Summary******************
+Passed:  8
+Failed:  0
+Total :  8
+

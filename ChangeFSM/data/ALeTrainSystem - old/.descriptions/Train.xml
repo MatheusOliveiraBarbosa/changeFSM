@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Train" 
+    uuid="__px68XM_EeWNAdm5YAmirg" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <package name="aletrainsystem.train.component"/>
+        <block name="b0" uuid="_CsC_0XNFEeWNAdm5YAmirg"/>
+        <block name="b1" uuid="_XAfIYXNQEeWwSc-b3mUj5g"/>
+    </required>
+</block>

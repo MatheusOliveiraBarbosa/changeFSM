@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arctis="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10 pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6 pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw">
+  <uml:Package xmi:id="_G8SuIIerEeWS0rERPEKd6g" name="aletrainsystem">
+    <packagedElement xmi:type="uml:Activity" xmi:id="_G8TVMoerEeWS0rERPEKd6g" name="SleeperCounter" classifierBehavior="_G_WpMIerEeWS0rERPEKd6g" node="_LN0NsIerEeWS0rERPEKd6g _NZwg0IerEeWS0rERPEKd6g _OROUUIerEeWS0rERPEKd6g _icWJ0IerEeWS0rERPEKd6g" group="_G8T8QIerEeWS0rERPEKd6g" partition="_G8T8QIerEeWS0rERPEKd6g">
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_G9_XQYerEeWS0rERPEKd6g" name="SleeperCounter_stm">
+        <region xmi:id="_G9_XQoerEeWS0rERPEKd6g" name="">
+          <transition xmi:id="_0v0hMIerEeWS0rERPEKd6g" source="_0v0hMYerEeWS0rERPEKd6g" target="_0v0hMoerEeWS0rERPEKd6g">
+            <effect xmi:type="uml:Activity" xmi:id="_NQfrEJK3EeWo8LwD4nfjpw" name="effect" node="_NQfrEZK3EeWo8LwD4nfjpw">
+              <node xmi:type="uml:OpaqueAction" xmi:id="_NQfrEZK3EeWo8LwD4nfjpw" name="call resetCounter"/>
+            </effect>
+            <trigger xmi:id="_NQfEAJK3EeWo8LwD4nfjpw" name="in via brick" event="_0v1IQIerEeWS0rERPEKd6g"/>
+          </transition>
+          <transition xmi:id="_5BntkIerEeWS0rERPEKd6g" source="_0v0hMoerEeWS0rERPEKd6g" target="_INEkEIesEeWS0rERPEKd6g">
+            <effect xmi:type="uml:Activity" xmi:id="_INFLIIesEeWS0rERPEKd6g" name="effect" node="_INFLIYesEeWS0rERPEKd6g">
+              <node xmi:type="uml:OpaqueAction" xmi:id="_INFLIYesEeWS0rERPEKd6g" name="call incrementCounter"/>
+            </effect>
+            <trigger xmi:id="_INEkEYesEeWS0rERPEKd6g" name="in via passedSleeper" event="_5BoUoYerEeWS0rERPEKd6g"/>
+          </transition>
+          <transition xmi:id="_MH9FQIesEeWS0rERPEKd6g" guard="_MH9FQoesEeWS0rERPEKd6g" source="_INEkEIesEeWS0rERPEKd6g" target="_MH9FQYesEeWS0rERPEKd6g">
+            <ownedRule xmi:id="_MH9FQoesEeWS0rERPEKd6g" name="isLastSleeperOnBrick()"/>
+            <effect xmi:type="uml:Activity" xmi:id="_MH9FQ4esEeWS0rERPEKd6g" name="effect" node="_MH9sUIesEeWS0rERPEKd6g">
+              <node xmi:type="uml:OpaqueAction" xmi:id="_MH9sUIesEeWS0rERPEKd6g" name="out  passedBrick"/>
+            </effect>
+          </transition>
+          <transition xmi:id="_NqoY8IesEeWS0rERPEKd6g" guard="_NqoY8YesEeWS0rERPEKd6g" source="_INEkEIesEeWS0rERPEKd6g" target="_0v0hMoerEeWS0rERPEKd6g">
+            <ownedRule xmi:id="_NqoY8YesEeWS0rERPEKd6g" name="else"/>
+          </transition>
+          <transition xmi:id="_r9VTMJK0EeWo8LwD4nfjpw" source="_0v0hMoerEeWS0rERPEKd6g" target="_r9V6QJK0EeWo8LwD4nfjpw">
+            <trigger xmi:id="_r9WhUJK0EeWo8LwD4nfjpw" name="in via abort" event="_r9WhUZK0EeWo8LwD4nfjpw"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_0v0hMYerEeWS0rERPEKd6g" name="&lt;initial>"/>
+          <subvertex xmi:type="uml:State" xmi:id="_0v0hMoerEeWS0rERPEKd6g" name="overBrick"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_INEkEIesEeWS0rERPEKd6g" name="checkIfPassed" kind="choice"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_MH9FQYesEeWS0rERPEKd6g" name="&lt;final>"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_r9V6QJK0EeWo8LwD4nfjpw" name="&lt;final>"/>
+        </region>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_G_WpMIerEeWS0rERPEKd6g" name="SleeperCounter">
+        <ownedComment xmi:id="_HBO4gIerEeWS0rERPEKd6g">
+          <body>HASH:63ae05a4b1661f98d64a1b0f83593b42158106f0</body>
+        </ownedComment>
+        <region xmi:id="_G_WpMoerEeWS0rERPEKd6g" name="&lt;region>">
+          <transition xmi:id="_r9rRcpK0EeWo8LwD4nfjpw" name="passedSleeper / " source="_r9rRcZK0EeWo8LwD4nfjpw" target="_r9rRcZK0EeWo8LwD4nfjpw"/>
+          <transition xmi:id="_r_KfMJK0EeWo8LwD4nfjpw" name="passedSleeper / passedBrick" source="_r9rRcZK0EeWo8LwD4nfjpw" target="_r9rRcJK0EeWo8LwD4nfjpw"/>
+          <transition xmi:id="_r_KfMpK0EeWo8LwD4nfjpw" name="abort / " source="_r9rRcZK0EeWo8LwD4nfjpw" target="_r9rRcJK0EeWo8LwD4nfjpw"/>
+          <transition xmi:id="_r_LGQJK0EeWo8LwD4nfjpw" name="brick / " source="_r9qqYJK0EeWo8LwD4nfjpw" target="_r9rRcZK0EeWo8LwD4nfjpw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_r9qqYJK0EeWo8LwD4nfjpw" name="&lt;initial>"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_r9rRcJK0EeWo8LwD4nfjpw" name="&lt;final>"/>
+          <subvertex xmi:type="uml:State" xmi:id="_r9rRcZK0EeWo8LwD4nfjpw" name="overBrick"/>
+        </region>
+      </ownedBehavior>
+      <ownedParameter xmi:id="_LN00wIerEeWS0rERPEKd6g" name="brick"/>
+      <ownedParameter xmi:id="_NZwg0YerEeWS0rERPEKd6g" name="passedSleeper" isStream="true"/>
+      <ownedParameter xmi:id="_OROUUYerEeWS0rERPEKd6g" name="abort" isStream="true"/>
+      <ownedParameter xmi:id="_icWJ0YerEeWS0rERPEKd6g" name="passedBrick" direction="out"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_G8T8QIerEeWS0rERPEKd6g" name="main" node="_LN0NsIerEeWS0rERPEKd6g _NZwg0IerEeWS0rERPEKd6g _OROUUIerEeWS0rERPEKd6g _icWJ0IerEeWS0rERPEKd6g"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_LN0NsIerEeWS0rERPEKd6g" name="brick" inPartition="_G8T8QIerEeWS0rERPEKd6g" type="_fkWB8IerEeWS0rERPEKd6g" parameter="_LN00wIerEeWS0rERPEKd6g"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_NZwg0IerEeWS0rERPEKd6g" name="passedSleeper" inPartition="_G8T8QIerEeWS0rERPEKd6g" parameter="_NZwg0YerEeWS0rERPEKd6g"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_OROUUIerEeWS0rERPEKd6g" name="abort" inPartition="_G8T8QIerEeWS0rERPEKd6g" parameter="_OROUUYerEeWS0rERPEKd6g"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_icWJ0IerEeWS0rERPEKd6g" name="passedBrick" inPartition="_G8T8QIerEeWS0rERPEKd6g" parameter="_icWJ0YerEeWS0rERPEKd6g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_fkWB8IerEeWS0rERPEKd6g" name="aletrainsystem.models.railroad.RailBrick"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_0v1IQIerEeWS0rERPEKd6g" name="brick"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_5BoUoYerEeWS0rERPEKd6g" name="passedSleeper"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_r9WhUZK0EeWo8LwD4nfjpw" name="abort"/>
+    <profileApplication xmi:id="_G8TVMIerEeWS0rERPEKd6g">
+      <eAnnotations xmi:id="_G8TVMYerEeWS0rERPEKd6g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_G8T8QYerEeWS0rERPEKd6g">
+      <eAnnotations xmi:id="_G8T8QoerEeWS0rERPEKd6g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_UEANMUVlEduH9aQE_pc66w"/>
+    </profileApplication>
+  </uml:Package>
+  <graphics:Shape xmi:id="_G9-wMIerEeWS0rERPEKd6g" x="180" y="55" width="613" height="54" base_Element="_G8TVMoerEeWS0rERPEKd6g"/>
+  <graphics:Shape xmi:id="_G9_XQIerEeWS0rERPEKd6g" x="180" y="108" width="613" height="415" base_Element="_G8T8QIerEeWS0rERPEKd6g"/>
+  <arctis:esm xmi:id="_G_WpMYerEeWS0rERPEKd6g" base_StateMachine="_G_WpMIerEeWS0rERPEKd6g"/>
+  <graphics:Shape xmi:id="_LPSNUIerEeWS0rERPEKd6g" x="125" y="148" base_Element="_LN0NsIerEeWS0rERPEKd6g" orientation="west"/>
+  <graphics:Shape xmi:id="_NZxH4IerEeWS0rERPEKd6g" x="125" y="148" base_Element="_NZwg0IerEeWS0rERPEKd6g" orientation="west"/>
+  <graphics:Shape xmi:id="_ORO7YIerEeWS0rERPEKd6g" x="125" y="148" base_Element="_OROUUIerEeWS0rERPEKd6g" orientation="west"/>
+  <graphics:Shape xmi:id="_icWw4IerEeWS0rERPEKd6g" x="220" y="522" base_Element="_icWJ0IerEeWS0rERPEKd6g" orientation="south"/>
+  <arctis:event xmi:id="_r_J4IJK0EeWo8LwD4nfjpw" base_Transition="_r9rRcpK0EeWo8LwD4nfjpw" triggers="_NZwg0IerEeWS0rERPEKd6g"/>
+  <arctis:event xmi:id="_r_KfMZK0EeWo8LwD4nfjpw" base_Transition="_r_KfMJK0EeWo8LwD4nfjpw" triggers="_NZwg0IerEeWS0rERPEKd6g" effects="_icWJ0IerEeWS0rERPEKd6g"/>
+  <arctis:event xmi:id="_r_KfM5K0EeWo8LwD4nfjpw" base_Transition="_r_KfMpK0EeWo8LwD4nfjpw" triggers="_OROUUIerEeWS0rERPEKd6g"/>
+  <arctis:event xmi:id="_r_LGQZK0EeWo8LwD4nfjpw" base_Transition="_r_LGQJK0EeWo8LwD4nfjpw" triggers="_LN0NsIerEeWS0rERPEKd6g"/>
+</xmi:XMI>

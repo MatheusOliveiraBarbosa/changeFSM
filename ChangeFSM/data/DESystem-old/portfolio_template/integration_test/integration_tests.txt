@@ -1,0 +1,6 @@
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;	    Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+
+SD1C sd1c.cf sd1c.mf
+SD5A sd5a.cf sd5a.mf

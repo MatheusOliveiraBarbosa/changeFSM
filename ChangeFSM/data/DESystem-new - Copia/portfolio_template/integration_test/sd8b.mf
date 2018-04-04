@@ -1,0 +1,42 @@
+;Message File - Integration Test for SD8B
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;			Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+;Author : Sri Harsha Koppaka (skoppaka)
+
+
+#INCLUDE defines.mf ;include CAN id and period definitions
+
+;intialize
+
+;Injecting Initial conditions
+;# 'SD8B/1a'
++0s  I  0s N AT_FLOOR_[1][FRONT]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[1][BACK]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[2][BACK]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[3][FRONT]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[4][FRONT]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[5][FRONT]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[6][FRONT]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[7][FRONT]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[7][BACK]_CAN_ID Bit = false
++0s  I  0s N AT_FLOOR_[8][FRONT]_CAN_ID Bit = false
+
+;Preconditions
+;# 'SD8B/1b'
++0s  I  0s N DOOR_CLOSED_SENSOR_[FRONT][LEFT]_CAN_ID Bit = false
+
+;# 'SD8B/2'
++0s  I 0s N EMERGENCY_BRAKE_CAN_ID Bit = true
+
+;# 'SD8B/3a'
++0.5s  A F Drive : speed == STOP
++0s  A F Drive : direction == STOP
+
+;# 'SD8B/3b'
++0.5s  A  N DESIRED_FLOOR_CAN_ID DesiredFloor : getFloor == 1
++0s  A  N DESIRED_FLOOR_CAN_ID DesiredFloor : getDirection == STOP
++0s  A  N DESIRED_FLOOR_CAN_ID DesiredFloor : getHallway == NONE
+
+
+

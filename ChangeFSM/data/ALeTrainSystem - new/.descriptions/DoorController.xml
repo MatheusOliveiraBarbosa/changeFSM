@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="DoorController" 
+    uuid="_0aGmMo4JEeWhyqPFGZmtAQ" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="b0" uuid="_-Z1y0QYYEd2YNcJmAB-6Iw"/>
+    </required>
+</block>

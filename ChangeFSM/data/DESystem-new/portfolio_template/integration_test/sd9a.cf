@@ -1,0 +1,10 @@
+;Configuration File - Integration Test for SD9A
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;			Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+;Author : Sally Stevenson (ststeven)
+
+Dispatcher 8 0.05s true
+LanternControl UP 0.2s true
+LanternControl DOWN 0.2s true
+DoorControl FRONT LEFT 0.01s true

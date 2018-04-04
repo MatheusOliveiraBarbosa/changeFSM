@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="build/bluebrick4j.jar"/>
+	<classpathentry kind="lib" path="build/point.jar"/>
+	<classpathentry kind="lib" path="build/pointswitchcontroller.jar"/>
+	<classpathentry kind="lib" path="build/terminator.jar"/>
+	<classpathentry kind="lib" path="build/train.jar"/>
+	<classpathentry kind="lib" path="lib/bluebrick4j.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/dbusjava.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/ev3classes.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-0.9.1/jgraph-5.13.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-0.9.1/jgrapht-core-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-0.9.1/jgrapht-demo-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-0.9.1/jgrapht-ext-0.9.1-uber.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-0.9.1/jgrapht-ext-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-0.9.1/jgraphx-2.0.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/rabbitmq-client.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

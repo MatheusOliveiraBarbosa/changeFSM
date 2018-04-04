@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Measure Time Micros" 
+    uuid="_jn1zE1fIEeWK8OTrlOsWDg" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <package name="aletrainsystem.measuretimemicros"/>
+    </required>
+</block>

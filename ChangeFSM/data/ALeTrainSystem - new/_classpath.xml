@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.lejos.ev3.ldt.LEJOS_EV3_LIBRARY_CONTAINER/"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="no.ntnu.item.arctis.ARCTIS_RUNTIME_CONTAINER"/>
+	<classpathentry kind="con" path="no.ntnu.item.arctis.ARCTIS_DEPENDENCIES_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="lib/ev3/dbusjava.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ev3/ev3classes.jar"/>
+	<classpathentry kind="lib" path="lib/bluebrick4j.jar"/>
+	<classpathentry kind="lib" path="lib/rabbitmq-client.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.3.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

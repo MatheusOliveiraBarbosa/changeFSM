@@ -1,0 +1,28 @@
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;	    Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+
+Simulator Parameters:
+Command line = -cf sd1b.cf -mf sd1b.mf -head header.txt
+RandomSeed = 1386646699222
+CanNetworkBitTime = 0 ns
+Effective Can Bitrate = Infinity
+Run Time = null
+Real time rate = null
+Message File = sd1b.mf
+Controller File = sd1b.cf
+
+Assertion Results:
+@0.1s:  PASSED simulator.payloads.DoorMotorPayload$ReadableDoorMotorPayload@13f67a9 :: command ?== CLOSE PASSED
+@1.15s:  PASSED simulator.payloads.HallLightPayload$ReadableHallLightPayload@df090d :: lighted ?== true PASSED
+@1.15s:  PASSED simulator.payloads.CanMailbox$ReadableCanMailbox@1867f7f :: getValue ?== true PASSED
+@1.25s:  PASSED simulator.payloads.DoorMotorPayload$ReadableDoorMotorPayload@1710c15 :: command ?== OPEN PASSED
+@2.3s:  PASSED simulator.payloads.HallLightPayload$ReadableHallLightPayload@15330ea :: lighted ?== false PASSED
+@2.45s:  PASSED simulator.payloads.DoorMotorPayload$ReadableDoorMotorPayload@8c0162 :: command ?== STOP PASSED
+
+
+******************Summary******************
+Passed:  6
+Failed:  0
+Total :  6
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="RabbitAMQPDup" 
+    uuid="_Z4rF8ZObEeWbfeQJRVcevA" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <library path="lib/gson-2.4.jar"/>
+        <library path="lib/rabbitmq-client.jar"/>
+        <resource path="src/ntnu/no/rabbitamqp/util/Message.java"/>
+        <resource path="src/ntnu/no/rabbitamqp/util/Tuple.java"/>
+        <block name="b0" uuid="_fYm5YZObEeWbfeQJRVcevA"/>
+        <block name="b2" uuid="_g0clQZObEeWbfeQJRVcevA"/>
+    </required>
+</block>

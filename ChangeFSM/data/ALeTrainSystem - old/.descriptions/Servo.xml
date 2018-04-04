@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Servo" 
+    author="Henrik Heggelund Svendsen" 
+    uuid="_CsvFg10OEeWb2oHgnb21JQ" 
+    status="experimental" 
+    type="block" 
+    tags="Lego Mindstorms, lejos" 
+    >
+    <required>
+        <package name="aletrainsystem.enums"/>
+        <package name="aletrainsystem.servo"/>
+        <package name="lejos.hardware.motor"/>
+    </required>
+</block>

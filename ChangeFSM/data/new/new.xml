@@ -1,0 +1,45 @@
+<ownedBehavior xmi:type="uml:StateMachine" xmi:id="_CuIqgHNFEeWNAdm5YAmirg"
+	name="TrainController">
+	<region xmi:id="_CuJRkXNFEeWNAdm5YAmirg" name="&lt;region>">
+		<transition xmi:id="_M5NIYHjMEeWv5JvBHAOX_g" name="init / "
+			source="_CuJRknNFEeWNAdm5YAmirg" target="_S2IMwIFyEeW-IY1wb01b1A" />
+		<transition xmi:id="_Oq-oAHjMEeWv5JvBHAOX_g" name="stop / "
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_8esoYY4BEeWhyqPFGZmtAQ" />
+		<transition xmi:id="_L5GQQIe0EeWS0rERPEKd6g" name=" / initialized"
+			source="_S2IMwIFyEeW-IY1wb01b1A" target="_M-Tq0HjMEeWv5JvBHAOX_g" />
+		<transition xmi:id="_dJqQsIiGEeWS0rERPEKd6g" name="trainEnteredProximity / "
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_d-0XEIiGEeWS0rERPEKd6g" name="trainLeftProximity / "
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_88LCMIlZEeWbcpvolr7Psw" name="lockRequestIn / "
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_-VbUIIlZEeWbcpvolr7Psw" name="lockResponseIn / "
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_AbtEIIlaEeWbcpvolr7Psw" name=" / lockRequestOut"
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_DT3kEIlaEeWbcpvolr7Psw" name="clearToEnter / "
+			source="_M-Tq0HjMEeWv5JvBHAOX_g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_ElI-sIlaEeWbcpvolr7Psw" name=" / lockResponseOut"
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_GD1HwI0fEeWhyqPFGZmtAQ" name="trainJoining / sendGreeting"
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_8ei3YI4BEeWhyqPFGZmtAQ" name=" / stopped"
+			source="_8esoYY4BEeWhyqPFGZmtAQ" target="_8esoYo4BEeWhyqPFGZmtAQ" />
+		<transition xmi:id="_pXpHcJNxEeWbfeQJRVcevA" name=" / orders"
+			source="_L5IsgIe0EeWS0rERPEKd6g" target="_L5IsgIe0EeWS0rERPEKd6g" />
+		<transition xmi:id="_X6MTIJOzEeWbfeQJRVcevA" name="stop / "
+			source="_S2IMwIFyEeW-IY1wb01b1A" target="_8esoYY4BEeWhyqPFGZmtAQ" />
+		<subvertex xmi:type="uml:Pseudostate" xmi:id="_CuJRknNFEeWNAdm5YAmirg"
+			name="&lt;initial>" />
+		<subvertex xmi:type="uml:State" xmi:id="_M-Tq0HjMEeWv5JvBHAOX_g"
+			name="idle" />
+		<subvertex xmi:type="uml:State" xmi:id="_S2IMwIFyEeW-IY1wb01b1A"
+			name="initializing" />
+		<subvertex xmi:type="uml:State" xmi:id="_L5IsgIe0EeWS0rERPEKd6g"
+			name="active" />
+		<subvertex xmi:type="uml:State" xmi:id="_8esoYY4BEeWhyqPFGZmtAQ"
+			name="stopping" />
+		<subvertex xmi:type="uml:FinalState" xmi:id="_8esoYo4BEeWhyqPFGZmtAQ"
+			name="&lt;final>" />
+	</region>
+</ownedBehavior>

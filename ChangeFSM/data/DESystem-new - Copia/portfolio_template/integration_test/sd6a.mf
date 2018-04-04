@@ -1,0 +1,42 @@
+;Message File - Integration Test for SD6A
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;			Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+;Author : Jiangtian Nie (jnie)
+
+#INCLUDE defines.mf ;include CAN id and period definitions
+
+;intialize
+;Injecting Initial conditions
+0.0s  I  0s N DOOR_CLOSED_SENSOR_[FRONT][LEFT]_CAN_ID Bit = true
+0.0s  I  0s N DOOR_CLOSED_SENSOR_[FRONT][RIGHT]_CAN_ID Bit = true
+0.0s  I  0s N DOOR_CLOSED_SENSOR_[BACK][LEFT]_CAN_ID Bit = true
+0.0s  I  0s N DOOR_CLOSED_SENSOR_[BACK][RIGHT]_CAN_ID Bit = true
+0.0s  I  0s N DESIRED_FLOOR_CAN_ID DesiredFloor = 5 FRONT UP
+0.0s  I  0s N AT_FLOOR_[4][FRONT]_CAN_ID Bit = true
+0.0s  I  0s N CAR_WEIGHT_ALARM_CAN_ID CarWeightAlarm = false
+0.0s  I  0s N CAR_WEIGHT_CAN_ID Int = 1000
+0.0s  I  0s N DOOR_MOTOR_COMMAND_[FRONT][LEFT]_CAN_ID DoorMotorCommand FRONT LEFT = STOP
+0.0s  I  0s N DOOR_MOTOR_COMMAND_[FRONT][RIGHT]_CAN_ID DoorMotorCommand FRONT RIGHT = STOP
+0.0s  I  0s N DOOR_MOTOR_COMMAND_[BACK][LEFT]_CAN_ID DoorMotorCommand BACK LEFT = STOP
+0.0s  I  0s N DOOR_MOTOR_COMMAND_[BACK][RIGHT]_CAN_ID DoorMotorCommand BACK RIGHT = STOP 
+
+
+;# arc '1a/1b'
++1s A F CarPositionIndicator : floor == 4 
++0s  A F Drive : speed == SLOW 
++0s  A F Drive : direction == UP
+
++1s  I  0s N AT_FLOOR_[4][FRONT]_CAN_ID Bit = false
+
+;# arc '1a'
++1s  I  0s N AT_FLOOR_[5][FRONT]_CAN_ID Bit = true
++0s  I  0s N LEVEL_SENSOR_[UP]_CAN_ID Bit = true
++0s  I  0s N LEVEL_SENSOR_[DOWN]_CAN_ID Bit = true
+
+;# arc '1b'
++1s A F CarPositionIndicator : floor == 5 
+
+;# arc '2'
++0s  A F Drive : speed == STOP
++0s  A F Drive : direction == STOP

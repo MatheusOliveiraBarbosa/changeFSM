@@ -1,0 +1,33 @@
+;Message File - Unit Test for SD5B
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;			Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+;Author : Yue Chen(yuechen)
+
+
+#INCLUDE defines.mf ;include CAN id and period definitions
+
+;intialize
+0.0s I 0.0s N AT_FLOOR_[4][FRONT]_CAN_ID Bit = true 
+
+;check that the door is closing initially
+0.2s  A F DoorMotor FRONT LEFT : command == CLOSE
+0.2s  A N DOOR_MOTOR_COMMAND_[FRONT][LEFT]_CAN_ID DoorMotorCommand FRONT LEFT : getDoorCommand == CLOSE
+
+;set conditions for T5.4
+0.4s I 0.0s N DOOR_REVERSAL_SENSOR_[FRONT][LEFT]_CAN_ID DoorReversal FRONT LEFT = true
+
+;T5.5
+;check that the door is openning
+0.8s  A S DoorControl[FRONT][LEFT] : STATE == STATE_OPEN
+0.8s  A F DoorMotor FRONT LEFT : command == OPEN
+0.8s  A N DOOR_MOTOR_COMMAND_[FRONT][LEFT]_CAN_ID DoorMotorCommand FRONT LEFT : getDoorCommand == OPEN
+
+;set conditions for T5.1
+1.20s  I  0s N DOOR_OPEN_SENSOR_[FRONT][LEFT]_CAN_ID Bit = true
+
+;T5.1
+;check that the door is open
+1.7s  A S DoorControl[FRONT][LEFT] : STATE == STATE_STOP_OPENING
+1.7s  A F DoorMotor FRONT LEFT : command == STOP
+1.7s  A N DOOR_MOTOR_COMMAND_[FRONT][LEFT]_CAN_ID DoorMotorCommand FRONT LEFT : getDoorCommand == STOP

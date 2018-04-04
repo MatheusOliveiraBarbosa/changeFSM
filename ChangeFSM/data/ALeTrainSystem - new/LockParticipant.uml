@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arctis="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10 pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6 pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw">
+  <uml:Package xmi:id="_ICD-AIeYEeWRLfKAue1ERQ" name="aletrainsystem">
+    <packagedElement xmi:type="uml:Activity" xmi:id="_ICD-AYeYEeWRLfKAue1ERQ" name="LockParticipant" classifierBehavior="_ICD-AoeYEeWRLfKAue1ERQ" node="_ICD-WoeYEeWRLfKAue1ERQ _ICD-W4eYEeWRLfKAue1ERQ _ICD-XIeYEeWRLfKAue1ERQ _ICD-XYeYEeWRLfKAue1ERQ _ICD-XoeYEeWRLfKAue1ERQ _ICD-X4eYEeWRLfKAue1ERQ _ICD-YYeYEeWRLfKAue1ERQ _ICD-YoeYEeWRLfKAue1ERQ _ICD-Y4eYEeWRLfKAue1ERQ _ICD-ZYeYEeWRLfKAue1ERQ _ICD-Z4eYEeWRLfKAue1ERQ _ICD-aIeYEeWRLfKAue1ERQ _ICD-aYeYEeWRLfKAue1ERQ _ICD-aoeYEeWRLfKAue1ERQ _ICD-a4eYEeWRLfKAue1ERQ _ICD-bIeYEeWRLfKAue1ERQ _ICD-bYeYEeWRLfKAue1ERQ _ICD-b4eYEeWRLfKAue1ERQ _ICD-cIeYEeWRLfKAue1ERQ _ICD-cYeYEeWRLfKAue1ERQ _ICD-coeYEeWRLfKAue1ERQ _ICD-c4eYEeWRLfKAue1ERQ _ICD-dYeYEeWRLfKAue1ERQ _ICD-doeYEeWRLfKAue1ERQ _ICD-d4eYEeWRLfKAue1ERQ _ICD-eIeYEeWRLfKAue1ERQ _ICD-eoeYEeWRLfKAue1ERQ _ICD-e4eYEeWRLfKAue1ERQ _ICD-fIeYEeWRLfKAue1ERQ _ICD-fYeYEeWRLfKAue1ERQ _c1NyEIiDEeWS0rERPEKd6g _f0e_kIiDEeWS0rERPEKd6g _5NrccIiDEeWS0rERPEKd6g _JCFrsI6rEeWHC5QBWQCGDw _j7JToI69EeWHC5QBWQCGDw" group="_ICD-KIeYEeWRLfKAue1ERQ" partition="_ICD-KIeYEeWRLfKAue1ERQ">
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_ICD-AoeYEeWRLfKAue1ERQ" name="LockParticipant">
+        <region xmi:id="_ICD-A4eYEeWRLfKAue1ERQ" name="&lt;region>">
+          <transition xmi:id="_ICD-BIeYEeWRLfKAue1ERQ" name="init / " source="_ICD-DIeYEeWRLfKAue1ERQ" target="_ICD-DoeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-BYeYEeWRLfKAue1ERQ" name="update / " source="_ICD-DoeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-BoeYEeWRLfKAue1ERQ" name="update / " source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-B4eYEeWRLfKAue1ERQ" name="in / out+updated" source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-CIeYEeWRLfKAue1ERQ" name="in / updated" source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-CYeYEeWRLfKAue1ERQ" name="in / " source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-CoeYEeWRLfKAue1ERQ" name="/ " source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-D4eYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_ICD-C4eYEeWRLfKAue1ERQ" name="in / out" source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_X4cgoIiEEeWS0rERPEKd6g" name="in / internalOut" source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <transition xmi:id="_aly3sIiEEeWS0rERPEKd6g" name="in / internalOut+updated" source="_ICD-DYeYEeWRLfKAue1ERQ" target="_ICD-DYeYEeWRLfKAue1ERQ"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ICD-DIeYEeWRLfKAue1ERQ" name="&lt;initial>"/>
+          <subvertex xmi:type="uml:State" xmi:id="_ICD-DYeYEeWRLfKAue1ERQ" name="active"/>
+          <subvertex xmi:type="uml:State" xmi:id="_ICD-DoeYEeWRLfKAue1ERQ" name="initializing"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_ICD-D4eYEeWRLfKAue1ERQ" name="&lt;final>"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_ICD-EIeYEeWRLfKAue1ERQ" name="Participant"/>
+      <ownedOperation xmi:id="_ICD-EYeYEeWRLfKAue1ERQ" name="saveResources"/>
+      <ownedOperation xmi:id="_ICD-EoeYEeWRLfKAue1ERQ" name="generateResponse"/>
+      <ownedOperation xmi:id="_ICD-E4eYEeWRLfKAue1ERQ" name="getRequestType"/>
+      <ownedOperation xmi:id="_ICD-FIeYEeWRLfKAue1ERQ" name="isReservationRequest"/>
+      <ownedOperation xmi:id="_ICD-FYeYEeWRLfKAue1ERQ" name="isPerformRequest"/>
+      <ownedOperation xmi:id="_ICD-FoeYEeWRLfKAue1ERQ" name="checkIfFree"/>
+      <ownedOperation xmi:id="_ICD-F4eYEeWRLfKAue1ERQ" name="isReserved"/>
+      <ownedOperation xmi:id="_ICD-GIeYEeWRLfKAue1ERQ" name="reserveLock"/>
+      <ownedOperation xmi:id="_ICD-GYeYEeWRLfKAue1ERQ" name="isReserve"/>
+      <ownedOperation xmi:id="_ICD-GoeYEeWRLfKAue1ERQ" name="isPerform"/>
+      <ownedOperation xmi:id="_ICD-G4eYEeWRLfKAue1ERQ" name="isReservedForOther"/>
+      <ownedOperation xmi:id="_ICD-HIeYEeWRLfKAue1ERQ" name="isReservedForCoordinator"/>
+      <ownedOperation xmi:id="_ICD-HYeYEeWRLfKAue1ERQ" name="lock"/>
+      <ownedOperation xmi:id="_ICD-HoeYEeWRLfKAue1ERQ" name="isAbort"/>
+      <ownedOperation xmi:id="_ICD-H4eYEeWRLfKAue1ERQ" name="abortReservation"/>
+      <ownedOperation xmi:id="_ICD-IIeYEeWRLfKAue1ERQ" name="isLockedForCoordinator"/>
+      <ownedOperation xmi:id="_ICD-IYeYEeWRLfKAue1ERQ" name="isRelease"/>
+      <ownedOperation xmi:id="_ICD-IoeYEeWRLfKAue1ERQ" name="releaseLock"/>
+      <ownedOperation xmi:id="_IGoU8IeYEeWRLfKAue1ERQ" name="LockParticipant"/>
+      <ownedOperation xmi:id="_tuO9oIiDEeWS0rERPEKd6g" name="isInternalResponse"/>
+      <ownedOperation xmi:id="_JCRR4I6rEeWHC5QBWQCGDw" name="logInit"/>
+      <ownedOperation xmi:id="_j7SdkI69EeWHC5QBWQCGDw" name="received"/>
+      <ownedParameter xmi:id="_ICD-I4eYEeWRLfKAue1ERQ" name="init"/>
+      <ownedParameter xmi:id="_ICD-JIeYEeWRLfKAue1ERQ" name="in" type="_jgh98IebEeWRLfKAue1ERQ" isStream="true"/>
+      <ownedParameter xmi:id="_ICD-JYeYEeWRLfKAue1ERQ" name="out" type="_jgY0AIebEeWRLfKAue1ERQ" direction="out" isStream="true"/>
+      <ownedParameter xmi:id="_ICD-JoeYEeWRLfKAue1ERQ" name="updated" type="_u8ec0IebEeWRLfKAue1ERQ" direction="out" isStream="true"/>
+      <ownedParameter xmi:id="_ICD-J4eYEeWRLfKAue1ERQ" name="update" type="_u8ec0IebEeWRLfKAue1ERQ" isStream="true"/>
+      <ownedParameter xmi:id="_c1ZYQIiDEeWS0rERPEKd6g" name="internalOut" type="_jgY0AIebEeWRLfKAue1ERQ" direction="out" isStream="true"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-KYeYEeWRLfKAue1ERQ" name="e0" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_JCFrsI6rEeWHC5QBWQCGDw" source="_ICD-WoeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-KoeYEeWRLfKAue1ERQ" name="e1" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-YoeYEeWRLfKAue1ERQ" source="_ICD-W4eYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-K4eYEeWRLfKAue1ERQ" name="e3" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-XYeYEeWRLfKAue1ERQ" source="_ICD-Y4eYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-LIeYEeWRLfKAue1ERQ" name="e5" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-Z4eYEeWRLfKAue1ERQ" source="_ICD-ZoeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-LYeYEeWRLfKAue1ERQ" name="e8" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-aIeYEeWRLfKAue1ERQ" source="_ICD-Z4eYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-LoeYEeWRLfKAue1ERQ" name="true" value="true"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-L4eYEeWRLfKAue1ERQ" name="e10" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-aYeYEeWRLfKAue1ERQ" source="_ICD-Z4eYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-MIeYEeWRLfKAue1ERQ" name="false"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-MYeYEeWRLfKAue1ERQ" name="e13" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-bIeYEeWRLfKAue1ERQ" source="_ICD-a4eYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-MoeYEeWRLfKAue1ERQ" name="e14" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-YYeYEeWRLfKAue1ERQ" source="_ICD-bIeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-M4eYEeWRLfKAue1ERQ" name="e15" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-a4eYEeWRLfKAue1ERQ" source="_ICD-aoeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-NIeYEeWRLfKAue1ERQ" name="e9" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-cYeYEeWRLfKAue1ERQ" source="_ICD-aIeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-NYeYEeWRLfKAue1ERQ" name="e12" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-aIeYEeWRLfKAue1ERQ" source="_ICD-aoeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-NoeYEeWRLfKAue1ERQ" name="e11" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-aoeYEeWRLfKAue1ERQ" source="_ICD-aYeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-N4eYEeWRLfKAue1ERQ" name="e16" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-bYeYEeWRLfKAue1ERQ" source="_ICD-XoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:OpaqueExpression" xmi:id="_ICD-OIeYEeWRLfKAue1ERQ" name="isPerform()">
+          <body>isPerform()</body>
+        </guard>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-OYeYEeWRLfKAue1ERQ" name="e2" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-ZYeYEeWRLfKAue1ERQ" source="_ICD-XoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:OpaqueExpression" xmi:id="_ICD-OoeYEeWRLfKAue1ERQ" name="isReserve()">
+          <body>isReservationRequest()</body>
+          <body>isReserve()</body>
+        </guard>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-O4eYEeWRLfKAue1ERQ" name="e4" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_j7JToI69EeWHC5QBWQCGDw" source="_ICD-YoeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-PIeYEeWRLfKAue1ERQ" name="e17" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-b4eYEeWRLfKAue1ERQ" source="_ICD-boeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-PYeYEeWRLfKAue1ERQ" name="e6" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-coeYEeWRLfKAue1ERQ" source="_ICD-cIeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-PoeYEeWRLfKAue1ERQ" name="e7" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-X4eYEeWRLfKAue1ERQ" source="_ICD-cYeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-P4eYEeWRLfKAue1ERQ" name="e20" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_5NrccIiDEeWS0rERPEKd6g" source="_ICD-YIeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-QIeYEeWRLfKAue1ERQ" name="e19" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-cIeYEeWRLfKAue1ERQ" source="_ICD-b4eYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-QYeYEeWRLfKAue1ERQ" name="true" value="true"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-QoeYEeWRLfKAue1ERQ" name="e18" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-cYeYEeWRLfKAue1ERQ" source="_ICD-b4eYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-Q4eYEeWRLfKAue1ERQ" name="false"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-RIeYEeWRLfKAue1ERQ" name="e21" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-a4eYEeWRLfKAue1ERQ" source="_ICD-coeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-RYeYEeWRLfKAue1ERQ" name="e22" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-cYeYEeWRLfKAue1ERQ" source="_ICD-coeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-RoeYEeWRLfKAue1ERQ" name="e23" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-c4eYEeWRLfKAue1ERQ" source="_ICD-XoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:OpaqueExpression" xmi:id="_ICD-R4eYEeWRLfKAue1ERQ" name="isAbort()">
+          <body>isAbort()</body>
+        </guard>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-SIeYEeWRLfKAue1ERQ" name="e24" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-dYeYEeWRLfKAue1ERQ" source="_ICD-dIeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-SYeYEeWRLfKAue1ERQ" name="e27" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-a4eYEeWRLfKAue1ERQ" source="_ICD-d4eYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-SoeYEeWRLfKAue1ERQ" name="e25" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-doeYEeWRLfKAue1ERQ" source="_ICD-dYeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-S4eYEeWRLfKAue1ERQ" name="false"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-TIeYEeWRLfKAue1ERQ" name="e26" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-d4eYEeWRLfKAue1ERQ" source="_ICD-dYeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-TYeYEeWRLfKAue1ERQ" name="true" value="true"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-ToeYEeWRLfKAue1ERQ" name="e28" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-eIeYEeWRLfKAue1ERQ" source="_ICD-XoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:OpaqueExpression" xmi:id="_ICD-T4eYEeWRLfKAue1ERQ" name="isRelease()">
+          <body>isRelease()</body>
+        </guard>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-UIeYEeWRLfKAue1ERQ" name="e29" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-eoeYEeWRLfKAue1ERQ" source="_ICD-eYeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-UYeYEeWRLfKAue1ERQ" name="e32" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-a4eYEeWRLfKAue1ERQ" source="_ICD-fIeYEeWRLfKAue1ERQ"/>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-UoeYEeWRLfKAue1ERQ" name="e30" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-e4eYEeWRLfKAue1ERQ" source="_ICD-eoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-U4eYEeWRLfKAue1ERQ" name="false"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_ICD-VIeYEeWRLfKAue1ERQ" name="e31" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-fIeYEeWRLfKAue1ERQ" source="_ICD-eoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ICD-VYeYEeWRLfKAue1ERQ" name="true" value="true"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ICD-VoeYEeWRLfKAue1ERQ" name="e33" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-fYeYEeWRLfKAue1ERQ" source="_ICD-XoeYEeWRLfKAue1ERQ">
+        <guard xmi:type="uml:StringExpression" xmi:id="_ICD-V4eYEeWRLfKAue1ERQ" name="else"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_f0TZYIiDEeWS0rERPEKd6g" name="e34" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-XIeYEeWRLfKAue1ERQ" source="_f0e_kIiDEeWS0rERPEKd6g">
+        <guard xmi:type="uml:StringExpression" xmi:id="_xCHwQIiDEeWS0rERPEKd6g" name="else"/>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_yII9IIiDEeWS0rERPEKd6g" name="e35" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_c1NyEIiDEeWS0rERPEKd6g" source="_f0e_kIiDEeWS0rERPEKd6g">
+        <guard xmi:type="uml:OpaqueExpression" xmi:id="_Ag81wIiEEeWS0rERPEKd6g" name="isInternalResponse()">
+          <body>isInternalResponse()</body>
+        </guard>
+      </edge>
+      <edge xmi:type="uml:ObjectFlow" xmi:id="_5NgdUIiDEeWS0rERPEKd6g" name="e36" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_f0e_kIiDEeWS0rERPEKd6g" source="_5NrccIiDEeWS0rERPEKd6g"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_j69GYI69EeWHC5QBWQCGDw" name="e37" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" target="_ICD-XoeYEeWRLfKAue1ERQ" source="_j7JToI69EeWHC5QBWQCGDw"/>
+      <variable xmi:id="_ICD-WIeYEeWRLfKAue1ERQ" name="resources" type="_u8ec0IebEeWRLfKAue1ERQ"/>
+      <variable xmi:id="_ICD-WYeYEeWRLfKAue1ERQ" name="request" type="_jgh98IebEeWRLfKAue1ERQ"/>
+      <variable xmi:id="_38374IiDEeWS0rERPEKd6g" name="response" type="_jgY0AIebEeWRLfKAue1ERQ"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_ICD-KIeYEeWRLfKAue1ERQ" name="main" node="_ICD-WoeYEeWRLfKAue1ERQ _ICD-W4eYEeWRLfKAue1ERQ _ICD-XIeYEeWRLfKAue1ERQ _ICD-XYeYEeWRLfKAue1ERQ _ICD-XoeYEeWRLfKAue1ERQ _ICD-X4eYEeWRLfKAue1ERQ _ICD-YYeYEeWRLfKAue1ERQ _ICD-YoeYEeWRLfKAue1ERQ _ICD-Y4eYEeWRLfKAue1ERQ _ICD-ZYeYEeWRLfKAue1ERQ _ICD-ZoeYEeWRLfKAue1ERQ _ICD-YIeYEeWRLfKAue1ERQ _ICD-Z4eYEeWRLfKAue1ERQ _ICD-aIeYEeWRLfKAue1ERQ _ICD-aYeYEeWRLfKAue1ERQ _ICD-aoeYEeWRLfKAue1ERQ _ICD-a4eYEeWRLfKAue1ERQ _ICD-bIeYEeWRLfKAue1ERQ _ICD-bYeYEeWRLfKAue1ERQ _ICD-boeYEeWRLfKAue1ERQ _ICD-b4eYEeWRLfKAue1ERQ _ICD-cIeYEeWRLfKAue1ERQ _ICD-cYeYEeWRLfKAue1ERQ _ICD-coeYEeWRLfKAue1ERQ _ICD-c4eYEeWRLfKAue1ERQ _ICD-dIeYEeWRLfKAue1ERQ _ICD-dYeYEeWRLfKAue1ERQ _ICD-doeYEeWRLfKAue1ERQ _ICD-d4eYEeWRLfKAue1ERQ _ICD-eIeYEeWRLfKAue1ERQ _ICD-eYeYEeWRLfKAue1ERQ _ICD-eoeYEeWRLfKAue1ERQ _ICD-e4eYEeWRLfKAue1ERQ _ICD-fIeYEeWRLfKAue1ERQ _ICD-fYeYEeWRLfKAue1ERQ _c1NyEIiDEeWS0rERPEKd6g _f0e_kIiDEeWS0rERPEKd6g _5NrccIiDEeWS0rERPEKd6g _JCFrsI6rEeWHC5QBWQCGDw _j7JToI69EeWHC5QBWQCGDw" edge="_ICD-KYeYEeWRLfKAue1ERQ _ICD-KoeYEeWRLfKAue1ERQ _ICD-K4eYEeWRLfKAue1ERQ _ICD-LIeYEeWRLfKAue1ERQ _ICD-LYeYEeWRLfKAue1ERQ _ICD-L4eYEeWRLfKAue1ERQ _ICD-MYeYEeWRLfKAue1ERQ _ICD-MoeYEeWRLfKAue1ERQ _ICD-M4eYEeWRLfKAue1ERQ _ICD-NIeYEeWRLfKAue1ERQ _ICD-NYeYEeWRLfKAue1ERQ _ICD-NoeYEeWRLfKAue1ERQ _ICD-N4eYEeWRLfKAue1ERQ _ICD-OYeYEeWRLfKAue1ERQ _ICD-O4eYEeWRLfKAue1ERQ _ICD-PIeYEeWRLfKAue1ERQ _ICD-PYeYEeWRLfKAue1ERQ _ICD-PoeYEeWRLfKAue1ERQ _ICD-P4eYEeWRLfKAue1ERQ _ICD-QIeYEeWRLfKAue1ERQ _ICD-QoeYEeWRLfKAue1ERQ _ICD-RIeYEeWRLfKAue1ERQ _ICD-RYeYEeWRLfKAue1ERQ _ICD-RoeYEeWRLfKAue1ERQ _ICD-SIeYEeWRLfKAue1ERQ _ICD-SYeYEeWRLfKAue1ERQ _ICD-SoeYEeWRLfKAue1ERQ _ICD-TIeYEeWRLfKAue1ERQ _ICD-ToeYEeWRLfKAue1ERQ _ICD-UIeYEeWRLfKAue1ERQ _ICD-UYeYEeWRLfKAue1ERQ _ICD-UoeYEeWRLfKAue1ERQ _ICD-VIeYEeWRLfKAue1ERQ _ICD-VoeYEeWRLfKAue1ERQ _f0TZYIiDEeWS0rERPEKd6g _yII9IIiDEeWS0rERPEKd6g _5NgdUIiDEeWS0rERPEKd6g _j69GYI69EeWHC5QBWQCGDw"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_ICD-WoeYEeWRLfKAue1ERQ" name="init" outgoing="_ICD-KYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" parameter="_ICD-I4eYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_ICD-W4eYEeWRLfKAue1ERQ" name="in" outgoing="_ICD-KoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_jgh98IebEeWRLfKAue1ERQ" parameter="_ICD-JIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_ICD-XIeYEeWRLfKAue1ERQ" name="out" incoming="_f0TZYIiDEeWS0rERPEKd6g" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_jgY0AIebEeWRLfKAue1ERQ" parameter="_ICD-JYeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:AddVariableValueAction" xmi:id="_ICD-XYeYEeWRLfKAue1ERQ" name="sv0" incoming="_ICD-K4eYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" variable="_ICD-WIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_ICD-XoeYEeWRLfKAue1ERQ" name="d0" incoming="_j69GYI69EeWHC5QBWQCGDw" outgoing="_ICD-N4eYEeWRLfKAue1ERQ _ICD-OYeYEeWRLfKAue1ERQ _ICD-RoeYEeWRLfKAue1ERQ _ICD-ToeYEeWRLfKAue1ERQ _ICD-VoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-X4eYEeWRLfKAue1ERQ" name="o0" incoming="_ICD-PoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-EoeYEeWRLfKAue1ERQ">
+        <result xmi:id="_ICD-YIeYEeWRLfKAue1ERQ" name="" outgoing="_ICD-P4eYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_jgY0AIebEeWRLfKAue1ERQ"/>
+      </node>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_ICD-YYeYEeWRLfKAue1ERQ" name="updated" incoming="_ICD-MoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_u8ec0IebEeWRLfKAue1ERQ" parameter="_ICD-JoeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:AddVariableValueAction" xmi:id="_ICD-YoeYEeWRLfKAue1ERQ" name="sv1" incoming="_ICD-KoeYEeWRLfKAue1ERQ" outgoing="_ICD-O4eYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" variable="_ICD-WYeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_ICD-Y4eYEeWRLfKAue1ERQ" name="update" outgoing="_ICD-K4eYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_u8ec0IebEeWRLfKAue1ERQ" parameter="_ICD-J4eYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-ZYeYEeWRLfKAue1ERQ" name="o1" incoming="_ICD-OYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-G4eYEeWRLfKAue1ERQ">
+        <result xmi:id="_ICD-ZoeYEeWRLfKAue1ERQ" name="" outgoing="_ICD-LIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_ICD-hoeYEeWRLfKAue1ERQ"/>
+      </node>
+      <node xmi:type="uml:DecisionNode" xmi:id="_ICD-Z4eYEeWRLfKAue1ERQ" name="d1" incoming="_ICD-LIeYEeWRLfKAue1ERQ" outgoing="_ICD-LYeYEeWRLfKAue1ERQ _ICD-L4eYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:MergeNode" xmi:id="_ICD-aIeYEeWRLfKAue1ERQ" name="m1" incoming="_ICD-LYeYEeWRLfKAue1ERQ _ICD-NYeYEeWRLfKAue1ERQ" outgoing="_ICD-NIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-aYeYEeWRLfKAue1ERQ" name="o2" incoming="_ICD-L4eYEeWRLfKAue1ERQ" outgoing="_ICD-NoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-GIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ForkNode" xmi:id="_ICD-aoeYEeWRLfKAue1ERQ" name="f0" incoming="_ICD-NoeYEeWRLfKAue1ERQ" outgoing="_ICD-M4eYEeWRLfKAue1ERQ _ICD-NYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:MergeNode" xmi:id="_ICD-a4eYEeWRLfKAue1ERQ" name="m2" incoming="_ICD-M4eYEeWRLfKAue1ERQ _ICD-RIeYEeWRLfKAue1ERQ _ICD-SYeYEeWRLfKAue1ERQ _ICD-UYeYEeWRLfKAue1ERQ" outgoing="_ICD-MYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ReadVariableAction" xmi:id="_ICD-bIeYEeWRLfKAue1ERQ" name="rv0" incoming="_ICD-MYeYEeWRLfKAue1ERQ" outgoing="_ICD-MoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" variable="_ICD-WIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-bYeYEeWRLfKAue1ERQ" name="o3" incoming="_ICD-N4eYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-HIeYEeWRLfKAue1ERQ">
+        <result xmi:id="_ICD-boeYEeWRLfKAue1ERQ" name="" outgoing="_ICD-PIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_ICD-hoeYEeWRLfKAue1ERQ"/>
+      </node>
+      <node xmi:type="uml:DecisionNode" xmi:id="_ICD-b4eYEeWRLfKAue1ERQ" name="d2" incoming="_ICD-PIeYEeWRLfKAue1ERQ" outgoing="_ICD-QIeYEeWRLfKAue1ERQ _ICD-QoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-cIeYEeWRLfKAue1ERQ" name="o4" incoming="_ICD-QIeYEeWRLfKAue1ERQ" outgoing="_ICD-PYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-HYeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:MergeNode" xmi:id="_ICD-cYeYEeWRLfKAue1ERQ" name="m0" incoming="_ICD-NIeYEeWRLfKAue1ERQ _ICD-QoeYEeWRLfKAue1ERQ _ICD-RYeYEeWRLfKAue1ERQ" outgoing="_ICD-PoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ForkNode" xmi:id="_ICD-coeYEeWRLfKAue1ERQ" name="f1" incoming="_ICD-PYeYEeWRLfKAue1ERQ" outgoing="_ICD-RIeYEeWRLfKAue1ERQ _ICD-RYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-c4eYEeWRLfKAue1ERQ" name="o5" incoming="_ICD-RoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-HIeYEeWRLfKAue1ERQ">
+        <result xmi:id="_ICD-dIeYEeWRLfKAue1ERQ" name="" outgoing="_ICD-SIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_ICD-hoeYEeWRLfKAue1ERQ"/>
+      </node>
+      <node xmi:type="uml:DecisionNode" xmi:id="_ICD-dYeYEeWRLfKAue1ERQ" name="d3" incoming="_ICD-SIeYEeWRLfKAue1ERQ" outgoing="_ICD-SoeYEeWRLfKAue1ERQ _ICD-TIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:FlowFinalNode" xmi:id="_ICD-doeYEeWRLfKAue1ERQ" name="z1" incoming="_ICD-SoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-d4eYEeWRLfKAue1ERQ" name="o6" incoming="_ICD-TIeYEeWRLfKAue1ERQ" outgoing="_ICD-SYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-H4eYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-eIeYEeWRLfKAue1ERQ" name="o7" incoming="_ICD-ToeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-IIeYEeWRLfKAue1ERQ">
+        <result xmi:id="_ICD-eYeYEeWRLfKAue1ERQ" name="" outgoing="_ICD-UIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_ICD-hoeYEeWRLfKAue1ERQ"/>
+      </node>
+      <node xmi:type="uml:DecisionNode" xmi:id="_ICD-eoeYEeWRLfKAue1ERQ" name="d4" incoming="_ICD-UIeYEeWRLfKAue1ERQ" outgoing="_ICD-UoeYEeWRLfKAue1ERQ _ICD-VIeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:FlowFinalNode" xmi:id="_ICD-e4eYEeWRLfKAue1ERQ" name="z2" incoming="_ICD-UoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ICD-fIeYEeWRLfKAue1ERQ" name="o8" incoming="_ICD-VIeYEeWRLfKAue1ERQ" outgoing="_ICD-UYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_ICD-IoeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:FlowFinalNode" xmi:id="_ICD-fYeYEeWRLfKAue1ERQ" name="z3" incoming="_ICD-VoeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:ActivityParameterNode" xmi:id="_c1NyEIiDEeWS0rERPEKd6g" name="internalOut" incoming="_yII9IIiDEeWS0rERPEKd6g" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" type="_jgY0AIebEeWRLfKAue1ERQ" parameter="_c1ZYQIiDEeWS0rERPEKd6g"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_f0e_kIiDEeWS0rERPEKd6g" name="d5" incoming="_5NgdUIiDEeWS0rERPEKd6g" outgoing="_f0TZYIiDEeWS0rERPEKd6g _yII9IIiDEeWS0rERPEKd6g" inPartition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+      <node xmi:type="uml:AddVariableValueAction" xmi:id="_5NrccIiDEeWS0rERPEKd6g" name="sv2" incoming="_ICD-P4eYEeWRLfKAue1ERQ" outgoing="_5NgdUIiDEeWS0rERPEKd6g" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" variable="_38374IiDEeWS0rERPEKd6g"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_JCFrsI6rEeWHC5QBWQCGDw" name="o9" incoming="_ICD-KYeYEeWRLfKAue1ERQ" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_JCRR4I6rEeWHC5QBWQCGDw"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_j7JToI69EeWHC5QBWQCGDw" name="o10" incoming="_ICD-O4eYEeWRLfKAue1ERQ" outgoing="_j69GYI69EeWHC5QBWQCGDw" inPartition="_ICD-KIeYEeWRLfKAue1ERQ" operation="_j7SdkI69EeWHC5QBWQCGDw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-foeYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.LockableResources"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-f4eYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.LockableResources&lt;P>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-gIeYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.LockableResources&lt;>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-gYeYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.LockableResources&lt;?>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-goeYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.Request"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-g4eYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.Request&lt;P>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-hIeYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.Response&lt;P>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-hYeYEeWRLfKAue1ERQ" name="no.ntnu.item.distributedlocking.model.RequestType"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-hoeYEeWRLfKAue1ERQ" name="boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ICD-h4eYEeWRLfKAue1ERQ" name="java.lang.Object"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_WDGk8IeaEeWRLfKAue1ERQ" name="Response&lt;P>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_WDJoQIeaEeWRLfKAue1ERQ" name="LockableResources&lt;P>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_WDMrkIeaEeWRLfKAue1ERQ" name="Request&lt;P>"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_jgY0AIebEeWRLfKAue1ERQ" name="aletrainsystem.models.locking.Response"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_jgh98IebEeWRLfKAue1ERQ" name="aletrainsystem.models.locking.Request"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_u8ec0IebEeWRLfKAue1ERQ" name="aletrainsystem.models.railroad.Railroad"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_y4AeQIebEeWRLfKAue1ERQ" name="aletrainsystem.models.railroad.IRailroad"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1w5OoIlWEeWbcpvolr7Psw" name="aletrainsystem.models.locking.LockingMessage"/>
+    <profileApplication xmi:id="_ICD-iIeYEeWRLfKAue1ERQ">
+      <eAnnotations xmi:id="_ICD-iYeYEeWRLfKAue1ERQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_ICD-ioeYEeWRLfKAue1ERQ">
+      <eAnnotations xmi:id="_ICD-i4eYEeWRLfKAue1ERQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_UEANMUVlEduH9aQE_pc66w"/>
+    </profileApplication>
+  </uml:Package>
+  <graphics:Shape xmi:id="_ICD-jIeYEeWRLfKAue1ERQ" x="180" y="55" width="973" height="55" base_Element="_ICD-AYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-jYeYEeWRLfKAue1ERQ" x="180" y="108" width="973" height="757" base_Element="_ICD-KIeYEeWRLfKAue1ERQ"/>
+  <arctis:esm xmi:id="_ICD-joeYEeWRLfKAue1ERQ" base_StateMachine="_ICD-AoeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-j4eYEeWRLfKAue1ERQ" x="144" y="162" base_Element="_ICD-WoeYEeWRLfKAue1ERQ" orientation="west"/>
+  <arctis:location xmi:id="_ICD-kIeYEeWRLfKAue1ERQ" base_Variable="_ICD-WIeYEeWRLfKAue1ERQ" partition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-kYeYEeWRLfKAue1ERQ" x="738" y="108" base_Element="_ICD-WIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-koeYEeWRLfKAue1ERQ" x="90" y="288" base_Element="_ICD-W4eYEeWRLfKAue1ERQ" orientation="west"/>
+  <graphics:Shape xmi:id="_ICD-k4eYEeWRLfKAue1ERQ" x="1152" y="396" base_Element="_ICD-XIeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-lIeYEeWRLfKAue1ERQ" x="198" y="198" width="127" height="55" base_Element="_ICD-XYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-lYeYEeWRLfKAue1ERQ" x="477" y="279" width="37" height="37" base_Element="_ICD-XoeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-loeYEeWRLfKAue1ERQ" x="990" y="270" width="163" height="55" base_Element="_ICD-X4eYEeWRLfKAue1ERQ" orientation="south"/>
+  <graphics:Shape xmi:id="_ICD-l4eYEeWRLfKAue1ERQ" x="810" y="864" base_Element="_ICD-YYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-mIeYEeWRLfKAue1ERQ" x="198" y="270" width="109" height="55" base_Element="_ICD-YoeYEeWRLfKAue1ERQ"/>
+  <arctis:location xmi:id="_ICD-mYeYEeWRLfKAue1ERQ" base_Variable="_ICD-WYeYEeWRLfKAue1ERQ" partition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-moeYEeWRLfKAue1ERQ" x="738" y="126" base_Element="_ICD-WYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-m4eYEeWRLfKAue1ERQ" x="72" y="216" base_Element="_ICD-Y4eYEeWRLfKAue1ERQ" orientation="west"/>
+  <graphics:Shape xmi:id="_ICD-nYeYEeWRLfKAue1ERQ" x="504" y="216" base_Element="_ICD-OoeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-noeYEeWRLfKAue1ERQ" x="414" y="126" width="163" height="55" base_Element="_ICD-ZYeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-n4eYEeWRLfKAue1ERQ" x="621" y="135" width="37" height="37" base_Element="_ICD-Z4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-oIeYEeWRLfKAue1ERQ" x="801" y="135" width="37" height="37" base_Element="_ICD-aIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-oYeYEeWRLfKAue1ERQ" x="666" y="126" base_Element="_ICD-LoeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-ooeYEeWRLfKAue1ERQ" x="648" y="180" width="109" height="55" base_Element="_ICD-aYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-o4eYEeWRLfKAue1ERQ" x="594" y="180" base_Element="_ICD-MIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-pIeYEeWRLfKAue1ERQ" aux1="0 54 -63 0 " base_Element="_ICD-L4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-pYeYEeWRLfKAue1ERQ" x="810" y="180" width="19" height="55" base_Element="_ICD-aoeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-poeYEeWRLfKAue1ERQ" x="801" y="783" width="37" height="37" base_Element="_ICD-a4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-p4eYEeWRLfKAue1ERQ" x="756" y="810" width="127" height="55" base_Element="_ICD-bIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-qIeYEeWRLfKAue1ERQ" aux1="" base_Element="_ICD-NoeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-qYeYEeWRLfKAue1ERQ" x="522" y="270" width="185" height="55" base_Element="_ICD-bYeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-qoeYEeWRLfKAue1ERQ" x="540" y="270" base_Element="_ICD-OIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-q4eYEeWRLfKAue1ERQ" aux1="" base_Element="_ICD-OYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-rIeYEeWRLfKAue1ERQ" x="729" y="279" width="37" height="37" base_Element="_ICD-b4eYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-rYeYEeWRLfKAue1ERQ" x="702" y="324" width="91" height="55" base_Element="_ICD-cIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-roeYEeWRLfKAue1ERQ" aux1="144 0 0 -144 " base_Element="_ICD-NIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-r4eYEeWRLfKAue1ERQ" x="945" y="279" width="37" height="37" base_Element="_ICD-cYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-sIeYEeWRLfKAue1ERQ" x="756" y="324" base_Element="_ICD-QYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-sYeYEeWRLfKAue1ERQ" x="756" y="270" base_Element="_ICD-Q4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-soeYEeWRLfKAue1ERQ" aux1="108 0 -108 0 " base_Element="_ICD-QoeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-s4eYEeWRLfKAue1ERQ" aux1="" base_Element="_ICD-QIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-tIeYEeWRLfKAue1ERQ" x="792" y="324" width="19" height="55" base_Element="_ICD-coeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-tYeYEeWRLfKAue1ERQ" aux1="162 0 0 54 " base_Element="_ICD-RYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-toeYEeWRLfKAue1ERQ" aux1="0 378 -18 -72 " base_Element="_ICD-RIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-t4eYEeWRLfKAue1ERQ" x="522" y="378" width="199" height="55" base_Element="_ICD-c4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-uIeYEeWRLfKAue1ERQ" aux1="36 54 -90 -54  126 54 0 -54 " base_Element="_ICD-RoeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-uYeYEeWRLfKAue1ERQ" x="540" y="360" base_Element="_ICD-R4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-uoeYEeWRLfKAue1ERQ" x="603" y="459" width="37" height="37" base_Element="_ICD-dYeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-u4eYEeWRLfKAue1ERQ" x="549" y="459" base_Element="_ICD-doeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-vIeYEeWRLfKAue1ERQ" x="648" y="450" width="163" height="55" base_Element="_ICD-d4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-vYeYEeWRLfKAue1ERQ" aux1="0 306 -90 -18  72 306 -18 -18 " base_Element="_ICD-SYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-voeYEeWRLfKAue1ERQ" x="576" y="486" base_Element="_ICD-S4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-v4eYEeWRLfKAue1ERQ" x="648" y="486" base_Element="_ICD-TYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-wIeYEeWRLfKAue1ERQ" x="396" y="522" width="199" height="55" base_Element="_ICD-eIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-wYeYEeWRLfKAue1ERQ" x="414" y="414" base_Element="_ICD-T4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-woeYEeWRLfKAue1ERQ" x="477" y="603" width="37" height="37" base_Element="_ICD-eoeYEeWRLfKAue1ERQ" orientation="east"/>
+  <graphics:Shape xmi:id="_ICD-w4eYEeWRLfKAue1ERQ" x="405" y="603" base_Element="_ICD-e4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-xIeYEeWRLfKAue1ERQ" x="558" y="594" width="145" height="55" base_Element="_ICD-fIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-xYeYEeWRLfKAue1ERQ" aux1="9 180 -198 0 " base_Element="_ICD-UYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-xoeYEeWRLfKAue1ERQ" x="432" y="630" base_Element="_ICD-U4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-x4eYEeWRLfKAue1ERQ" x="540" y="630" base_Element="_ICD-VYeYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-yIeYEeWRLfKAue1ERQ" base_Transition="_ICD-BIeYEeWRLfKAue1ERQ" triggers="_ICD-WoeYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-yYeYEeWRLfKAue1ERQ" base_Transition="_ICD-BYeYEeWRLfKAue1ERQ" triggers="_ICD-Y4eYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-yoeYEeWRLfKAue1ERQ" base_Transition="_ICD-BoeYEeWRLfKAue1ERQ" triggers="_ICD-Y4eYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-y4eYEeWRLfKAue1ERQ" base_Transition="_ICD-B4eYEeWRLfKAue1ERQ" triggers="_ICD-W4eYEeWRLfKAue1ERQ" effects="_ICD-XIeYEeWRLfKAue1ERQ _ICD-YYeYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-zIeYEeWRLfKAue1ERQ" base_Transition="_ICD-CIeYEeWRLfKAue1ERQ" triggers="_ICD-W4eYEeWRLfKAue1ERQ" effects="_ICD-YYeYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-zYeYEeWRLfKAue1ERQ" base_Transition="_ICD-CYeYEeWRLfKAue1ERQ" triggers="_ICD-W4eYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-zoeYEeWRLfKAue1ERQ" x="351" y="369" base_Element="_ICD-fYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_ICD-z4eYEeWRLfKAue1ERQ" x="360" y="342" base_Element="_ICD-V4eYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-0IeYEeWRLfKAue1ERQ" base_Transition="_ICD-CoeYEeWRLfKAue1ERQ"/>
+  <arctis:event xmi:id="_ICD-0YeYEeWRLfKAue1ERQ" base_Transition="_ICD-C4eYEeWRLfKAue1ERQ" triggers="_ICD-W4eYEeWRLfKAue1ERQ" effects="_ICD-XIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_c1uvcIiDEeWS0rERPEKd6g" x="1152" y="504" base_Element="_c1NyEIiDEeWS0rERPEKd6g" orientation="east"/>
+  <graphics:Shape xmi:id="_f0veQIiDEeWS0rERPEKd6g" x="1053" y="387" width="37" height="37" base_Element="_f0e_kIiDEeWS0rERPEKd6g"/>
+  <graphics:Shape xmi:id="_xRvgoIiDEeWS0rERPEKd6g" x="1080" y="378" base_Element="_xCHwQIiDEeWS0rERPEKd6g"/>
+  <graphics:Shape xmi:id="_yiFHIIiDEeWS0rERPEKd6g" aux1="0 108 -86 0 " base_Element="_yII9IIiDEeWS0rERPEKd6g"/>
+  <arctis:location xmi:id="_387mQIiDEeWS0rERPEKd6g" base_Variable="_38374IiDEeWS0rERPEKd6g" partition="_ICD-KIeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_387mQYiDEeWS0rERPEKd6g" x="882" y="108" base_Element="_38374IiDEeWS0rERPEKd6g"/>
+  <graphics:Shape xmi:id="_5N9wUIiDEeWS0rERPEKd6g" x="990" y="324" width="163" height="55" base_Element="_5NrccIiDEeWS0rERPEKd6g"/>
+  <graphics:Shape xmi:id="_A4SXsIiEEeWS0rERPEKd6g" x="936" y="432" base_Element="_Ag81wIiEEeWS0rERPEKd6g"/>
+  <arctis:event xmi:id="_X4fj8IiEEeWS0rERPEKd6g" base_Transition="_X4cgoIiEEeWS0rERPEKd6g" triggers="_ICD-W4eYEeWRLfKAue1ERQ" effects="_c1NyEIiDEeWS0rERPEKd6g"/>
+  <arctis:event xmi:id="_al17AIiEEeWS0rERPEKd6g" base_Transition="_aly3sIiEEeWS0rERPEKd6g" triggers="_ICD-W4eYEeWRLfKAue1ERQ" effects="_c1NyEIiDEeWS0rERPEKd6g _ICD-YYeYEeWRLfKAue1ERQ"/>
+  <graphics:Shape xmi:id="_JEam8I6rEeWHC5QBWQCGDw" x="180" y="144" width="124" height="55" base_Element="_JCFrsI6rEeWHC5QBWQCGDw"/>
+  <graphics:Shape xmi:id="_j9HCgI69EeWHC5QBWQCGDw" x="306" y="270" width="127" height="55" base_Element="_j7JToI69EeWHC5QBWQCGDw"/>
+</xmi:XMI>

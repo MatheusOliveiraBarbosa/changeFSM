@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252"
+      http-equiv="Content-Type">
+    <title>18649 Elevatorcontrol Package</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">18649 - Elevator Control Package<br>
+    </h1>
+    <hr style="width: 100%; height: 2px;">18649 - Fall 2013<br>
+    Group 16 - Jiangtian Nie (jnie) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+    Sally Stevenson (ststeven)<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sri Harsha Koppaka (skoppaka)<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yue Chen (yuechen)
+    <hr style="width: 100%; height: 2px;">This page lists and describes
+    the java files in your elevatorcontrol package.&nbsp; Update this
+    document to reflect your implementation and add your java files to
+    the elevatorcontrol folder.<br>
+    <span style="font-weight: bold;"><br>
+      Note:&nbsp; In order for your portfolio to be complete, the code
+      files in the elevatorcontrol folder must compiled and run if
+      copied into the elevatorcontrol package (overwriting any
+      duplicates) of a clean version of the latest required simulator
+      release.</span><br>
+    <h2>Controller files</h2>
+    <ul>
+      <li><a href="DoorControl.java">DoorControl.java</a> - Controller
+        that implements the behavior for the Doors Motors in the
+        elevator system.<br>
+      </li>
+      <li><a href="HallButtonControl.java">HallButtonControl.java</a>&nbsp;-
+
+        Controller that implements the behavior for the HallLights and
+        HallCalls in the elevator system.<br>
+      </li>
+      <li><a href="CarButtonControl.java">CarButtonControl.java</a> -
+        Controller that implements the behavior for the CarLights and
+        CarCalls in the elevator system.<br>
+      </li>
+    </ul>
+    <h2>Translator files</h2>
+    Links and descriptions to all message translators used by the
+    controllers.<br>
+    <ul>
+      <li><a href="DesiredFloorCanPayloadTranslator.java">DesiredFloorCanPayloadTranslator.java</a>
+        - Translator for the mDesiredFloor[f,b,d] message. Packages the
+        three fields into a bit level representation.<br>
+      </li>
+      <li><a href="DoorMotorCommandCanPayloadTranslator.java">DoorMotorCommandCanPayloadTranslator.java</a>
+        - Translator for the DoorMotor Commands.</li>
+      <li><a href="DriveSpeedCanPayloadTranslator.java">DriveSpeedCanPayloadTranslator.java</a>
+        - Translator for the DriveSpeed message.<br>
+      </li>
+    </ul>
+    <h2>Utility files</h2>
+    <ul>
+      <li><a href="Utility.java">Utility.java</a> - Contains some
+        example classes that are useful in replicated situations.<br>
+      </li>
+      <li><a href="MessageDictionary.java">MessageDictionary.java</a> -
+        Contains constant definitions for CAN IDs and CAN Base IDs(for
+        replicated cases).<br>
+      </li>
+    </ul>
+    <br>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="ColorSensorTest" 
+    uuid="_dHqbUHv-EeWoPI4aagTCRw" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <library path="lib/ev3/ev3classes.jar"/>
+        <block name="b0" uuid="_z-ge8Xv4EeWoPI4aagTCRw"/>
+    </required>
+</block>

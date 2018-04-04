@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="LockHandler" 
+    uuid="_F1QIVYeYEeWRLfKAue1ERQ" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <library path="lib/rabbitmq-client.jar"/>
+        <block name="b0" uuid="_ICD-AYeYEeWRLfKAue1ERQ"/>
+        <block name="b1" uuid="_EYZIwIeYEeWRLfKAue1ERQ"/>
+    </required>
+</block>

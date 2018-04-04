@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="PointSwitch" 
+    uuid="_y6jJsF0OEeWb2oHgnb21JQ" 
+    status="under construction" 
+    session="multi_session" 
+    type="block" 
+    >
+    <required>
+        <package name="aletrainsystem.enums"/>
+        <package name="aletrainsystem.models"/>
+        <package name="aletrainsystem.models.railroad"/>
+        <package name="aletrainsystem.pointswitch"/>
+        <block name="b0" uuid="_CsvFg10OEeWb2oHgnb21JQ"/>
+    </required>
+</block>

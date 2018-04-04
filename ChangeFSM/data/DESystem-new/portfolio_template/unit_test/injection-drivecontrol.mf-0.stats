@@ -1,0 +1,61 @@
+;Course and Semester : 18649 Fall 2013
+;Group 16 : Jiangtian Nie(jnie), Sally Stevenson(ststeven)
+;	    Yue Chen(yuechen), Sri Harsha Koppaka(skoppaka)
+
+Simulator Parameters:
+Command line = -cf drivecontrol.cf -mf drivecontrol.mf -head header.txt
+RandomSeed = 1386646694899
+CanNetworkBitTime = 0 ns
+Effective Can Bitrate = Infinity
+Run Time = null
+Real time rate = null
+Message File = drivecontrol.mf
+Controller File = drivecontrol.cf
+
+Assertion Results:
+@0.04s:  PASSED DriveControl::checkState(STATE) ?== STATE_STOP PASSED
+@0.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@1d4433f :: speed ?== STOP PASSED
+@0.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@7caac5 :: direction ?== STOP PASSED
+@14.04s:  PASSED DriveControl::checkState(STATE) ?== STATE_SLOW_UP PASSED
+@14.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@c27dc4 :: speed ?== SLOW PASSED
+@14.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@43d653 :: direction ?== UP PASSED
+@18.04s:  PASSED DriveControl::checkState(STATE) ?== STATE_FAST_UP PASSED
+@18.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@a49360 :: speed ?== FAST PASSED
+@18.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@a7563d :: direction ?== UP PASSED
+@20.04s:  PASSED DriveControl::checkState(STATE) ?== STATE_SLOW_UP PASSED
+@20.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@121a9ec :: speed ?== SLOW PASSED
+@20.04s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@116a3de :: direction ?== UP PASSED
+@22.24s:  PASSED DriveControl::checkState(STATE) ?== STATE_LEVEL_UP PASSED
+@22.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@f10a53 :: speed ?== LEVEL PASSED
+@22.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@17eae6c :: direction ?== UP PASSED
+@24.24s:  PASSED DriveControl::checkState(STATE) ?== STATE_STOP PASSED
+@24.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@d77ed3 :: speed ?== STOP PASSED
+@24.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@9f3f8 :: direction ?== STOP PASSED
+@26.24s:  PASSED DriveControl::checkState(STATE) ?== STATE_SLOW_DOWN PASSED
+@26.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@663731 :: speed ?== SLOW PASSED
+@26.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@151c9a0 :: direction ?== DOWN PASSED
+@28.24s:  PASSED DriveControl::checkState(STATE) ?== STATE_FAST_DOWN PASSED
+@28.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@d5b111 :: speed ?== FAST PASSED
+@28.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@f96093 :: direction ?== DOWN PASSED
+@30.24s:  PASSED DriveControl::checkState(STATE) ?== STATE_SLOW_DOWN PASSED
+@30.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@9faafc :: speed ?== SLOW PASSED
+@30.24s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@86506a :: direction ?== DOWN PASSED
+@32.44s:  PASSED DriveControl::checkState(STATE) ?== STATE_LEVEL_DOWN PASSED
+@32.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@e046e :: speed ?== LEVEL PASSED
+@32.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@351fbf :: direction ?== DOWN PASSED
+@34.44s:  PASSED DriveControl::checkState(STATE) ?== STATE_STOP PASSED
+@34.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@5dbc90 :: speed ?== STOP PASSED
+@34.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@2cb5c6 :: direction ?== STOP PASSED
+@36.44s:  PASSED DriveControl::checkState(STATE) ?== STATE_STOP PASSED
+@36.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@d67b44 :: speed ?== STOP PASSED
+@36.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@5ef1eb :: direction ?== STOP PASSED
+@38.44s:  PASSED DriveControl::checkState(STATE) ?== STATE_EMERGENCY PASSED
+@38.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@1d9a2ab :: speed ?== STOP PASSED
+@38.44s:  PASSED simulator.payloads.DrivePayload$ReadableDrivePayload@a8a199 :: direction ?== STOP PASSED
+
+
+******************Summary******************
+Passed:  39
+Failed:  0
+Total :  39
+
