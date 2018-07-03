@@ -22,8 +22,8 @@ import ch.uzh.ifi.seal.changedistiller.model.entities.SourceCodeChange;
 public class Main {
 
 	private static final String FILE_EXTENSION = ".java";
-	private static final String PATH_PROJECT_OLD = "./data/smarthome-first-version/bundles/core/org.eclipse.smarthome.core.thing/";
-	private static final String PATH_PROJECT_NEW = "./data/smarthome-master/bundles/core/org.eclipse.smarthome.core.thing/";
+	private static final String PATH_PROJECT_OLD = "./data/design-pattern-indeepth-old/";
+	private static final String PATH_PROJECT_NEW = "./data/design-pattern-indeepth-new/";
 	private static final String PATH_XMI = "./data/status-smarthome.xml";
 	private static final String TAG_STATE = "subvertex";
 	private static final String TYPE_STATE = "uml:State";
@@ -42,7 +42,7 @@ public class Main {
 //		filterClasses();
 
 		String results = "";
-		String head = "\"Change\", \"Type Change\", \"Label Change\", \"Changed Entity\", \"Parent Entity\", \"Root Entity\", \"Class Name\"";
+		String head = "\"ID\", \"Change\", \"Type Change\", \"Label Change\", \"Changed Entity\", \"Parent Entity\", \"Root Entity\", \"Class Name\"";
 		results = head + "\n";
 		int cont = 0;
 		for (File fileNew : classesNew) {
@@ -57,8 +57,8 @@ public class Main {
 				int indexNew = PATH_PROJECT_NEW.length();
 				auxNew = auxNew.substring(indexNew);
 				auxOld = auxOld.substring(indexOld);
-				System.out.println(auxNew);
-				System.out.println(auxOld);
+//				System.out.println(auxNew);
+//				System.out.println(auxOld);
 
 				if (auxNew.equals(auxOld)) {
 
@@ -78,7 +78,7 @@ public class Main {
 
 								cont++;
 								String corretor = change.toString().replace("\"", "");
-								results += "\"" + corretor + "\",";
+								results += cont +", " + "\"" + corretor + "\",";
 
 								corretor = change.getChangeType().toString().replace("\"", "");
 								results += "\"" + corretor + "\",";
