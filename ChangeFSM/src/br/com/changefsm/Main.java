@@ -2,26 +2,13 @@ package br.com.changefsm;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
 import br.com.changefsm.models.State;
-import br.com.changefsm.readerxml.ReaderXML;
-import br.com.changefsm.utils.FileUtils;
-import ch.uzh.ifi.seal.changedistiller.ChangeDistiller;
-import ch.uzh.ifi.seal.changedistiller.ChangeDistiller.Language;
-import ch.uzh.ifi.seal.changedistiller.distilling.FileDistiller;
-import ch.uzh.ifi.seal.changedistiller.model.entities.SourceCodeChange;
 
 public class Main {
 
-	private static final String FILE_EXTENSION = ".java";
 	private static final String PATH_PROJECT_OLD = "./data/design-pattern-indeepth-old/";
 	private static final String PATH_PROJECT_NEW = "./data/design-pattern-indeepth-new/";
 	private static final String PATH_XMI = "./data/status-smarthome.xml";
@@ -33,91 +20,24 @@ public class Main {
 	private static ArrayList<File> classesNew = new ArrayList<File>();
 
 	public static void main(String[] args) {
-
+	
+		// Extract the classes for the both versions
+		ExtractorClasses ec = new ExtractorClasses();
+		ec.extractClasses(PATH_PROJECT_OLD, PATH_PROJECT_NEW);
+		classesNew = ec.getNewJavaClasses();
+		classesOld = ec.getOldJavaClasses();
 		
-//		extractElementsXML();
+		//Extract changes and their classes
+		ExtractChangesInClasses ecc = new ExtractChangesInClasses();
+		ecc.extractChanges(classesOld, classesNew);
 
-		String classesJava = extractClassesNames();
-
+		//Extract Elements in SM
+		String pathME = "./data/status-smarthome.xml";
+		ExtractME eme = new ExtractME();
+		eme.extractElementsSM(pathME);
+		System.out.println(eme.printTransitions());
+		
 //		filterClasses();
-
-		String results = "";
-		String head = "\"ID\", \"Change\", \"Type Change\", \"Label Change\", \"Changed Entity\", \"Parent Entity\", \"Root Entity\", \"Class Name\"";
-		results = head + "\n";
-		int cont = 0;
-		for (File fileNew : classesNew) {
-			for (File fileOld : classesOld) {
-
-				// This part is support for to identify the corrects classes
-				// excluding classes with the same name but in different package.
-
-				String auxNew = fileNew.getPath();
-				String auxOld = fileOld.getPath();
-				int indexOld = PATH_PROJECT_OLD.length();
-				int indexNew = PATH_PROJECT_NEW.length();
-				auxNew = auxNew.substring(indexNew);
-				auxOld = auxOld.substring(indexOld);
-//				System.out.println(auxNew);
-//				System.out.println(auxOld);
-
-				if (auxNew.equals(auxOld)) {
-
-					FileDistiller fd = ChangeDistiller.createFileDistiller(Language.JAVA);
-					fd.extractClassifiedSourceCodeChanges(fileOld, fileNew);
-					if (!fd.getSourceCodeChanges().isEmpty()) {
-
-						for (SourceCodeChange change : fd.getSourceCodeChanges()) {
-
-							if ((!change.getChangeType().toString().equals("DOC_UPDATE"))
-									&& (!change.getChangeType().toString().equals("COMMENT_UPDATE"))
-									&& (!change.getChangeType().toString().equals("DOC_DELETE"))
-									&& (!change.getChangeType().toString().equals("COMMENT_DELETE"))
-									&& (!change.getChangeType().toString().equals("DOC_INSERT"))
-									&& (!change.getChangeType().toString().equals("COMMENT_INSERT"))
-									&& (!change.getChangeType().toString().equals("COMMENT_MOVE"))) {
-
-								cont++;
-								String corretor = change.toString().replace("\"", "");
-								results += cont +", " + "\"" + corretor + "\",";
-
-								corretor = change.getChangeType().toString().replace("\"", "");
-								results += "\"" + corretor + "\",";
-
-								results += "\"" + change.getLabel() + "\",";
-
-								corretor = change.getChangedEntity().toString().replace("\"", "");
-								results += "\"" + corretor + "\",";
-
-								corretor = change.getParentEntity().toString().replace("\"", "");
-								results += "\"" + corretor + "\",";
-
-								results += "\"" + change.getRootEntity() + "\",";
-
-								results += "\"" + fileOld.getName() + "\" \n";
-								System.out.println("Estamos executando.... contagem: " + cont);
-
-							}
-						}
-						break;
-					}
-				}
-			}
-		}
-		System.out.println(results);
-		System.out.println(cont);
-
-		try {
-			FileWriter writer = new FileWriter("./data/changes.csv");
-			writer.write(results);
-			writer.close();
-
-			FileWriter fw = new FileWriter("./data/classes.txt");
-			fw.write(classesJava);
-			fw.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 	}
 
@@ -175,58 +95,5 @@ public class Main {
 
 	}
 
-	/**
-	 * Extract all names of the new and old Java Classes, and separate in two
-	 * ArrayList, each one for version.
-	 * 
-	 * @return string classesJava : This String return a string that contains all
-	 *         names of the new and old class java.
-	 */
-	private static String extractClassesNames() {
-		// Leitura arquivos JAVAOLD
-		ArrayList<String> files = (ArrayList<String>) FileUtils.listNames(PATH_PROJECT_OLD, "", FILE_EXTENSION);
-		String classesJava = "Classes Java " + files.size() + " \n";
-		for (int i = 0; i < files.size(); i++) {
-			String path = files.get(i);
-			path = PATH_PROJECT_OLD + path;
-			File java = new File(path);
-			classesOld.add(java);
-			classesJava += java.getPath() + "\n";
-		}
-
-		// Leitura arquivos JAVANEW
-		files = (ArrayList<String>) FileUtils.listNames(PATH_PROJECT_NEW, "", FILE_EXTENSION);
-		classesJava += "\n Classes Nova " + files.size() + "\n ";
-		for (int i = 0; i < files.size(); i++) {
-			String path = files.get(i);
-			path = PATH_PROJECT_NEW + path;
-			File java = new File(path);
-			classesNew.add(java);
-			classesJava += java.getPath() + "\n";
-		}
-		return classesJava;
-	}
-
-	/**
-	 * Read a XML file and extract the values used in StateMachine like a State and
-	 * Transitions
-	 * 
-	 * The XML model is Enterprise Architecture
-	 * 
-	 * @author Matheus de Oliveira
-	 */
-	private static void extractElementsXML() {
-		ReaderXML.readXML(PATH_XMI);
-		NodeList nodes = ReaderXML.getNodeList(TAG_STATE);
-		for (int i = 0; i < nodes.getLength(); i++) {
-			Node node = nodes.item(i);
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				Element element = (Element) node;
-				if (element.getAttribute("xmi:type").equals(TYPE_STATE)) {
-					states.add(new State(element.getAttribute("name")));
-				}
-			}
-		}
-	}
 
 }

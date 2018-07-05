@@ -16,7 +16,7 @@ public class JFrameChangeFSM {
 		JFrame frame = new JFrame(NAME_APP + " " + VERSION);
 		frame.add(this.panelChangeFSM.getPanel());
 		frame.setResizable(false);
-//		frame.setSize(WIDTH, HEIGHT);
+		frame.setSize(WIDTH, HEIGHT);
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		frame.pack();
 		frame.setVisible(true);
