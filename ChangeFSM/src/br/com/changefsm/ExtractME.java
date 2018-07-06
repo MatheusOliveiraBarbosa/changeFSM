@@ -15,6 +15,8 @@ public class ExtractME {
 	private List<State> states = new ArrayList<State>();
 	private List<Transition> transitions = new ArrayList<Transition>();
 
+	public ExtractME() {}
+	
 	/**
 	 * Read a XML file and extract the values used in StateMachine like a State and
 	 * Transitions
@@ -48,7 +50,7 @@ public class ExtractME {
 			Element element = (Element) nlT.item(j);
 			source = null;
 			target = null;
-			for (State state : states) {
+			for (State state : getStates()) {
 				if (element.getAttribute("source").equals(state.getId())) {
 					source = state;
 				}
@@ -56,7 +58,7 @@ public class ExtractME {
 					target = state;
 				}
 			}
-			transitions
+			getTransitions()
 					.add(new Transition(element.getAttribute("xmi:id"), element.getAttribute("name"), source, target));
 		}
 	}
@@ -73,12 +75,14 @@ public class ExtractME {
 		for (int i = 0; i < nlS.getLength(); i++) {
 			Element element = (Element) nlS.item(i);
 			if (element.getAttribute("xmi:type").equals("uml:FinalState")) {
-				states.add(new State(element.getAttribute("xmi:id"), "FINAL_STATE"));
+				getStates().add(new State(element.getAttribute("xmi:id"), "FINAL_STATE"));
+
 			} else if (element.getAttribute("xmi:type").equals("uml:Pseudostate")
 					&& element.getAttribute("kind").equals("initial")) {
-				states.add(new State(element.getAttribute("xmi:id"), "INITITAL_STATE"));
+				getStates().add(new State(element.getAttribute("xmi:id"), "INITITAL_STATE"));
+
 			} else {
-				states.add(new State(element.getAttribute("xmi:id"), element.getAttribute("name")));
+				getStates().add(new State(element.getAttribute("xmi:id"), element.getAttribute("name")));
 			}
 		}
 	}
@@ -92,11 +96,27 @@ public class ExtractME {
 	 */
 	public String printTransitions() {
 		String transitionsForPrint = "";
-		for (Transition transition : transitions) {
-			transitionsForPrint += transition.getSource() + "  ---------   " + transition.getName()
+		for (Transition transition : getTransitions()) {
+			transitionsForPrint += transition.getSource() + "  ---------   " + transition.getAction()
 					+ "   ----------->>  " + transition.getTarget() + "\n";
 		}
 		return transitionsForPrint;
+	}
+
+	public List<State> getStates() {
+		return states;
+	}
+
+	public void setStates(List<State> states) {
+		this.states = states;
+	}
+
+	public List<Transition> getTransitions() {
+		return transitions;
+	}
+
+	public void setTransitions(List<Transition> transitions) {
+		this.transitions = transitions;
 	}
 
 }

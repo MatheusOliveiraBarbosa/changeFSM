@@ -1,5 +1,6 @@
 package br.com.changefsm.models;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,23 +8,23 @@ import ch.uzh.ifi.seal.changedistiller.model.entities.SourceCodeChange;
 
 public class ClassChanged {
 	
-	private String className;
+	private File classFile;
 	private List<SourceCodeChange> changes;
 	
 	public ClassChanged() {
 		changes = new ArrayList<SourceCodeChange>();
 	}
 	
-	public ClassChanged(String className, List<SourceCodeChange> changes) {
-		this.className = className;
+	public ClassChanged(File className, List<SourceCodeChange> changes) {
+		this.classFile = className;
 		this.changes = changes;
 	}
 	
-	public String getClassName() {
-		return className;
+	public File getClassFile() {
+		return classFile;
 	}
-	public void setClassName(String className) {
-		this.className = className;
+	public void setClassFile(File classFile) {
+		this.classFile = classFile;
 	}
 	public List<SourceCodeChange> getChanges() {
 		return changes;
@@ -34,7 +35,7 @@ public class ClassChanged {
 	
 	@Override
 	public String toString() {
-		return getClassName() +" --- Changes: " + getChanges();
+		return getClassFile() +" --- Changes: " + getChanges();
 	}
 
 }

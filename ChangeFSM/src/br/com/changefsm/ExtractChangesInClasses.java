@@ -46,8 +46,10 @@ public class ExtractChangesInClasses {
 								cc.getChanges().add(change);
 							}
 						}
-						cc.setClassName(fileNew.getPath());
-						classesChanged.add(cc);
+						if(!cc.getChanges().isEmpty()) {
+							cc.setClassFile(fileNew);
+							classesChanged.add(cc);
+						}
 						break;
 					}
 				}

@@ -3,7 +3,9 @@ package br.com.changefsm.models;
 public class Transition {
 	
 	private String id;
-	private String name;
+	private String action;
+	private String guard;
+	private String event;
 	private State source;
 	private State target;
 	
@@ -12,16 +14,16 @@ public class Transition {
 	
 	public Transition(String id, String name, State source, State target) {
 		this.id= id;
-		this.name = name;
+		this.action = name;
 		this.source = source;
 		this.target = target;
 	}
 	
-	public String getName() {
-		return name;
+	public String getAction() {
+		return action;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setAction(String action) {
+		this.action = action;
 	}
 	public String getId() {
 		return id;
@@ -44,7 +46,23 @@ public class Transition {
 	
 	@Override
 	public String toString() {
-		return this.name;
+		return this.action;
+	}
+
+	public String getGuard() {
+		return guard;
+	}
+
+	public void setGuard(String guard) {
+		this.guard = guard;
+	}
+
+	public String getEvent() {
+		return event;
+	}
+
+	public void setEvent(String event) {
+		this.event = event;
 	}
 
 }
