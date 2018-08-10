@@ -12,9 +12,15 @@ public class Transition {
 	
 	public Transition () {	}
 	
-	public Transition(String id, String name, State source, State target) {
+	public Transition(String action, State source, State target) {
+		this.action = action;
+		this.source = source;
+		this.target = target;
+	}
+	
+	public Transition(String id, String action, State source, State target) {
 		this.id= id;
-		this.action = name;
+		this.action = action;
 		this.source = source;
 		this.target = target;
 	}

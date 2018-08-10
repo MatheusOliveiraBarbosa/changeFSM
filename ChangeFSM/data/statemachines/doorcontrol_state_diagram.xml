@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" name="carButtonControl" visibility="public">
+			<packagedElement xmi:type="uml:StateMachine" xmi:id="EAID_SM000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_StateMachine1" visibility="public">
+				<region xmi:type="uml:Region" xmi:id="EAID_SR000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_Region1" visibility="public">
+					<subvertex xmi:type="uml:State" xmi:id="EAID_AD09ABA0_B738_436c_9864_56377DD694AC" name="State S5.1: Command Door to Open" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE"/>
+						<incoming xmi:idref="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0"/>
+						<outgoing xmi:idref="EAID_B1505D60_CED0_487f_9558_D524E146A7AF"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_C927_490a_A071_AF92B4C8EDA8" visibility="public">
+							<ownedOperation xmi:id="EAID_BE9D04E3_C927_490a_A071_AF92B4C8EDA8" name="DoorMotor[b, r] = Open" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_C927_490a_A071_AF92B4C8EDA8" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_C0758A98_EE27_4e30_98E5_A437541917EF" name="mDoorMotor[b, r] = Open" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_EE27_4e30_98E5_A437541917EF" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_555A2187_7152_4232_B97D_36F3041F4A60" name="CountDown = Dwell" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_7152_4232_B97D_36F3041F4A60" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_B1505D60_CED0_487f_9558_D524E146A7AF" name="T5.1" visibility="public" kind="local" source="EAID_AD09ABA0_B738_436c_9864_56377DD694AC" target="EAID_5DD1979C_C13E_4248_9091_656D53463805"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_5DD1979C_C13E_4248_9091_656D53463805" name="State S5.2: Command Doot to Stop Opening" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_B1505D60_CED0_487f_9558_D524E146A7AF"/>
+						<outgoing xmi:idref="EAID_33AEE899_3398_4355_A70F_53DE49202DD0"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_4179_4380_8466_CCBB8F023F54" visibility="public">
+							<ownedOperation xmi:id="EAID_064EC5FC_4179_4380_8466_CCBB8F023F54" name="DoorMotor[b, r] = Stop" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_4179_4380_8466_CCBB8F023F54" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_1899DE38_F95E_4675_A752_BF65C6432A4D" name="mDoorMotor[b, r] = Stop" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_F95E_4675_A752_BF65C6432A4D" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_C780D4DB_D85F_4140_A8A8_1CDC125C2D21" name="Decrement coountDown" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_D85F_4140_A8A8_1CDC125C2D21" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_33AEE899_3398_4355_A70F_53DE49202DD0" name="T5.2" visibility="public" kind="local" source="EAID_5DD1979C_C13E_4248_9091_656D53463805" target="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" name="State S5.3: Command Door to Nudge" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4"/>
+						<incoming xmi:idref="EAID_33AEE899_3398_4355_A70F_53DE49202DD0"/>
+						<outgoing xmi:idref="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE"/>
+						<outgoing xmi:idref="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_C8D8_4eec_9274_8A0645F1C574" visibility="public">
+							<ownedOperation xmi:id="EAID_9A26F86C_C8D8_4eec_9274_8A0645F1C574" name="DoorMotor[b, r] = Nudge" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_C8D8_4eec_9274_8A0645F1C574" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_3938491B_A2E8_4a4b_8210_EB2EFC6745DB" name="mDoorMotor[b, r] = Nudge" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_A2E8_4a4b_8210_EB2EFC6745DB" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F" name="T5.4" visibility="public" kind="local" source="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" target="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE" name="T5.3" visibility="public" kind="local" source="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" target="EAID_AD09ABA0_B738_436c_9864_56377DD694AC"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F" name="State S5.4: Command Door to Stop Closing" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F"/>
+						<outgoing xmi:idref="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_A14F_4acc_9A1A_4C553170E1C6" visibility="public">
+							<ownedOperation xmi:id="EAID_6C5E52F9_A14F_4acc_9A1A_4C553170E1C6" name="DoorMotor[b, r] = Stop" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_A14F_4acc_9A1A_4C553170E1C6" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_88D5286B_99CA_4577_BCA7_E0468E0D2EBD" name="mDoorMotor[b, r] = Stop" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_99CA_4577_BCA7_E0468E0D2EBD" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0" name="T5.5" visibility="public" kind="local" source="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F" target="EAID_AD09ABA0_B738_436c_9864_56377DD694AC"/>
+					<subvertex xmi:type="uml:Pseudostate" xmi:id="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1" visibility="public" kind="initial">
+						<outgoing xmi:idref="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4"/>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4" visibility="public" kind="local" source="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1" target="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943"/>
+				</region>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" xmi:type="uml:Package" name="carButtonControl" scope="public">
+				<model package2="EAID_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" package="EAPK_7D5EF230_4EE2_4cab_BFA1_730D91D6CD00" tpos="0" ea_localid="2" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 10:56:48" modified="2018-07-09 15:01:07" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-07-09 00:00:00" modified="2018-07-09 00:00:00"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE" packageFlags="isModel=1;VICON=4;"/>
+			</element>
+			<element xmi:idref="EAID_AD09ABA0_B738_436c_9864_56377DD694AC" xmi:type="uml:State" name="State S5.1: Command Door to Open" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="13" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 16:08:58" modified="2018-07-09 16:17:04" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="DoorMotor[b, r] = Open" visibility="public" isAsynchronous="false">
+						<model ea_guid="{BE9D04E3-C927-490a-A071-AF92B4C8EDA8}" ea_localid="13"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_C927_490a_A071_AF92B4C8EDA8" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-C927-490a-A071-AF92B4C8EDA8}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="mDoorMotor[b, r] = Open" visibility="public" isAsynchronous="false">
+						<model ea_guid="{C0758A98-EE27-4e30-98E5-A437541917EF}" ea_localid="14"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_EE27_4e30_98E5_A437541917EF" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-EE27-4e30-98E5-A437541917EF}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="CountDown = Dwell" visibility="public" isAsynchronous="false">
+						<model ea_guid="{555A2187-7152-4232-B97D-36F3041F4A60}" ea_localid="15"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="2"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_7152_4232_B97D_36F3041F4A60" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-7152-4232-B97D-36F3041F4A60}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_B1505D60_CED0_487f_9558_D524E146A7AF" start="EAID_AD09ABA0_B738_436c_9864_56377DD694AC" end="EAID_5DD1979C_C13E_4248_9091_656D53463805"/>
+					<StateFlow xmi:id="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0" start="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F" end="EAID_AD09ABA0_B738_436c_9864_56377DD694AC"/>
+					<StateFlow xmi:id="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE" start="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" end="EAID_AD09ABA0_B738_436c_9864_56377DD694AC"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_5DD1979C_C13E_4248_9091_656D53463805" xmi:type="uml:State" name="State S5.2: Command Doot to Stop Opening" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="14" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 16:24:01" modified="2018-07-09 16:24:19" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="DoorMotor[b, r] = Stop" visibility="public" isAsynchronous="false">
+						<model ea_guid="{064EC5FC-4179-4380-8466-CCBB8F023F54}" ea_localid="16"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_4179_4380_8466_CCBB8F023F54" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-4179-4380-8466-CCBB8F023F54}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="mDoorMotor[b, r] = Stop" visibility="public" isAsynchronous="false">
+						<model ea_guid="{1899DE38-F95E-4675-A752-BF65C6432A4D}" ea_localid="17"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_F95E_4675_A752_BF65C6432A4D" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-F95E-4675-A752-BF65C6432A4D}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Decrement coountDown" visibility="public" isAsynchronous="false">
+						<model ea_guid="{C780D4DB-D85F-4140-A8A8-1CDC125C2D21}" ea_localid="18"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="2"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_D85F_4140_A8A8_1CDC125C2D21" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-D85F-4140-A8A8-1CDC125C2D21}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_33AEE899_3398_4355_A70F_53DE49202DD0" start="EAID_5DD1979C_C13E_4248_9091_656D53463805" end="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943"/>
+					<StateFlow xmi:id="EAID_B1505D60_CED0_487f_9558_D524E146A7AF" start="EAID_AD09ABA0_B738_436c_9864_56377DD694AC" end="EAID_5DD1979C_C13E_4248_9091_656D53463805"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" xmi:type="uml:State" name="State S5.3: Command Door to Nudge" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="15" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 16:25:22" modified="2018-07-09 16:25:38" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="DoorMotor[b, r] = Nudge" visibility="public" isAsynchronous="false">
+						<model ea_guid="{9A26F86C-C8D8-4eec-9274-8A0645F1C574}" ea_localid="19"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_C8D8_4eec_9274_8A0645F1C574" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-C8D8-4eec-9274-8A0645F1C574}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="mDoorMotor[b, r] = Nudge" visibility="public" isAsynchronous="false">
+						<model ea_guid="{3938491B-A2E8-4a4b-8210-EB2EFC6745DB}" ea_localid="20"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_A2E8_4a4b_8210_EB2EFC6745DB" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-A2E8-4a4b-8210-EB2EFC6745DB}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F" start="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" end="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F"/>
+					<StateFlow xmi:id="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE" start="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" end="EAID_AD09ABA0_B738_436c_9864_56377DD694AC"/>
+					<StateFlow xmi:id="EAID_33AEE899_3398_4355_A70F_53DE49202DD0" start="EAID_5DD1979C_C13E_4248_9091_656D53463805" end="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943"/>
+					<StateFlow xmi:id="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4" start="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1" end="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F" xmi:type="uml:State" name="State S5.4: Command Door to Stop Closing" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="16" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 16:25:44" modified="2018-07-09 16:25:57" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="DoorMotor[b, r] = Stop" visibility="public" isAsynchronous="false">
+						<model ea_guid="{6C5E52F9-A14F-4acc-9A1A-4C553170E1C6}" ea_localid="21"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_A14F_4acc_9A1A_4C553170E1C6" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-A14F-4acc-9A1A-4C553170E1C6}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="mDoorMotor[b, r] = Stop" visibility="public" isAsynchronous="false">
+						<model ea_guid="{88D5286B-99CA-4577-BCA7-E0468E0D2EBD}" ea_localid="22"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_99CA_4577_BCA7_E0468E0D2EBD" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-99CA-4577-BCA7-E0468E0D2EBD}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0" start="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F" end="EAID_AD09ABA0_B738_436c_9864_56377DD694AC"/>
+					<StateFlow xmi:id="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F" start="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" end="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1" xmi:type="uml:StateNode" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="12" ea_eleType="element"/>
+				<properties isSpecification="false" sType="StateNode" nType="3" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 16:03:05" modified="2018-07-09 16:03:07" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4" start="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1" end="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_B1505D60_CED0_487f_9558_D524E146A7AF">
+				<source xmi:idref="EAID_AD09ABA0_B738_436c_9864_56377DD694AC">
+					<model ea_localid="13" type="State" name="State S5.1: Command Door to Open"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_5DD1979C_C13E_4248_9091_656D53463805">
+					<model ea_localid="14" type="State" name="State S5.2: Command Doot to Stop Opening"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="11"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0">
+				<source xmi:idref="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F">
+					<model ea_localid="16" type="State" name="State S5.4: Command Door to Stop Closing"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_AD09ABA0_B738_436c_9864_56377DD694AC">
+					<model ea_localid="13" type="State" name="State S5.1: Command Door to Open"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="16"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE">
+				<source xmi:idref="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943">
+					<model ea_localid="15" type="State" name="State S5.3: Command Door to Nudge"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_AD09ABA0_B738_436c_9864_56377DD694AC">
+					<model ea_localid="13" type="State" name="State S5.1: Command Door to Open"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="14"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_33AEE899_3398_4355_A70F_53DE49202DD0">
+				<source xmi:idref="EAID_5DD1979C_C13E_4248_9091_656D53463805">
+					<model ea_localid="14" type="State" name="State S5.2: Command Doot to Stop Opening"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943">
+					<model ea_localid="15" type="State" name="State S5.3: Command Door to Nudge"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="12"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F">
+				<source xmi:idref="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943">
+					<model ea_localid="15" type="State" name="State S5.3: Command Door to Nudge"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F">
+					<model ea_localid="16" type="State" name="State S5.4: Command Door to Stop Closing"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4">
+				<source xmi:idref="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1">
+					<model ea_localid="12" type="StateNode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943">
+					<model ea_localid="15" type="State" name="State S5.3: Command Door to Nudge"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="13"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_do" name="do" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles/>
+		<diagrams>
+			<diagram xmi:id="EAID_8E7534F9_EBA4_491d_ABE9_2305BAD4E18F">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" localID="2" owner="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B"/>
+				<properties name="carposition" type="Statechart"/>
+				<project author="mathe" version="1.0" created="2018-07-09 14:08:35" modified="2018-07-09 17:12:45"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=795;DocSize.cy=1130;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SaveTag=6C4C7311;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=504;Top=302;Right=747;Bottom=362;" subject="EAID_C1C164B0_FDB8_47f2_9972_E86147B2F01F" seqno="1" style="DUID=1ACC7157;"/>
+					<element geometry="Left=130;Top=300;Right=332;Bottom=360;" subject="EAID_5057B63A_6D7F_4c50_A21E_A654D4AC4943" seqno="2" style="DUID=5E552BE9;"/>
+					<element geometry="Left=498;Top=133;Right=723;Bottom=207;" subject="EAID_5DD1979C_C13E_4248_9091_656D53463805" seqno="3" style="DUID=AFBB6003;"/>
+					<element geometry="Left=139;Top=130;Right=325;Bottom=201;" subject="EAID_AD09ABA0_B738_436c_9864_56377DD694AC" seqno="4" style="DUID=72015F58;"/>
+					<element geometry="Left=220;Top=234;Right=240;Bottom=254;" subject="EAID_BD02CE22_2165_4f54_9D35_B2E2665242E1" seqno="5" style="DUID=89327FA6;LBL=;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_72B85A8C_4AD3_40c1_BB81_46512A1FA51F" style="Mode=3;EOID=1ACC7157;SOID=5E552BE9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=CX=22:CY=13:OX=55:OY=-31:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_33AEE899_3398_4355_A70F_53DE49202DD0" style="Mode=3;EOID=5E552BE9;SOID=AFBB6003;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_96FD0BD1_D3F5_4188_B34A_818F68B602A4" style="Mode=3;EOID=5E552BE9;SOID=89327FA6;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B1505D60_CED0_487f_9558_D524E146A7AF" style="Mode=3;EOID=AFBB6003;SOID=72015F58;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=22:CY=13:OX=64:OY=18:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A4FB11F2_6515_4427_9CEF_F1A3F82611B0" style="Mode=3;EOID=72015F58;SOID=1ACC7157;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-51;SY=17;EX=-52;EY=-35;EDGE=1;$LLB=;LLT=;LMT=CX=22:CY=13:OX=-15:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FB96EB45_611A_403c_8A4E_C1CF8EBEE5AE" style="Mode=3;EOID=72015F58;SOID=5E552BE9;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>

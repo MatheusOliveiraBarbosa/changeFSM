@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" name="carButtonControl" visibility="public">
+			<packagedElement xmi:type="uml:StateMachine" xmi:id="EAID_SM000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_StateMachine1" visibility="public">
+				<region xmi:type="uml:Region" xmi:id="EAID_SR000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_Region1" visibility="public">
+					<subvertex xmi:type="uml:State" xmi:id="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" name="State S6.1: STOP" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43"/>
+						<incoming xmi:idref="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836"/>
+						<incoming xmi:idref="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C"/>
+						<incoming xmi:idref="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615"/>
+						<incoming xmi:idref="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C"/>
+						<incoming xmi:idref="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD"/>
+						<outgoing xmi:idref="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81"/>
+						<outgoing xmi:idref="EAID_77484800_A99F_4640_8D70_CF5F5026F470"/>
+						<outgoing xmi:idref="EAID_74002188_28C7_4944_8620_86C7BB6BE19F"/>
+						<outgoing xmi:idref="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466"/>
+						<outgoing xmi:idref="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615"/>
+						<outgoing xmi:idref="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_F2CC_4cf3_84F2_D336A85FBD5D" visibility="public">
+							<ownedOperation xmi:id="EAID_4FA4325E_F2CC_4cf3_84F2_D336A85FBD5D" name="Set Drive to (stop, stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_F2CC_4cf3_84F2_D336A85FBD5D" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_439E4159_4205_48b4_A0B7_9FBCA974EE96" name="Set mDrive to (stop, stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_4205_48b4_A0B7_9FBCA974EE96" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_327D8A6C_AE43_4a92_8B6C_43615B606105" name="Set mDriveSpeed to (0, stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_AE43_4a92_8B6C_43615B606105" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2" name="T6.5.1" visibility="public" kind="local" source="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" target="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615" name="T6.12" visibility="public" kind="local" source="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" target="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466" name="T6.1" visibility="public" kind="local" source="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" target="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_74002188_28C7_4944_8620_86C7BB6BE19F" name="T6.8" visibility="public" kind="local" source="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" target="EAID_2AECEC90_D9BF_436a_8267_943334611E79"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_77484800_A99F_4640_8D70_CF5F5026F470" name="T6.4" visibility="public" kind="local" source="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" target="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81" name="T6.9" visibility="public" kind="local" source="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" target="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8" name="State S6.2: LEVEL_DOWN" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81"/>
+						<incoming xmi:idref="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD"/>
+						<outgoing xmi:idref="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_1CB3_4837_91AF_5BE4B03D13B5" visibility="public">
+							<ownedOperation xmi:id="EAID_CA50C422_1CB3_4837_91AF_5BE4B03D13B5" name="Set Drive to (Level, Down)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_1CB3_4837_91AF_5BE4B03D13B5" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_96C36070_0B11_44ac_ADA6_1BD93CC1D47A" name="Set mDrive to (Level, Down)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_0B11_44ac_ADA6_1BD93CC1D47A" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43" name="T6.10" visibility="public" kind="local" source="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8" target="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" name="State S6.3: DRIVE_UP" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466"/>
+						<outgoing xmi:idref="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3"/>
+						<outgoing xmi:idref="EAID_B495CC90_7D55_4644_BB72_52738BA76436"/>
+						<outgoing xmi:idref="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_AEE9_48fb_B680_C701A04CFD83" visibility="public">
+							<ownedOperation xmi:id="EAID_959C21C3_AEE9_48fb_B680_C701A04CFD83" name="Set Drive to (Slow, Up)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_AEE9_48fb_B680_C701A04CFD83" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_78C3EC08_062D_436e_B7BE_0148E5FC961D" name="Set mDrive to (Slow, Up)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_062D_436e_B7BE_0148E5FC961D" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836" name="T6.3" visibility="public" kind="local" source="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" target="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_B495CC90_7D55_4644_BB72_52738BA76436" name="T6.6" visibility="public" kind="local" source="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" target="EAID_2AECEC90_D9BF_436a_8267_943334611E79"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3" name="T6.5.2" visibility="public" kind="local" source="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" target="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_2AECEC90_D9BF_436a_8267_943334611E79" name="State S6.4: LEVEL_UP" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_B495CC90_7D55_4644_BB72_52738BA76436"/>
+						<incoming xmi:idref="EAID_74002188_28C7_4944_8620_86C7BB6BE19F"/>
+						<outgoing xmi:idref="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_5CC0_4cf8_AA87_151C52360E6D" visibility="public">
+							<ownedOperation xmi:id="EAID_FD8C0DC3_5CC0_4cf8_AA87_151C52360E6D" name="Set Drive to (LEVEL, Up)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_5CC0_4cf8_AA87_151C52360E6D" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_97CF28F4_2A1B_4d9d_9EDD_38AD35D08056" name="Set mDrive to (LEVEL, Up)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_2A1B_4d9d_9EDD_38AD35D08056" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C" name="T6.7" visibility="public" kind="local" source="EAID_2AECEC90_D9BF_436a_8267_943334611E79" target="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" name="State S6.5: DRIVE_DOWN" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_77484800_A99F_4640_8D70_CF5F5026F470"/>
+						<outgoing xmi:idref="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD"/>
+						<outgoing xmi:idref="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577"/>
+						<outgoing xmi:idref="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_9FCD_44bf_AD94_B3AD15B058D7" visibility="public">
+							<ownedOperation xmi:id="EAID_4F0B65C3_9FCD_44bf_AD94_B3AD15B058D7" name="Set Drive to (Slow, Down)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_9FCD_44bf_AD94_B3AD15B058D7" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_3ABC585C_C4C3_40d3_9BCA_2A789DDF0459" name="Set mDrive to (Slow, Down)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_C4C3_40d3_9BCA_2A789DDF0459" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD" name="T6.2" visibility="public" kind="local" source="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" target="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577" name="T6.5.3" visibility="public" kind="local" source="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" target="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD" name="T6.11" visibility="public" kind="local" source="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" target="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_3361CAF1_D32F_47d1_8B33_12443920262A" name="State S6.6: EMERGENCY" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3"/>
+						<incoming xmi:idref="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577"/>
+						<incoming xmi:idref="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_1FB6_4642_BF65_347789835927" visibility="public">
+							<ownedOperation xmi:id="EAID_0A8AEEF2_1FB6_4642_BF65_347789835927" name="Set Drive to (Stop, Stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_1FB6_4642_BF65_347789835927" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_4FCA1102_103B_46b7_8630_D6B6D6B81872" name="Set mDrive to (Stop, Stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_103B_46b7_8630_D6B6D6B81872" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_4226E2D6_283C_41dc_A8ED_6A40D9AA6B84" name="Set DriveSpeed to (0, Stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_283C_41dc_A8ED_6A40D9AA6B84" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<subvertex xmi:type="uml:Pseudostate" xmi:id="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515" visibility="public" kind="initial">
+						<outgoing xmi:idref="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C"/>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C" visibility="public" kind="local" source="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515" target="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+				</region>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" xmi:type="uml:Package" name="carButtonControl" scope="public">
+				<model package2="EAID_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" package="EAPK_7D5EF230_4EE2_4cab_BFA1_730D91D6CD00" tpos="0" ea_localid="2" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 10:56:48" modified="2018-07-09 15:01:07" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-07-09 00:00:00" modified="2018-07-09 00:00:00"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE" packageFlags="isModel=1;VICON=4;"/>
+			</element>
+			<element xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" xmi:type="uml:State" name="State S6.1: STOP" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="24" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:33:13" modified="2018-07-09 18:33:42" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set Drive to (stop, stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{4FA4325E-F2CC-4cf3-84F2-D336A85FBD5D}" ea_localid="33"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_F2CC_4cf3_84F2_D336A85FBD5D" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-F2CC-4cf3-84F2-D336A85FBD5D}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDrive to (stop, stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{439E4159-4205-48b4-A0B7-9FBCA974EE96}" ea_localid="34"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_4205_48b4_A0B7_9FBCA974EE96" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-4205-48b4-A0B7-9FBCA974EE96}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDriveSpeed to (0, stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{327D8A6C-AE43-4a92-8B6C-43615B606105}" ea_localid="35"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="2"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_AE43_4a92_8B6C_43615B606105" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-AE43-4a92-8B6C-43615B606105}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<StateFlow xmi:id="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B"/>
+					<StateFlow xmi:id="EAID_74002188_28C7_4944_8620_86C7BB6BE19F" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_2AECEC90_D9BF_436a_8267_943334611E79"/>
+					<StateFlow xmi:id="EAID_77484800_A99F_4640_8D70_CF5F5026F470" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C"/>
+					<StateFlow xmi:id="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8"/>
+					<StateFlow xmi:id="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD" start="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C" start="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C" start="EAID_2AECEC90_D9BF_436a_8267_943334611E79" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836" start="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43" start="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8" xmi:type="uml:State" name="State S6.2: LEVEL_DOWN" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="29" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:49:08" modified="2018-07-09 18:49:23" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set Drive to (Level, Down)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{CA50C422-1CB3-4837-91AF-5BE4B03D13B5}" ea_localid="45"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_1CB3_4837_91AF_5BE4B03D13B5" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-1CB3-4837-91AF-5BE4B03D13B5}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDrive to (Level, Down)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{96C36070-0B11-44ac-ADA6-1BD93CC1D47A}" ea_localid="46"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_0B11_44ac_ADA6_1BD93CC1D47A" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-0B11-44ac-ADA6-1BD93CC1D47A}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43" start="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD" start="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" end="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8"/>
+					<StateFlow xmi:id="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" xmi:type="uml:State" name="State S6.3: DRIVE_UP" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="27" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:42:08" modified="2018-07-09 18:42:24" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set Drive to (Slow, Up)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{959C21C3-AEE9-48fb-B680-C701A04CFD83}" ea_localid="41"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_AEE9_48fb_B680_C701A04CFD83" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-AEE9-48fb-B680-C701A04CFD83}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDrive to (Slow, Up)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{78C3EC08-062D-436e-B7BE-0148E5FC961D}" ea_localid="42"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_062D_436e_B7BE_0148E5FC961D" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-062D-436e-B7BE-0148E5FC961D}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836" start="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_B495CC90_7D55_4644_BB72_52738BA76436" start="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" end="EAID_2AECEC90_D9BF_436a_8267_943334611E79"/>
+					<StateFlow xmi:id="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3" start="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" end="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<StateFlow xmi:id="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_2AECEC90_D9BF_436a_8267_943334611E79" xmi:type="uml:State" name="State S6.4: LEVEL_UP" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="28" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:48:45" modified="2018-07-09 18:48:59" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set Drive to (LEVEL, Up)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{FD8C0DC3-5CC0-4cf8-AA87-151C52360E6D}" ea_localid="43"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_5CC0_4cf8_AA87_151C52360E6D" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-5CC0-4cf8-AA87-151C52360E6D}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDrive to (LEVEL, Up)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{97CF28F4-2A1B-4d9d-9EDD-38AD35D08056}" ea_localid="44"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_2A1B_4d9d_9EDD_38AD35D08056" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-2A1B-4d9d-9EDD-38AD35D08056}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C" start="EAID_2AECEC90_D9BF_436a_8267_943334611E79" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_74002188_28C7_4944_8620_86C7BB6BE19F" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_2AECEC90_D9BF_436a_8267_943334611E79"/>
+					<StateFlow xmi:id="EAID_B495CC90_7D55_4644_BB72_52738BA76436" start="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" end="EAID_2AECEC90_D9BF_436a_8267_943334611E79"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" xmi:type="uml:State" name="State S6.5: DRIVE_DOWN" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="26" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:39:22" modified="2018-07-09 18:39:38" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set Drive to (Slow, Down)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{4F0B65C3-9FCD-44bf-AD94-B3AD15B058D7}" ea_localid="39"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_9FCD_44bf_AD94_B3AD15B058D7" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-9FCD-44bf-AD94-B3AD15B058D7}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDrive to (Slow, Down)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{3ABC585C-C4C3-40d3-9BCA-2A789DDF0459}" ea_localid="40"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_C4C3_40d3_9BCA_2A789DDF0459" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-C4C3-40d3-9BCA-2A789DDF0459}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD" start="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+					<StateFlow xmi:id="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577" start="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" end="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<StateFlow xmi:id="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD" start="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" end="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8"/>
+					<StateFlow xmi:id="EAID_77484800_A99F_4640_8D70_CF5F5026F470" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_3361CAF1_D32F_47d1_8B33_12443920262A" xmi:type="uml:State" name="State S6.6: EMERGENCY" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="25" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:35:56" modified="2018-07-09 18:36:14" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set Drive to (Stop, Stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{0A8AEEF2-1FB6-4642-BF65-347789835927}" ea_localid="36"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_1FB6_4642_BF65_347789835927" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-1FB6-4642-BF65-347789835927}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDrive to (Stop, Stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{4FCA1102-103B-46b7-8630-D6B6D6B81872}" ea_localid="37"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_103B_46b7_8630_D6B6D6B81872" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-103B-46b7-8630-D6B6D6B81872}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set DriveSpeed to (0, Stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{4226E2D6-283C-41dc-A8ED-6A40D9AA6B84}" ea_localid="38"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="2"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_283C_41dc_A8ED_6A40D9AA6B84" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-283C-41dc-A8ED-6A40D9AA6B84}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2" start="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" end="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<StateFlow xmi:id="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577" start="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" end="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+					<StateFlow xmi:id="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3" start="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" end="EAID_3361CAF1_D32F_47d1_8B33_12443920262A"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515" xmi:type="uml:StateNode" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="23" ea_eleType="element"/>
+				<properties isSpecification="false" sType="StateNode" nType="3" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:32:51" modified="2018-07-09 18:32:58" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C" start="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515" end="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2">
+				<source xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_3361CAF1_D32F_47d1_8B33_12443920262A">
+					<model ea_localid="25" type="State" name="State S6.6: EMERGENCY"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="25"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615">
+				<source xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="24"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466">
+				<source xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B">
+					<model ea_localid="27" type="State" name="State S6.3: DRIVE_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="29"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_74002188_28C7_4944_8620_86C7BB6BE19F">
+				<source xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_2AECEC90_D9BF_436a_8267_943334611E79">
+					<model ea_localid="28" type="State" name="State S6.4: LEVEL_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="32"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_77484800_A99F_4640_8D70_CF5F5026F470">
+				<source xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C">
+					<model ea_localid="26" type="State" name="State S6.5: DRIVE_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="26"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81">
+				<source xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8">
+					<model ea_localid="29" type="State" name="State S6.2: LEVEL_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="35"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD">
+				<source xmi:idref="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C">
+					<model ea_localid="26" type="State" name="State S6.5: DRIVE_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="27"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C">
+				<source xmi:idref="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515">
+					<model ea_localid="23" type="StateNode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="23"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C">
+				<source xmi:idref="EAID_2AECEC90_D9BF_436a_8267_943334611E79">
+					<model ea_localid="28" type="State" name="State S6.4: LEVEL_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="33"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836">
+				<source xmi:idref="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B">
+					<model ea_localid="27" type="State" name="State S6.3: DRIVE_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="30"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43">
+				<source xmi:idref="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8">
+					<model ea_localid="29" type="State" name="State S6.2: LEVEL_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9">
+					<model ea_localid="24" type="State" name="State S6.1: STOP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="36"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD">
+				<source xmi:idref="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C">
+					<model ea_localid="26" type="State" name="State S6.5: DRIVE_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8">
+					<model ea_localid="29" type="State" name="State S6.2: LEVEL_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="37"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_B495CC90_7D55_4644_BB72_52738BA76436">
+				<source xmi:idref="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B">
+					<model ea_localid="27" type="State" name="State S6.3: DRIVE_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_2AECEC90_D9BF_436a_8267_943334611E79">
+					<model ea_localid="28" type="State" name="State S6.4: LEVEL_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="34"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3">
+				<source xmi:idref="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B">
+					<model ea_localid="27" type="State" name="State S6.3: DRIVE_UP"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_3361CAF1_D32F_47d1_8B33_12443920262A">
+					<model ea_localid="25" type="State" name="State S6.6: EMERGENCY"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="31"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577">
+				<source xmi:idref="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C">
+					<model ea_localid="26" type="State" name="State S6.5: DRIVE_DOWN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_3361CAF1_D32F_47d1_8B33_12443920262A">
+					<model ea_localid="25" type="State" name="State S6.6: EMERGENCY"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="28"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_do" name="do" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles/>
+		<diagrams>
+			<diagram xmi:id="EAID_8E7534F9_EBA4_491d_ABE9_2305BAD4E18F">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" localID="2" owner="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B"/>
+				<properties name="carposition" type="Statechart"/>
+				<project author="mathe" version="1.0" created="2018-07-09 14:08:35" modified="2018-07-09 18:58:59"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=795;DocSize.cy=1130;ShowDetails=0;Orientation=P;Zoom=113;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SaveTag=9E5076D4;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=482;Top=214;Right=661;Bottom=274;" subject="EAID_A4A8A983_1846_4381_8747_5CD3EA2226D8" seqno="1" style="DUID=E484FD07;"/>
+					<element geometry="Left=230;Top=213;Right=403;Bottom=273;" subject="EAID_2AECEC90_D9BF_436a_8267_943334611E79" seqno="2" style="DUID=4EDE0FBB;"/>
+					<element geometry="Left=89;Top=358;Right=252;Bottom=418;" subject="EAID_D58BF016_ACD8_47ea_9D2F_335939044A9B" seqno="3" style="DUID=DE523AEC;"/>
+					<element geometry="Left=611;Top=365;Right=787;Bottom=425;" subject="EAID_CEC23FBA_C865_4dfc_BC91_01BFE073789C" seqno="4" style="DUID=7F575D00;"/>
+					<element geometry="Left=335;Top=505;Right=512;Bottom=579;" subject="EAID_3361CAF1_D32F_47d1_8B33_12443920262A" seqno="5" style="DUID=83CDBCE7;"/>
+					<element geometry="Left=331;Top=353;Right=514;Bottom=427;" subject="EAID_92E44D1F_840D_451a_9E30_DBEE3BBF72A9" seqno="6" style="DUID=7F7FAFF9;"/>
+					<element geometry="Left=526;Top=452;Right=546;Bottom=472;" subject="EAID_CBDD3B61_1BBE_4549_82D2_4BB89EA3E515" seqno="7" style="DUID=A178A76B;LBL=;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=28:CY=13:OX=18:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_ADA746AF_0E1E_476d_BF87_B0EC4F0A27DD" style="Mode=3;EOID=E484FD07;SOID=7F575D00;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-41;SY=-29;EX=68;EY=36;EDGE=3;$LLB=;LLT=;LMT=CX=28:CY=13:OX=20:OY=9:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A0DBE714_E764_4ecf_A87B_480AF285AE43" style="Mode=3;EOID=7F7FAFF9;SOID=E484FD07;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=-82;EY=-30;EDGE=1;$LLB=;LLT=;LMT=CX=22:CY=13:OX=-10:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B84D6B7F_3A47_4d76_AFEB_60E4ACB37E81" style="Mode=3;EOID=E484FD07;SOID=7F7FAFF9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=-64;EY=-29;EDGE=1;$LLB=;LLT=;LMT=CX=22:CY=13:OX=-12:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B495CC90_7D55_4644_BB72_52738BA76436" style="Mode=3;EOID=4EDE0FBB;SOID=DE523AEC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-44;SY=-4;EX=-44;EY=-4;EDGE=3;$LLB=;LLT=;LMT=CX=22:CY=13:OX=-17:OY=14:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_91125D76_07DC_4aba_B37A_DEB1D2D1B14C" style="Mode=3;EOID=7F7FAFF9;SOID=4EDE0FBB;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=22:CY=13:OX=12:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_74002188_28C7_4944_8620_86C7BB6BE19F" style="Mode=3;EOID=4EDE0FBB;SOID=7F7FAFF9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=1;SY=-29;EX=-87;EY=-7;EDGE=3;$LLB=;LLT=;LMT=CX=31:CY=13:OX=8:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_DBC5630A_9C28_4c08_A2A4_74A02B67DDA3" style="Mode=3;EOID=83CDBCE7;SOID=DE523AEC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=2;SY=-22;EX=2;EY=-20;EDGE=2;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9D1B6824_A325_4098_BFB0_15C0E57FF836" style="Mode=3;EOID=7F7FAFF9;SOID=DE523AEC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=7;SY=23;EX=7;EY=21;EDGE=4;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_68BFD167_B492_4864_9D3C_97F80A5A5466" style="Mode=3;EOID=DE523AEC;SOID=7F7FAFF9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=8;SY=-29;EX=88;EY=-6;EDGE=3;$LLB=;LLT=;LMT=CX=31:CY=13:OX=0:OY=-9:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AA797AB8_C290_4f0b_9ED2_2D9BBD433577" style="Mode=3;EOID=83CDBCE7;SOID=7F575D00;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=4;SY=18;EX=4;EY=13;EDGE=4;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_18B7ACDE_44ED_4dcc_885F_BB8075C81ADD" style="Mode=3;EOID=7F7FAFF9;SOID=7F575D00;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=-21;EX=0;EY=-16;EDGE=2;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_77484800_A99F_4640_8D70_CF5F5026F470" style="Mode=3;EOID=7F575D00;SOID=7F7FAFF9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=CX=31:CY=13:OX=22:OY=1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3B2B6FE5_82CD_40d6_BB42_01C56D52A7D2" style="Mode=3;EOID=83CDBCE7;SOID=7F7FAFF9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;SCME=1;SCTR=1;EDGE=3;SCTR.LEFT=335;SCTR.TOP=-454;SCTR.RIGHT=381;SCTR.BOTTOM=-426;$LLB=;LLT=;LMT=CX=28:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=335:-427$335:-454$381:-454$381:-427$;" subject="EAID_56A060AF_8A57_4b90_8C34_AD65CF24B615" style="Mode=3;EOID=7F7FAFF9;SOID=7F7FAFF9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_55154E23_B4EC_4c7f_8335_5CAF4D11B73C" style="Mode=3;EOID=7F7FAFF9;SOID=A178A76B;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>

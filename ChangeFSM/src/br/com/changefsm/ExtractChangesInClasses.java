@@ -27,7 +27,6 @@ public class ExtractChangesInClasses {
 				
 				lastPoint = fileOld.getPath().lastIndexOf("\\");
 				String auxOld = fileOld.getPath().substring(lastPoint);
-
 				if (auxNew.equals(auxOld)) {
 
 					FileDistiller fd = ChangeDistiller.createFileDistiller(Language.JAVA);

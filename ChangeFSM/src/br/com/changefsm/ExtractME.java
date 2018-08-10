@@ -7,7 +7,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import br.com.changefsm.models.State;
+import br.com.changefsm.models.StateAction;
 import br.com.changefsm.models.Transition;
+import br.com.changefsm.models.TypeStateAction;
 import br.com.changefsm.readerxml.ReaderXML;
 
 public class ExtractME {
@@ -15,8 +17,9 @@ public class ExtractME {
 	private List<State> states = new ArrayList<State>();
 	private List<Transition> transitions = new ArrayList<Transition>();
 
-	public ExtractME() {}
-	
+	public ExtractME() {
+	}
+
 	/**
 	 * Read a XML file and extract the values used in StateMachine like a State and
 	 * Transitions
@@ -58,9 +61,48 @@ public class ExtractME {
 					target = state;
 				}
 			}
-			getTransitions()
-					.add(new Transition(element.getAttribute("xmi:id"), element.getAttribute("name"), source, target));
+			Transition transition = new Transition(element.getAttribute("xmi:id"), element.getAttribute("name"), source,
+					target);
+			transition.setGuard(extractGuard(element));
+			transition.setEvent(extractEvent(element));
+			this.transitions.add(transition);
 		}
+	}
+
+	/**
+	 * Extract the events of the Transition and return like a String
+	 * the values that exist
+	 * 
+	 * @param element
+	 * @return events of the Transition
+	 */
+	private String extractEvent(Element element) {
+		String events = "";
+		NodeList eventList = element.getElementsByTagName("effect");
+		for (int i = 0; i < eventList.getLength(); i++) {
+			Element e = (Element) eventList.item(i);
+			events += e.getAttribute("body") +"\n";
+		}
+		return events;
+	}
+
+	/**
+	 * Extract the guards of the Transitions and return like a String the
+	 * expressions that exist
+	 * 
+	 * @param element
+	 * @return guards of the Transition
+	 */
+	private String extractGuard(Element element) {
+		NodeList guardList = element.getElementsByTagName("specification");
+		String guards = "";
+		for (int i = 0; i < guardList.getLength(); i++) {
+			Element e = (Element) guardList.item(i);
+			if (e.getParentNode().toString().contains("guard")) {
+				guards += e.getAttribute("body") + "\n";
+			}
+		}
+		return guards;
 	}
 
 	/**
@@ -75,16 +117,45 @@ public class ExtractME {
 		for (int i = 0; i < nlS.getLength(); i++) {
 			Element element = (Element) nlS.item(i);
 			if (element.getAttribute("xmi:type").equals("uml:FinalState")) {
-				getStates().add(new State(element.getAttribute("xmi:id"), "FINAL_STATE"));
+				this.states.add(new State(element.getAttribute("xmi:id"), "FINAL_STATE"));
 
 			} else if (element.getAttribute("xmi:type").equals("uml:Pseudostate")
 					&& element.getAttribute("kind").equals("initial")) {
-				getStates().add(new State(element.getAttribute("xmi:id"), "INITITAL_STATE"));
+				this.states.add(new State(element.getAttribute("xmi:id"), "INITITAL_STATE"));
 
 			} else {
-				getStates().add(new State(element.getAttribute("xmi:id"), element.getAttribute("name")));
+				// here it will extract the actions presents on State
+				State state = new State(element.getAttribute("xmi:id"), element.getAttribute("name"));
+				state.setActions(extractActions(element));
+				this.states.add(state);
 			}
 		}
+	}
+
+	/**
+	 * This method extract the State's behaviors searching for tags has in the XML
+	 * file
+	 * 
+	 * @param element
+	 * @return ArrayList<StateAction> the behaviors of the State
+	 */
+	private ArrayList<StateAction> extractActions(Element element) {
+		ArrayList<StateAction> actionsState = new ArrayList<StateAction>();
+		NodeList doActs = element.getElementsByTagName("ownedOperation");
+		for (int i = 0; i < doActs.getLength(); i++) {
+			Element e = (Element) doActs.item(i);
+			if (e.getParentNode().toString().contains("doActivity")) {
+				StateAction stateAction = new StateAction(TypeStateAction.DO, e.getAttribute("name"));
+				actionsState.add(stateAction);
+			} else if (e.getParentNode().toString().contains("exitActivity")) {
+				StateAction stateAction = new StateAction(TypeStateAction.EXIT, e.getAttribute("name"));
+				actionsState.add(stateAction);
+			} else if (e.getParentNode().toString().contains("entryActivity")) {
+				StateAction stateAction = new StateAction(TypeStateAction.ENTRY, e.getAttribute("name"));
+				actionsState.add(stateAction);
+			}
+		}
+		return actionsState;
 	}
 
 	/**
@@ -103,6 +174,7 @@ public class ExtractME {
 		return transitionsForPrint;
 	}
 
+	// Getters and Setters
 	public List<State> getStates() {
 		return states;
 	}

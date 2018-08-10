@@ -16,7 +16,6 @@ public class StateAction {
 		this.name = name;
 	}
 	
-	
 	public TypeStateAction getTypeStateAction() {
 		return typeStateAction;
 	}
@@ -28,6 +27,11 @@ public class StateAction {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Action: " + this.name + " / Type: " + this.typeStateAction;
 	}
 
 }

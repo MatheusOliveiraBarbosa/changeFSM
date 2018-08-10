@@ -31,7 +31,7 @@ public class MappingChangesWithSM {
 					String line = scanner.nextLine();
 					for (State state : states) {
 						if (line.contains(state.getName()) && !getCandidateCodeClasses().contains(classChange)) {
-							getCandidateCodeClasses().add(classChange);
+							candidateCodeClasses.add(classChange);
 						}
 					}
 				}

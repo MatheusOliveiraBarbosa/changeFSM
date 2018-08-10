@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" name="carButtonControl" visibility="public">
+			<packagedElement xmi:type="uml:StateMachine" xmi:id="EAID_SM000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_StateMachine1" visibility="public">
+				<region xmi:type="uml:Region" xmi:id="EAID_SR000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_Region1" visibility="public">
+					<subvertex xmi:type="uml:State" xmi:id="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" name="State S11.1 SET_TARGET" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED"/>
+						<outgoing xmi:idref="EAID_29F950F4_1939_402e_884B_213299EE7A15"/>
+						<outgoing xmi:idref="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_47C2_4c83_9520_188EF47523F3" visibility="public">
+							<ownedOperation xmi:id="EAID_5CA40375_47C2_4c83_9520_188EF47523F3" name="Set mDesiredFloor to (Target,b,Stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_47C2_4c83_9520_188EF47523F3" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_7F035F50_C09C_48c6_AF33_6FC42782AABE" name="Set mDesiredDwell to t" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_C09C_48c6_AF33_6FC42782AABE" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED" name="T11.1" visibility="public" kind="local" source="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" target="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_29F950F4_1939_402e_884B_213299EE7A15" name="T11.2" visibility="public" kind="local" source="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" target="EAID_7B03562C_973B_4830_8154_C0733C3330AE"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_7B03562C_973B_4830_8154_C0733C3330AE" name="State S11.2 RESET" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_29F950F4_1939_402e_884B_213299EE7A15"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_A8F2_4dc1_A73B_9B3C11F96996" visibility="public">
+							<ownedOperation xmi:id="EAID_F2D23602_A8F2_4dc1_A73B_9B3C11F96996" name="Set mDesiredFloor to (1,None,Stop)" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_A8F2_4dc1_A73B_9B3C11F96996" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+				</region>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" xmi:type="uml:Package" name="carButtonControl" scope="public">
+				<model package2="EAID_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" package="EAPK_7D5EF230_4EE2_4cab_BFA1_730D91D6CD00" tpos="0" ea_localid="2" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 10:56:48" modified="2018-07-09 15:01:07" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-07-09 00:00:00" modified="2018-07-09 00:00:00"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE" packageFlags="isModel=1;VICON=4;"/>
+			</element>
+			<element xmi:idref="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" xmi:type="uml:State" name="State S11.1 SET_TARGET" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="10" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 15:24:09" modified="2018-07-09 15:24:36" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set mDesiredFloor to (Target,b,Stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{5CA40375-47C2-4c83-9520-188EF47523F3}" ea_localid="11"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_47C2_4c83_9520_188EF47523F3" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-47C2-4c83-9520-188EF47523F3}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="Set mDesiredDwell to t" visibility="public" isAsynchronous="false">
+						<model ea_guid="{7F035F50-C09C-48c6-AF33-6FC42782AABE}" ea_localid="10"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_C09C_48c6_AF33_6FC42782AABE" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-C09C-48c6-AF33-6FC42782AABE}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED" start="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" end="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754"/>
+					<StateFlow xmi:id="EAID_29F950F4_1939_402e_884B_213299EE7A15" start="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" end="EAID_7B03562C_973B_4830_8154_C0733C3330AE"/>
+					<StateFlow xmi:id="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED" start="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" end="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_7B03562C_973B_4830_8154_C0733C3330AE" xmi:type="uml:State" name="State S11.2 RESET" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="11" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 15:24:52" modified="2018-07-09 15:25:11" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="Set mDesiredFloor to (1,None,Stop)" visibility="public" isAsynchronous="false">
+						<model ea_guid="{F2D23602-A8F2-4dc1-A73B-9B3C11F96996}" ea_localid="12"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_A8F2_4dc1_A73B_9B3C11F96996" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-A8F2-4dc1-A73B-9B3C11F96996}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_29F950F4_1939_402e_884B_213299EE7A15" start="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" end="EAID_7B03562C_973B_4830_8154_C0733C3330AE"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED">
+				<source xmi:idref="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754">
+					<model ea_localid="10" type="State" name="State S11.1 SET_TARGET"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754">
+					<model ea_localid="10" type="State" name="State S11.1 SET_TARGET"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="8"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_29F950F4_1939_402e_884B_213299EE7A15">
+				<source xmi:idref="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754">
+					<model ea_localid="10" type="State" name="State S11.1 SET_TARGET"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_7B03562C_973B_4830_8154_C0733C3330AE">
+					<model ea_localid="11" type="State" name="State S11.2 RESET"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="9"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_do" name="do" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles/>
+		<diagrams>
+			<diagram xmi:id="EAID_8E7534F9_EBA4_491d_ABE9_2305BAD4E18F">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" localID="2" owner="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B"/>
+				<properties name="carposition" type="Statechart"/>
+				<project author="mathe" version="1.0" created="2018-07-09 14:08:35" modified="2018-07-09 15:29:40"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=795;DocSize.cy=1130;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SaveTag=5763FE6D;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=561;Top=191;Right=776;Bottom=251;" subject="EAID_7B03562C_973B_4830_8154_C0733C3330AE" seqno="1" style="DUID=EB713A57;"/>
+					<element geometry="Left=250;Top=193;Right=482;Bottom=253;" subject="EAID_482551C0_31A1_4a2f_8E4A_1EB4FC2C3754" seqno="2" style="DUID=80915E8D;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=28:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_29F950F4_1939_402e_884B_213299EE7A15" style="Mode=3;EOID=EB713A57;SOID=80915E8D;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;SCME=1;SCTR=1;EDGE=1;SCTR.LEFT=206;SCTR.TOP=-229;SCTR.RIGHT=297;SCTR.BOTTOM=-181;$LLB=;LLT=;LMT=CX=28:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=297:-193$297:-181$206:-181$206:-229$250:-229$;" subject="EAID_12947A79_C8AC_4fd0_B030_99C2F5EC20ED" style="Mode=3;EOID=80915E8D;SOID=80915E8D;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>

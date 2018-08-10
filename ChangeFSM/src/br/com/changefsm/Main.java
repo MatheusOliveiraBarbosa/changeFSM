@@ -2,12 +2,17 @@ package br.com.changefsm;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
+
+import br.com.changefsm.models.ClassChanged;
+import ch.uzh.ifi.seal.changedistiller.model.entities.SourceCodeChange;
 
 
 public class Main {
 
-	private static final String PATH_PROJECT_OLD = "./data/smarthome-first-version/";
-	private static final String PATH_PROJECT_NEW = "./data/smarthome-master/";
+	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
+	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
+	private static final String PATH_SM = "./data/statemachines/gumballmachine1.xml";
 
 	private static ArrayList<File> classesOld = new ArrayList<File>();
 	private static ArrayList<File> classesNew = new ArrayList<File>();
@@ -22,12 +27,12 @@ public class Main {
 		
 		//Extract changes and their classes
 		ExtractChangesInClasses ecc = new ExtractChangesInClasses();
-//		ecc.extractChanges(classesOld, classesNew);
+		List<ClassChanged> scc = ecc.extractChanges(classesOld, classesNew);
+	
 		
 		//Extract Elements in SM
-		String pathME = "./data/status-smarthome.xml";
 		ExtractME eme = new ExtractME();
-		eme.extractElementsSM(pathME);
+		eme.extractElementsSM(PATH_SM);
 		System.out.println(eme.printTransitions());
 		
 		/* Mapped between Class and StateMachine
@@ -35,7 +40,12 @@ public class Main {
 		 * where the class has some relation with state machine
 		 */
 		MappingChangesWithSM mcwsm = new MappingChangesWithSM();
-		mcwsm.mappingClassWithSM(ecc.extractChanges(classesOld, classesNew), eme.getStates(), eme.getTransitions());
+		mcwsm.mappingClassWithSM(scc, eme.getStates(), eme.getTransitions());
+		
+		//Classify Changes and Updates
+		ClassifierUpdatesSM cusm = new ClassifierUpdatesSM();
+		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses());
+		
 		
 	}
 }

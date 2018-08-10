@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" name="carButtonControl" visibility="public">
+			<packagedElement xmi:type="uml:StateMachine" xmi:id="EAID_SM000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_StateMachine1" visibility="public">
+				<region xmi:type="uml:Region" xmi:id="EAID_SR000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_Region1" visibility="public">
+					<subvertex xmi:type="uml:State" xmi:id="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB" name="State S7.1: Latern On" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678"/>
+						<outgoing xmi:idref="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_EF88_4ac7_9012_551FD8EC5613" visibility="public">
+							<ownedOperation xmi:id="EAID_AA07F447_EF88_4ac7_9012_551FD8EC5613" name="CarLantern[d] = true;" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_EF88_4ac7_9012_551FD8EC5613" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_95FAA128_1B2C_433c_92CF_33F1AA2E4037" name="mCarLantern[d] = true;" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_1B2C_433c_92CF_33F1AA2E4037" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD" name="T7.1" visibility="public" kind="local" source="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB" target="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E" name="State S7.2: Lantern Off" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44"/>
+						<incoming xmi:idref="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD"/>
+						<outgoing xmi:idref="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678"/>
+						<doActivity xmi:type="uml:Behavior" xmi:id="EAID_BH000000_93E1_4677_B758_0CF2F1722CE6" visibility="public">
+							<ownedOperation xmi:id="EAID_1A29BD37_93E1_4677_B758_0CF2F1722CE6" name="CarLantern[d] = false;" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_93E1_4677_B758_0CF2F1722CE6" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+							<ownedOperation xmi:id="EAID_8DE9224B_190D_45a6_A411_F79778C6E240" name="mCarLantern[d] = false;" visibility="public" concurrency="sequential">
+								<ownedParameter xmi:id="EAID_RT000000_190D_45a6_A411_F79778C6E240" name="return" direction="return" type="EAJava_do"/>
+							</ownedOperation>
+						</doActivity>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678" name="T7.2" visibility="public" kind="local" source="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E" target="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB"/>
+					<subvertex xmi:type="uml:Pseudostate" xmi:id="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600" visibility="public" kind="initial">
+						<outgoing xmi:idref="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44"/>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44" visibility="public" kind="local" source="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600" target="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E"/>
+				</region>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" xmi:type="uml:Package" name="carButtonControl" scope="public">
+				<model package2="EAID_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" package="EAPK_7D5EF230_4EE2_4cab_BFA1_730D91D6CD00" tpos="0" ea_localid="2" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 10:56:48" modified="2018-07-09 15:01:07" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-07-09 00:00:00" modified="2018-07-09 00:00:00"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE" packageFlags="isModel=1;VICON=4;"/>
+			</element>
+			<element xmi:idref="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB" xmi:type="uml:State" name="State S7.1: Latern On" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="21" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:21:27" modified="2018-07-09 18:21:46" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="CarLantern[d] = true;" visibility="public" isAsynchronous="false">
+						<model ea_guid="{AA07F447-EF88-4ac7-9012-551FD8EC5613}" ea_localid="31"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_EF88_4ac7_9012_551FD8EC5613" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-EF88-4ac7-9012-551FD8EC5613}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="mCarLantern[d] = true;" visibility="public" isAsynchronous="false">
+						<model ea_guid="{95FAA128-1B2C-433c-92CF-33F1AA2E4037}" ea_localid="32"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_1B2C_433c_92CF_33F1AA2E4037" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-1B2C-433c-92CF-33F1AA2E4037}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD" start="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB" end="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E"/>
+					<StateFlow xmi:id="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678" start="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E" end="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E" xmi:type="uml:State" name="State S7.2: Lantern Off" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="22" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:21:48" modified="2018-07-09 18:21:57" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl">
+					<states type="Transition" name="CarLantern[d] = false;" visibility="public" isAsynchronous="false">
+						<model ea_guid="{1A29BD37-93E1-4677-B758-0CF2F1722CE6}" ea_localid="29"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="0"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_93E1_4677_B758_0CF2F1722CE6" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-93E1-4677-B758-0CF2F1722CE6}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+					<states type="Transition" name="mCarLantern[d] = false;" visibility="public" isAsynchronous="false">
+						<model ea_guid="{8DE9224B-190D-45a6-A411-F79778C6E240}" ea_localid="30"/>
+						<type type="do" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<properties position="1"/>
+						<xrefs/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_190D_45a6_A411_F79778C6E240" visibility="public">
+								<properties pos="0" type="do" const="false" ea_guid="{RETURNID-190D-45a6-A411-F79778C6E240}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+					</states>
+				</extendedProperties>
+				<links>
+					<StateFlow xmi:id="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678" start="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E" end="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB"/>
+					<StateFlow xmi:id="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD" start="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB" end="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E"/>
+					<StateFlow xmi:id="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44" start="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600" end="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600" xmi:type="uml:StateNode" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="20" ea_eleType="element"/>
+				<properties isSpecification="false" sType="StateNode" nType="3" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 18:21:18" modified="2018-07-09 18:21:21" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44" start="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600" end="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD">
+				<source xmi:idref="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB">
+					<model ea_localid="21" type="State" name="State S7.1: Latern On"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E">
+					<model ea_localid="22" type="State" name="State S7.2: Lantern Off"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="21"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678">
+				<source xmi:idref="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E">
+					<model ea_localid="22" type="State" name="State S7.2: Lantern Off"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB">
+					<model ea_localid="21" type="State" name="State S7.1: Latern On"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="22"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44">
+				<source xmi:idref="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600">
+					<model ea_localid="20" type="StateNode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E">
+					<model ea_localid="22" type="State" name="State S7.2: Lantern Off"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="20"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_do" name="do" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles/>
+		<diagrams>
+			<diagram xmi:id="EAID_8E7534F9_EBA4_491d_ABE9_2305BAD4E18F">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" localID="2" owner="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B"/>
+				<properties name="carposition" type="Statechart"/>
+				<project author="mathe" version="1.0" created="2018-07-09 14:08:35" modified="2018-07-09 18:27:14"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=795;DocSize.cy=1130;ShowDetails=0;Orientation=P;Zoom=113;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SaveTag=2CF25C24;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=208;Top=353;Right=366;Bottom=413;" subject="EAID_043EBBAB_7AB0_4b2c_99A7_956DFC1E487E" seqno="1" style="DUID=5AA7C0AC;"/>
+					<element geometry="Left=458;Top=352;Right=612;Bottom=412;" subject="EAID_42C132D7_611D_47f2_B7B4_D08F311068CB" seqno="2" style="DUID=2487C74D;"/>
+					<element geometry="Left=211;Top=273;Right=231;Bottom=293;" subject="EAID_2F9B096A_52DF_433b_A7C6_0F0AC6A92600" seqno="3" style="DUID=122D391A;LBL=;"/>
+					<element geometry="SX=1;SY=-20;EX=1;EY=-19;EDGE=2;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9B9311CD_3EC7_4cd0_BB2D_4A80DA795678" style="Mode=3;EOID=2487C74D;SOID=5AA7C0AC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=1;SY=19;EX=1;EY=19;EDGE=4;$LLB=;LLT=;LMT=CX=22:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_4F2D4761_6AD0_4ad2_9A1D_00CF15B38EAD" style="Mode=3;EOID=5AA7C0AC;SOID=2487C74D;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FB964AA3_8B83_4e2b_9637_6592E81E2B44" style="Mode=3;EOID=5AA7C0AC;SOID=122D391A;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>

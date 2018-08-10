@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" name="carButtonControl" visibility="public">
+			<packagedElement xmi:type="uml:StateMachine" xmi:id="EAID_SM000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_StateMachine1" visibility="public">
+				<region xmi:type="uml:Region" xmi:id="EAID_SR000001_660C_48e4_9ADB_65737F0F1F2B" name="EA_Region1" visibility="public">
+					<subvertex xmi:type="uml:State" xmi:id="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" name="Gumball Sold" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244"/>
+						<outgoing xmi:idref="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87"/>
+						<outgoing xmi:idref="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE"/>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE" name="dispense gumball" visibility="public" kind="local" source="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" target="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4">
+						<guard xmi:type="uml:Constraint" xmi:id="EAID_CO000000_565F_49a6_9D10_668A147FACFE">
+							<specification xmi:type="uml:OpaqueExpression" xmi:id="EAID_OE000000_565F_49a6_9D10_668A147FACFE" body="gumball = 0"/>
+						</guard>
+					</transition>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87" name="dispense gumball" visibility="public" kind="local" source="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" target="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE">
+						<guard xmi:type="uml:Constraint" xmi:id="EAID_CO000000_2732_4cd3_83F1_975D198FBD87">
+							<specification xmi:type="uml:OpaqueExpression" xmi:id="EAID_OE000000_2732_4cd3_83F1_975D198FBD87" body="gumball &gt; 0"/>
+						</guard>
+					</transition>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" name="Has Quarter" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_E998A561_4C1C_45bb_AA37_B54A94228804"/>
+						<outgoing xmi:idref="EAID_B2C105B2_093F_4368_B369_5149FAA06760"/>
+						<outgoing xmi:idref="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244"/>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244" name="turns crank" visibility="public" kind="local" source="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" target="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2"/>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_B2C105B2_093F_4368_B369_5149FAA06760" name="ejects quarter" visibility="public" kind="local" source="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" target="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE" name="No Quarter" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_B2C105B2_093F_4368_B369_5149FAA06760"/>
+						<incoming xmi:idref="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87"/>
+						<outgoing xmi:idref="EAID_E998A561_4C1C_45bb_AA37_B54A94228804"/>
+					</subvertex>
+					<transition xmi:type="uml:Transition" xmi:id="EAID_E998A561_4C1C_45bb_AA37_B54A94228804" name="insert quarter" visibility="public" kind="local" source="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE" target="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C"/>
+					<subvertex xmi:type="uml:State" xmi:id="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4" name="Out of Gumballs" visibility="public" isSubmachineState="false">
+						<incoming xmi:idref="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE"/>
+					</subvertex>
+				</region>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" xmi:type="uml:Package" name="carButtonControl" scope="public">
+				<model package2="EAID_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" package="EAPK_7D5EF230_4EE2_4cab_BFA1_730D91D6CD00" tpos="0" ea_localid="2" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 10:56:48" modified="2018-07-09 15:01:07" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-07-09 00:00:00" modified="2018-07-09 00:00:00"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE" packageFlags="isModel=1;VICON=4;"/>
+			</element>
+			<element xmi:idref="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" xmi:type="uml:State" name="Gumball Sold" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="33" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 19:07:21" modified="2018-07-09 19:07:40" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE" start="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" end="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4"/>
+					<StateFlow xmi:id="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87" start="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" end="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE"/>
+					<StateFlow xmi:id="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244" start="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" end="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" xmi:type="uml:State" name="Has Quarter" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="31" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 19:07:07" modified="2018-07-09 19:07:11" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244" start="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" end="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2"/>
+					<StateFlow xmi:id="EAID_B2C105B2_093F_4368_B369_5149FAA06760" start="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" end="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE"/>
+					<StateFlow xmi:id="EAID_E998A561_4C1C_45bb_AA37_B54A94228804" start="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE" end="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE" xmi:type="uml:State" name="No Quarter" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="32" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 19:07:14" modified="2018-07-09 19:07:17" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_E998A561_4C1C_45bb_AA37_B54A94228804" start="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE" end="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C"/>
+					<StateFlow xmi:id="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87" start="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" end="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE"/>
+					<StateFlow xmi:id="EAID_B2C105B2_093F_4368_B369_5149FAA06760" start="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" end="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4" xmi:type="uml:State" name="Out of Gumballs" scope="public">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" tpos="0" ea_localid="30" ea_eleType="element"/>
+				<properties isSpecification="false" sType="State" nType="0" scope="public"/>
+				<project author="mathe" version="1.0" phase="1.0" created="2018-07-09 19:06:43" modified="2018-07-09 19:07:04" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=0;HSwimLanes=0;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="carButtonControl"/>
+				<links>
+					<StateFlow xmi:id="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE" start="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" end="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE">
+				<source xmi:idref="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2">
+					<model ea_localid="33" type="State" name="Gumball Sold"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4">
+					<model ea_localid="30" type="State" name="Out of Gumballs"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="39"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0" privatedata2="gumball = 0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87">
+				<source xmi:idref="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2">
+					<model ea_localid="33" type="State" name="Gumball Sold"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE">
+					<model ea_localid="32" type="State" name="No Quarter"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="40"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0" privatedata2="gumball &gt; 0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244">
+				<source xmi:idref="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C">
+					<model ea_localid="31" type="State" name="Has Quarter"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2">
+					<model ea_localid="33" type="State" name="Gumball Sold"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="38"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_B2C105B2_093F_4368_B369_5149FAA06760">
+				<source xmi:idref="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C">
+					<model ea_localid="31" type="State" name="Has Quarter"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE">
+					<model ea_localid="32" type="State" name="No Quarter"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="42"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_E998A561_4C1C_45bb_AA37_B54A94228804">
+				<source xmi:idref="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE">
+					<model ea_localid="32" type="State" name="No Quarter"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C">
+					<model ea_localid="31" type="State" name="Has Quarter"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="41"/>
+				<properties ea_type="StateFlow" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles/>
+		<diagrams>
+			<diagram xmi:id="EAID_8E7534F9_EBA4_491d_ABE9_2305BAD4E18F">
+				<model package="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B" localID="2" owner="EAPK_2986FD6D_660C_48e4_9ADB_65737F0F1F2B"/>
+				<properties name="carposition" type="Statechart"/>
+				<project author="mathe" version="1.0" created="2018-07-09 14:08:35" modified="2018-07-09 19:29:12"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=795;DocSize.cy=1130;ShowDetails=0;Orientation=P;Zoom=113;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SaveTag=A52FF4F1;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=503;Top=477;Right=623;Bottom=537;" subject="EAID_0CBC2C71_1FBF_4a51_AFDA_E5F06EAB1CC2" seqno="1" style="DUID=A4787A65;"/>
+					<element geometry="Left=290;Top=308;Right=410;Bottom=368;" subject="EAID_70FFF37C_466C_4b3c_A018_F8A8398390AE" seqno="2" style="DUID=D990712A;"/>
+					<element geometry="Left=496;Top=309;Right=616;Bottom=369;" subject="EAID_FB8FDE94_1C46_4f06_87C3_35E56C4A818C" seqno="3" style="DUID=06AD141D;"/>
+					<element geometry="Left=188;Top=470;Right=308;Bottom=530;" subject="EAID_B45FD2B9_8047_4f4d_8E13_96C6C2E01AF4" seqno="4" style="DUID=404A76CE;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=CX=49:CY=13:OX=31:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9E85D725_D8E8_4ec7_B2DE_3BEBE9BE2244" style="Mode=3;EOID=A4787A65;SOID=06AD141D;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=149:CY=13:OX=-90:OY=8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AA1B3775_2732_4cd3_83F1_975D198FBD87" style="Mode=3;EOID=D990712A;SOID=A4787A65;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=1;SY=-20;EX=1;EY=-20;EDGE=4;$LLB=;LLT=;LMT=CX=63:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B2C105B2_093F_4368_B369_5149FAA06760" style="Mode=3;EOID=D990712A;SOID=06AD141D;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=4;SY=17;EX=4;EY=18;EDGE=2;$LLB=;LLT=;LMT=CX=61:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E998A561_4C1C_45bb_AA37_B54A94228804" style="Mode=3;EOID=06AD141D;SOID=D990712A;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-60;SY=-10;EX=-2;EY=-17;EDGE=4;$LLB=;LLT=;LMT=CX=149:CY=13:OX=4:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_5FF8FA2B_565F_49a6_9D10_668A147FACFE" style="Mode=3;EOID=404A76CE;SOID=A4787A65;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>
