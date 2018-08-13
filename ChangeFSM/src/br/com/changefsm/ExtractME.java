@@ -8,6 +8,7 @@ import org.w3c.dom.NodeList;
 
 import br.com.changefsm.models.State;
 import br.com.changefsm.models.StateAction;
+import br.com.changefsm.models.StateType;
 import br.com.changefsm.models.Transition;
 import br.com.changefsm.models.TypeStateAction;
 import br.com.changefsm.readerxml.ReaderXML;
@@ -70,8 +71,8 @@ public class ExtractME {
 	}
 
 	/**
-	 * Extract the events of the Transition and return like a String
-	 * the values that exist
+	 * Extract the events of the Transition and return like a String the values that
+	 * exist
 	 * 
 	 * @param element
 	 * @return events of the Transition
@@ -81,7 +82,7 @@ public class ExtractME {
 		NodeList eventList = element.getElementsByTagName("effect");
 		for (int i = 0; i < eventList.getLength(); i++) {
 			Element e = (Element) eventList.item(i);
-			events += e.getAttribute("body") +"\n";
+			events += e.getAttribute("body") + "\n";
 		}
 		return events;
 	}
@@ -116,16 +117,17 @@ public class ExtractME {
 	private void extractStates(NodeList nlS) {
 		for (int i = 0; i < nlS.getLength(); i++) {
 			Element element = (Element) nlS.item(i);
+
 			if (element.getAttribute("xmi:type").equals("uml:FinalState")) {
-				this.states.add(new State(element.getAttribute("xmi:id"), "FINAL_STATE"));
+				this.states.add(new State(element.getAttribute("xmi:id"), "FINAL_STATE", StateType.PSEUDO_FINAL));
 
 			} else if (element.getAttribute("xmi:type").equals("uml:Pseudostate")
 					&& element.getAttribute("kind").equals("initial")) {
-				this.states.add(new State(element.getAttribute("xmi:id"), "INITITAL_STATE"));
+				this.states.add(new State(element.getAttribute("xmi:id"), "INITITAL_STATE", StateType.PSEUDO_INITIAL));
 
 			} else {
 				// here it will extract the actions presents on State
-				State state = new State(element.getAttribute("xmi:id"), element.getAttribute("name"));
+				State state = new State(element.getAttribute("xmi:id"), element.getAttribute("name"), StateType.NORMAL);
 				state.setActions(extractActions(element));
 				this.states.add(state);
 			}
