@@ -1,6 +1,7 @@
 package br.com.changefsm;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +40,13 @@ public class Main {
 		 * where the class has some relation with state machine
 		 */
 		MappingChangesWithSM mcwsm = new MappingChangesWithSM();
-		mcwsm.mappingClassWithSM(scc, eme.getStates(), eme.getTransitions());
+//		mcwsm.mappingClassWithSM(scc, eme.getStates(), eme.getTransitions());
+		try {
+			mcwsm.mappingClassWithLucene(scc, eme.getStates(), eme.getTransitions());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//Classify Changes and Updates
 		ClassifierUpdatesSM cusm = new ClassifierUpdatesSM();

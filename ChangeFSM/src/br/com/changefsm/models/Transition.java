@@ -10,16 +10,24 @@ public class Transition {
 	private State target;
 	
 	
-	public Transition () {	}
+	public Transition () {
+		this.event = "";
+		this.guard = "";
+		this.action = "";
+	}
 	
 	public Transition(String action, State source, State target) {
 		this.action = action;
 		this.source = source;
 		this.target = target;
+		this.event = "";
+		this.guard = "";
 	}
 	
 	public Transition(String id, String action, State source, State target) {
 		this.id= id;
+		this.event = "";
+		this.guard = "";
 		this.action = action;
 		this.source = source;
 		this.target = target;
