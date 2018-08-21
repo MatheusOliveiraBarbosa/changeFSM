@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.changefsm.models.ClassChanged;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import br.com.changefsm.models.ClassChanged;
 
 public class Main {
 
@@ -16,7 +18,9 @@ public class Main {
 
 	private static ArrayList<File> classesOld = new ArrayList<File>();
 	private static ArrayList<File> classesNew = new ArrayList<File>();
-
+	
+	private static final Logger log = LogManager.getLogger(Main.class);
+	
 	public static void main(String[] args) {
 	
 		// Extract the classes for the both versions
@@ -28,27 +32,23 @@ public class Main {
 		//Extract changes and their classes
 		ExtractChangesInClasses ecc = new ExtractChangesInClasses();
 		List<ClassChanged> scc = ecc.extractChanges(classesOld, classesNew);
-	
-		
+
 		//Extract Elements in SM
 		ExtractME eme = new ExtractME();
 		eme.extractElementsSM(PATH_SM);
-		System.out.println(eme.printTransitions());
 		
 		/* Mapped between Class and StateMachine
 		 * but keep in the array just classes and their changes
 		 * where the class has some relation with state machine
 		 */
 		MappingChangesWithSM mcwsm = new MappingChangesWithSM();
-//		mcwsm.mappingClassWithSM(scc, eme.getStates(), eme.getTransitions());
 		try {
 			mcwsm.mappingClassWithLucene(scc, eme.getStates(), eme.getTransitions());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error(e.getMessage());
 		}
 		
-		//Classify Changes and Updates
+//		//Classify Changes and Updates
 		ClassifierUpdatesSM cusm = new ClassifierUpdatesSM();
 		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses());
 		

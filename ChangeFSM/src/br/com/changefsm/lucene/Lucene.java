@@ -25,6 +25,9 @@ import org.apache.lucene.util.QueryBuilder;
 
 import br.com.changefsm.models.ClassChanged;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Lucene implements IFLucene {
 
 	private IndexWriter indexWriter;
@@ -33,6 +36,7 @@ public class Lucene implements IFLucene {
 	private final String pathClass = "path";
 	private Directory ramDir;
 	private StandardAnalyzer analyzer;
+	private final Logger log = LogManager.getLogger(Lucene.class);
 
 	/**
 	 * Initialize the indexer of the Lucene.
@@ -64,7 +68,8 @@ public class Lucene implements IFLucene {
 	}
 
 	/**
-	 * Transform a file in a String to can possible to index in Lucene
+	 * Transform the lines of the file in a String to can possible to index in
+	 * Lucene
 	 * 
 	 * @param classFile
 	 * @return <code> String </code> that is the whole text in file;
@@ -83,7 +88,7 @@ public class Lucene implements IFLucene {
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			System.err.println(e.getMessage());
-			System.err.println("Don't find the file!");
+			log.error("Didn't find the file!");
 		}
 		return fileToString;
 	}
@@ -108,36 +113,45 @@ public class Lucene implements IFLucene {
 		TopDocs topDocs = searcher.search(query, 100);
 		List<ClassChanged> classesRelated = new ArrayList<ClassChanged>();
 
+		// To consider that a class is related, the class should has score >60% than the
+		// biggest score
+		double porcentToSelect = topDocs.getMaxScore() * (0.6);
+
 		for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
-			ClassChanged classRelated = new ClassChanged();
-			File file = new File(searcher.doc(scoreDoc.doc).getField(pathClass).stringValue());
-			classRelated.setClassFile(file);
-			classesRelated.add(classRelated);
+			if (porcentToSelect < scoreDoc.score) {
+				log.info("Score by Lucene in the class " + searcher.doc(scoreDoc.doc).getField(pathClass).stringValue()
+						+ " is: " + scoreDoc.score);
+				ClassChanged classRelated = new ClassChanged();
+				File file = new File(searcher.doc(scoreDoc.doc).getField(pathClass).stringValue());
+				classRelated.setClassFile(file);
+				classesRelated.add(classRelated);
+			}
 		}
 
 		return classesRelated;
 	}
 
 	/**
-	 * Convert the List of Strings to one String addicting 
-	 * the expression OR to improve the search.
+	 * Convert the List of Strings to one String addicting the expression OR to
+	 * improve the search.
+	 * 
 	 * @param keyWords
-	 * @return String with all elements separate by conditional "OR" 
+	 * @return String with all elements separate by conditional "OR"
 	 */
 	private String convertListStringToString(List<String> keyWords) {
 		String queryText = "";
 
 		if (keyWords.size() > 1) {
 			for (int i = 0; i < keyWords.size(); i++) {
-				//Verify weather the last iterate for don't put conditional "OR"
-				if( (i+1) == keyWords.size() ) {
+				// Verify weather the last iterate for don't put conditional "OR"
+				if ((i + 1) == keyWords.size()) {
 					queryText += keyWords.get(i);
-				}else {
+				} else {
 					queryText += keyWords.get(i) + " OR ";
 				}
 			}
 		}
-		//Weather list has only String the query is a simple word
+		// Weather list has only String the query is a simple word
 		else if (keyWords.size() == 1) {
 			return keyWords.get(0);
 		}

@@ -2,6 +2,9 @@ package br.com.changefsm;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import br.com.changefsm.models.ClassChanged;
 import ch.uzh.ifi.seal.changedistiller.model.entities.SourceCodeChange;
 
@@ -13,6 +16,8 @@ public class ClassifierUpdatesSM {
 	private final String ELSE_INSTANCE = "ELSE_STATEMENT";
 //	private final String ENUM_VALUE = "ENUM_VALUE";
 //	private final String SCAPE_RETURN = "SCAPE_RETURN";
+	
+	private final Logger log = LogManager.getLogger(ClassifierUpdatesSM.class);
 
 	public ClassifierUpdatesSM() {
 	}
@@ -26,44 +31,37 @@ public class ClassifierUpdatesSM {
 	}
 
 	private void analyseChanges(List<SourceCodeChange> changes) {
-		for (SourceCodeChange scc : changes) {
-			System.out.println("----------------------------NEW CHANGE------------------------------------");
-			// System.out.println(scc.getLabel());
-			// System.out.println(scc.getParentEntity());
-			// System.out.println(scc.getChangedEntity());
-			// System.out.println(scc.getChangedEntity().getLabel());
-			System.out.println(scc.getRootEntity());
-			switch (scc.getChangedEntity().getLabel()) {
+		for (SourceCodeChange change : changes) {
+			switch (change.getChangedEntity().getLabel()) {
 
 			case METHOD_CALL:
-				System.out.println("mudança em chamada de método");
+				log.info("This change is in MethodCall");
 				break;
 
 			case ASSIGNMENT:
-				System.out.println("mudança em assinatura de objeto");
+				log.info("This change is in Assignment");
 				break;
 
 			case IF_INSTANCE:
-				System.out.println("mudança em instÂncia de IF");
+				log.info("This change is in IF");
 				break;
 
 			case ELSE_INSTANCE:
-				System.out.println("mudança em instância de ELSE");
+				log.info("This change is in Else");
 				break;
 				
 //			case ENUM_VALUE:
-//				System.out.println("mudança de valor no enum");
+//				log.info("This change is in Enum");
 //				break;
 //				
 //			case SCAPE_RETURN:
-//				System.out.println("mudança de retorno");
+//				log.info("This change is in Scape Return");
 //				break;
 				
 			default:
 				break;
 
 			}
-			System.out.println("----------------------------END CHANGE------------------------------------\n");
 		}
 	}
 

@@ -3,6 +3,8 @@ package br.com.changefsm;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -17,6 +19,7 @@ public class ExtractME {
 
 	private List<State> states = new ArrayList<State>();
 	private List<Transition> transitions = new ArrayList<Transition>();
+	private Logger log = LogManager.getLogger(ExtractME.class);
 
 	public ExtractME() {
 	}
@@ -31,13 +34,15 @@ public class ExtractME {
 	 */
 	public void extractElementsSM(String path) {
 		ReaderXML.readXML(path);
+		log.info("Preparing for extract elements of the State Machine");
 		NodeList nlT = ReaderXML.getNodeList("transition");
 		NodeList nlS = ReaderXML.getNodeList("subvertex");
 
 		extractStates(nlS);
 
 		extractTransitions(nlT);
-
+		log.info("Extraction of State Machine's elements was success.");
+		log.info("The State Machine can be represented this way: \n" + printTransitions());
 	}
 
 	/**

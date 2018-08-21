@@ -35,7 +35,7 @@ public class ClassChanged {
 	
 	@Override
 	public String toString() {
-		return getClassFile() +" --- Changes: " + getChanges();
+		return getClassFile().getName();
 	}
 
 }

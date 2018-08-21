@@ -3,9 +3,11 @@ package br.com.changefsm;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import br.com.changefsm.lucene.IFLucene;
 import br.com.changefsm.lucene.Lucene;
@@ -18,7 +20,8 @@ import br.com.changefsm.models.Transition;
 public class MappingChangesWithSM {
 
 	private List<ClassChanged> candidateCodeClasses;
-	private String[] stopWords = { "of", "the", "set", "get", "a", "an", "with", "to" };
+	private String[] stopWords = { "of", "the", "set", "get", "a", "an", "with", "to", "=", "true", "false", "state", "", " " };
+	private final Logger log = LogManager.getLogger(MappingChangesWithSM.class);
 	
 	private final String SPACE = " ";
 
@@ -74,6 +77,14 @@ public class MappingChangesWithSM {
 		}
 	}
 
+	/**
+	 * Make a relation between Changed classes and States and Transitions, using Lucene.
+	 * 
+	 * @param classesChanged
+	 * @param states
+	 * @param transitions
+	 * @throws IOException
+	 */
 	public void mappingClassWithLucene(List<ClassChanged> classesChanged, List<State> states,
 			List<Transition> transitions) throws IOException {
 		IFLucene lucene = new Lucene();
@@ -83,8 +94,10 @@ public class MappingChangesWithSM {
 		ArrayList<String> keyWords = new ArrayList<String>();
 		keyWords.addAll(extractNamesByStates(states));
 		keyWords.addAll(extractNamesByTransitions(transitions));
+		log.info("The keywords separate are: " + keyWords);
 
 		List<ClassChanged> relatedClasses = lucene.searchFilesRelated(keyWords);
+		log.info("The classes find by Lucene: "+ relatedClasses);
 		for (ClassChanged relatedClassesByLucene : relatedClasses) {
 			for (ClassChanged classChanged : classesChanged) {
 				if(classChanged.getClassFile().getPath().equals(relatedClassesByLucene.getClassFile().getPath())) {
@@ -96,6 +109,35 @@ public class MappingChangesWithSM {
 		
 
 	}
+	/**
+	 * Make a relation between Changed classes and States, using Lucene.
+	 * @param classesChanged
+	 * @param states
+	 * @throws IOException
+	 */
+	public void mappingClassWithLucene(List<ClassChanged> classesChanged, List<State> states) throws IOException {
+		IFLucene lucene = new Lucene();
+		lucene.createInderWriter();
+		lucene.indexerClass(classesChanged);
+
+		ArrayList<String> keyWords = new ArrayList<String>();
+		keyWords.addAll(extractNamesByStates(states));
+		log.info("The keywords separate are: " + keyWords);
+
+		List<ClassChanged> relatedClasses = lucene.searchFilesRelated(keyWords);
+		log.info("The classes find by Lucene: "+ relatedClasses);
+		for (ClassChanged relatedClassesByLucene : relatedClasses) {
+			for (ClassChanged classChanged : classesChanged) {
+				if(classChanged.getClassFile().getPath().equals(relatedClassesByLucene.getClassFile().getPath())) {
+					this.candidateCodeClasses.add(classChanged);
+					break;
+				}
+			}
+		}
+		
+
+	}
+
 
 	/**
 	 * 
@@ -110,6 +152,7 @@ public class MappingChangesWithSM {
 			keyWordsTransition.addAll(removeStopWords(transition.getGuard().split(SPACE)));
 			keyWordsTransition.addAll(removeStopWords(transition.getEvent().split(SPACE)));
 		}
+		log.info("The keywords by transitions are: " + keyWordsTransition);
 
 		return keyWordsTransition;
 	}
@@ -127,6 +170,7 @@ public class MappingChangesWithSM {
 				keyWordsState.addAll(removeStopWordsByState(state));
 			}
 		}
+		log.info("The keywords by states are: " + keyWordsState);
 
 		return keyWordsState;
 	}
@@ -161,6 +205,7 @@ public class MappingChangesWithSM {
 		ArrayList<String> wordsSelected = new ArrayList<String>();
 		for (String word : wordToWord) {
 			boolean hasStopWord = false;
+			log.info("Verifying weather is a stopword: " + word);
 			for (String stopWord : this.stopWords) {
 				if(word.toLowerCase().equals(stopWord.toLowerCase())) {
 					hasStopWord = true;
