@@ -10,6 +10,7 @@ import org.w3c.dom.NodeList;
 
 import br.com.changefsm.models.State;
 import br.com.changefsm.models.StateAction;
+import br.com.changefsm.models.StateMachine;
 import br.com.changefsm.models.StateType;
 import br.com.changefsm.models.Transition;
 import br.com.changefsm.models.TypeStateAction;
@@ -19,10 +20,10 @@ public class ExtractME {
 
 	private List<State> states = new ArrayList<State>();
 	private List<Transition> transitions = new ArrayList<Transition>();
+	private StateMachine stateMachine;
 	private Logger log = LogManager.getLogger(ExtractME.class);
 
-	public ExtractME() {
-	}
+	public ExtractME() {}
 
 	/**
 	 * Read a XML file and extract the values used in StateMachine like a State and
@@ -39,10 +40,11 @@ public class ExtractME {
 		NodeList nlS = ReaderXML.getNodeList("subvertex");
 
 		extractStates(nlS);
-
 		extractTransitions(nlT);
+		
+		setStateMachine(new StateMachine(path, states, transitions));
 		log.info("Extraction of State Machine's elements was success.");
-		log.info("The State Machine can be represented this way: \n" + printTransitions());
+		log.info("The State Machine can be represented this way: \n" + printStateMachine(getStateMachine()));
 	}
 
 	/**
@@ -172,9 +174,9 @@ public class ExtractME {
 	 * @return transitionsForPrint - A string for represent the transitions and
 	 *         their states
 	 */
-	public String printTransitions() {
+	public String printStateMachine(StateMachine stateMachine) {
 		String transitionsForPrint = "";
-		for (Transition transition : getTransitions()) {
+		for (Transition transition : stateMachine.getTransitions()) {
 			transitionsForPrint += transition.getSource() + "  ---------   " + transition.getAction()
 					+ "   ----------->>  " + transition.getTarget() + "\n";
 		}
@@ -182,6 +184,8 @@ public class ExtractME {
 	}
 
 	// Getters and Setters
+	
+	
 	public List<State> getStates() {
 		return states;
 	}
@@ -196,6 +200,14 @@ public class ExtractME {
 
 	public void setTransitions(List<Transition> transitions) {
 		this.transitions = transitions;
+	}
+
+	public StateMachine getStateMachine() {
+		return stateMachine;
+	}
+
+	public void setStateMachine(StateMachine stateMachine) {
+		this.stateMachine = stateMachine;
 	}
 
 }

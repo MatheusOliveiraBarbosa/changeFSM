@@ -64,7 +64,7 @@ public class FileUtils{
 	 *            = the directory source of the files.
 	 * @return - the file containing all classes.
 	 */
-	private File getClassListFile(String sourceFolder) {
+	public File getClassListFile(String sourceFolder) {
 		List<String> listClassNames = listNames(sourceFolder, "", ".java");
 		StringBuffer lines = new StringBuffer();
 		for (String className : listClassNames) {

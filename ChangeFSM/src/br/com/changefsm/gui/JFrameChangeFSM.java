@@ -4,17 +4,18 @@ import javax.swing.JFrame;
 
 public class JFrameChangeFSM {
 	
-	private static JFrameChangeFSM instance;
-	private final int WIDTH = 800;
-	private final int HEIGHT = 600;
-	private final String NAME_APP = "ChangeFSM";
-	private final String VERSION = "V0.1";
-	private JPanelChangeFSM panelChangeFSM;
+	private static final int WIDTH = 800;
+	private static final int HEIGHT = 600;
+	private static final String NAME_APP = "ChangeFSM";
+	private static final String VERSION = "V0.1";
 	
 	private JFrameChangeFSM() {
-		this.panelChangeFSM = new JPanelChangeFSM();
+	}
+	
+	public static void main(String[] args) {
+		JPanelChangeFSM panelChangeFSM = new JPanelChangeFSM();
 		JFrame frame = new JFrame(NAME_APP + " " + VERSION);
-		frame.add(this.panelChangeFSM.getPanel());
+		frame.add(panelChangeFSM.getPanel());
 		frame.setResizable(false);
 		frame.setSize(WIDTH, HEIGHT);
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
@@ -22,18 +23,5 @@ public class JFrameChangeFSM {
 		frame.setVisible(true);
 	}
 	
-	public static void main(String[] args) {
-		JFrameChangeFSM frame = getInstance();
-	}
-	
-	/**
-	 * This method is responsible for implemented SINGLETON pattern,
-	 * where verify if INSTANCE is initialized and return the same instance, 
-	 * else create a new JFrameChangeFSM object and return;
-	 * @return just only instance of this class
-	 */
-	public static JFrameChangeFSM getInstance() {
-		return  (instance != null) ? instance :  ( instance = new JFrameChangeFSM() );	
-	}
 
 }

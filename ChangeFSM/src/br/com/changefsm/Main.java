@@ -43,14 +43,16 @@ public class Main {
 		 */
 		MappingChangesWithSM mcwsm = new MappingChangesWithSM();
 		try {
-			mcwsm.mappingClassWithLucene(scc, eme.getStates(), eme.getTransitions());
+			mcwsm.mappingClassWithLucene(scc, eme.getStateMachine());
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
 		
 //		//Classify Changes and Updates
 		ClassifierUpdatesSM cusm = new ClassifierUpdatesSM();
-		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses());
+		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses(), eme.getStateMachine());
+		
+		System.out.println(cusm.getUpdates());
 		
 		
 	}

@@ -14,6 +14,7 @@ import br.com.changefsm.lucene.Lucene;
 import br.com.changefsm.models.ClassChanged;
 import br.com.changefsm.models.State;
 import br.com.changefsm.models.StateAction;
+import br.com.changefsm.models.StateMachine;
 import br.com.changefsm.models.StateType;
 import br.com.changefsm.models.Transition;
 
@@ -85,15 +86,14 @@ public class MappingChangesWithSM {
 	 * @param transitions
 	 * @throws IOException
 	 */
-	public void mappingClassWithLucene(List<ClassChanged> classesChanged, List<State> states,
-			List<Transition> transitions) throws IOException {
+	public void mappingClassWithLucene(List<ClassChanged> classesChanged, StateMachine stateMachine) throws IOException {
 		IFLucene lucene = new Lucene();
 		lucene.createInderWriter();
 		lucene.indexerClass(classesChanged);
 
 		ArrayList<String> keyWords = new ArrayList<String>();
-		keyWords.addAll(extractNamesByStates(states));
-		keyWords.addAll(extractNamesByTransitions(transitions));
+		keyWords.addAll(extractNamesByStates(stateMachine.getStates()));
+		keyWords.addAll(extractNamesByTransitions(stateMachine.getTransitions()));
 		log.info("The keywords separate are: " + keyWords);
 
 		List<ClassChanged> relatedClasses = lucene.searchFilesRelated(keyWords);
@@ -109,34 +109,34 @@ public class MappingChangesWithSM {
 		
 
 	}
-	/**
-	 * Make a relation between Changed classes and States, using Lucene.
-	 * @param classesChanged
-	 * @param states
-	 * @throws IOException
-	 */
-	public void mappingClassWithLucene(List<ClassChanged> classesChanged, List<State> states) throws IOException {
-		IFLucene lucene = new Lucene();
-		lucene.createInderWriter();
-		lucene.indexerClass(classesChanged);
-
-		ArrayList<String> keyWords = new ArrayList<String>();
-		keyWords.addAll(extractNamesByStates(states));
-		log.info("The keywords separate are: " + keyWords);
-
-		List<ClassChanged> relatedClasses = lucene.searchFilesRelated(keyWords);
-		log.info("The classes find by Lucene: "+ relatedClasses);
-		for (ClassChanged relatedClassesByLucene : relatedClasses) {
-			for (ClassChanged classChanged : classesChanged) {
-				if(classChanged.getClassFile().getPath().equals(relatedClassesByLucene.getClassFile().getPath())) {
-					this.candidateCodeClasses.add(classChanged);
-					break;
-				}
-			}
-		}
-		
-
-	}
+//	/**
+//	 * Make a relation between Changed classes and States, using Lucene.
+//	 * @param classesChanged
+//	 * @param states
+//	 * @throws IOException
+//	 */
+//	public void mappingClassWithLucene(List<ClassChanged> classesChanged, List<State> states) throws IOException {
+//		IFLucene lucene = new Lucene();
+//		lucene.createInderWriter();
+//		lucene.indexerClass(classesChanged);
+//
+//		ArrayList<String> keyWords = new ArrayList<String>();
+//		keyWords.addAll(extractNamesByStates(states));
+//		log.info("The keywords separate are: " + keyWords);
+//
+//		List<ClassChanged> relatedClasses = lucene.searchFilesRelated(keyWords);
+//		log.info("The classes find by Lucene: "+ relatedClasses);
+//		for (ClassChanged relatedClassesByLucene : relatedClasses) {
+//			for (ClassChanged classChanged : classesChanged) {
+//				if(classChanged.getClassFile().getPath().equals(relatedClassesByLucene.getClassFile().getPath())) {
+//					this.candidateCodeClasses.add(classChanged);
+//					break;
+//				}
+//			}
+//		}
+//		
+//
+//	}
 
 
 	/**
