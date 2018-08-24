@@ -14,7 +14,7 @@ public class Main {
 
 	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
 	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
-	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml";
+	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";
 
 	private static ArrayList<File> classesOld = new ArrayList<File>();
 	private static ArrayList<File> classesNew = new ArrayList<File>();
@@ -32,7 +32,7 @@ public class Main {
 		//Extract changes and their classes
 		ExtractChangesInClasses ecc = new ExtractChangesInClasses();
 		List<ClassChanged> scc = ecc.extractChanges(classesOld, classesNew);
-
+		
 		//Extract Elements in SM
 		ExtractME eme = new ExtractME();
 		eme.extractElementsSM(PATH_SM);
