@@ -52,7 +52,7 @@ public class Main {
 		ClassifierUpdatesSM cusm = new ClassifierUpdatesSM();
 		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses(), eme.getStateMachine());
 		
-		System.out.println(cusm.getUpdates());
+//		System.out.println(cusm.getUpdates());
 		
 		
 	}
