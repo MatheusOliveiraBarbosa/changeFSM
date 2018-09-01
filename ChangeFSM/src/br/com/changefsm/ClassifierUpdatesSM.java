@@ -37,16 +37,17 @@ public class ClassifierUpdatesSM {
 
 	public void searchAndClassifySMUpdates(List<ClassChanged> candidateCodeClasses, StateMachine stateMachine) {
 		for (ClassChanged classChanged : candidateCodeClasses) {
-			log.info("Looking for updates in the class: " + classChanged.getClassFile().getName());
+			log.info("Looking for updates in STATES in the class: " + classChanged.getClassFile().getName());
+			analyseChangesToStates(classChanged, stateMachine);
+		}
+		for (ClassChanged classChanged : candidateCodeClasses) {
+			log.info("Looking for updates in another elements in the class: " + classChanged.getClassFile().getName());
 			analyseChanges(classChanged, stateMachine);
 		}
+		log.info("The updates to realize are: " + updates);
 	}
 
 	private void analyseChanges(ClassChanged classChanged, StateMachine stateMachine) {
-
-		log.info(stateMachine.getStates());
-		analyseChangesToStates(classChanged, stateMachine);
-		log.info(stateMachine.getStates());
 
 		for (SourceCodeChange change : classChanged.getChanges()) {
 			UpdateSM updateSM = new UpdateSM(classChanged.getClassFile(), change, stateMachine);
@@ -68,10 +69,8 @@ public class ClassifierUpdatesSM {
 			// break;
 			default:
 				break;
-
 			}
 		}
-		// log.info("The updates to realize are: " + updates);
 	}
 
 	/**
@@ -102,22 +101,27 @@ public class ClassifierUpdatesSM {
 	private void classifyByChangesEnum(UpdateSM updateSM, StateMachine stateMachine) {
 
 		String nameEnum = extractNameOfEnum(updateSM.getCodeChange().toString());
-		if (updateSM.getCodeChange().getChangeType().toString().contains("ADD")) {
+		boolean exist = false;
+		for (State state : stateMachine.getStates()) {
+			if (state.getName().contains(nameEnum)) {
+				exist = true;
+				break;
+			}
+		}
+
+		if (updateSM.getCodeChange().getChangeType().toString().contains("ADD") && exist == false) {
 			updateSM.setUpdateSMType(UpdateSMType.ADD_STATE);
 			stateMachine.getStates().add(new State(nameEnum));
 			updates.add(updateSM);
-			log.info("ADD NEW STATE");
-		} else if (updateSM.getCodeChange().getChangeType().toString().contains("REMOVE")) {
+		} else if (updateSM.getCodeChange().getChangeType().toString().contains("REMOVE") && exist == true) {
 			updateSM.setUpdateSMType(UpdateSMType.REMOVE_STATE);
 			updates.add(updateSM);
-			log.info("REMOVE STATE");
 		}
 	}
 
 	private String extractNameOfEnum(String changeToString) {
 		int indexLast2PointsAndSpace = changeToString.lastIndexOf(" :");
 		int indexLastPoint = changeToString.lastIndexOf(".");
-
 		return changeToString.substring(indexLastPoint + 1, indexLast2PointsAndSpace);
 	}
 
@@ -134,21 +138,58 @@ public class ClassifierUpdatesSM {
 	 */
 	private void classifyByChangeAssignment(UpdateSM updateSM) {
 		// TODO Verify that is indication of a switch State
-		if (updateSM.getCodeChange().toString().startsWith(UPDATE)) {
-			log.info(updateSM.getCodeChange());
-			updateSM.setUpdateSMType(UpdateSMType.UPDATE_TRANSITION);
-			updates.add(updateSM);
-		} else if (updateSM.getCodeChange().toString().startsWith(DELETE)) {
-			log.info(updateSM.getCodeChange());
-			updateSM.setUpdateSMType(UpdateSMType.REMOVE_TRANSITION);
-			updates.add(updateSM);
-		} else if (updateSM.getCodeChange().toString().startsWith(INSERT)) {
-			log.info(updateSM.getCodeChange());
-			updateSM.setUpdateSMType(UpdateSMType.ADD_TRANSITION);
-			updates.add(updateSM);
+		boolean isPossibleTransition = false;
+		for (State state : updateSM.getStateMachine().getStates()) {
+			if (updateSM.getCodeChange().toString().contains(state.getName())) {
+				isPossibleTransition = true;
+			} else if (state.getName().split(" ").length > 1) {
+				String[] words = state.getName().split(" ");
+				List<String> wordsSeparated = removeStopWords(words);
+				for (String word : wordsSeparated) {
+					if (updateSM.getCodeChange().toString().toLowerCase().contains(word.toLowerCase())) {
+						isPossibleTransition = true;
+					}
+				}
+			}
+		}
+		if (isPossibleTransition) {
+			if (updateSM.getCodeChange().toString().startsWith(UPDATE)) {
+				log.info(updateSM.getCodeChange());
+				updateSM.setUpdateSMType(UpdateSMType.UPDATE_TRANSITION);
+				updates.add(updateSM);
+				log.info("Assignment: " + updateSM);
+			} else if (updateSM.getCodeChange().toString().startsWith(DELETE)) {
+				log.info(updateSM.getCodeChange());
+				updateSM.setUpdateSMType(UpdateSMType.REMOVE_TRANSITION);
+				updates.add(updateSM);
+				log.info("Assignment: " + updateSM);
+			} else if (updateSM.getCodeChange().toString().startsWith(INSERT)) {
+				log.info(updateSM.getCodeChange());
+				updateSM.setUpdateSMType(UpdateSMType.ADD_TRANSITION);
+				updates.add(updateSM);
+				log.info("Assignment: " + updateSM);
+			}
 		}
 
 	}
+	private List<String> removeStopWords(String[] words) {
+		String[] stopWords = { "of", "the", "set", "get", "a", "an", "with", "to", "=", "true", "false", "state", "", " " };
+		List<String> separetedWords = new ArrayList<String>();
+		for (int i = 0; i < words.length; i++) {
+			boolean hasStopWord = false;
+			for (int j = 0; j < stopWords.length; j++) {
+				if(words[i].toLowerCase().equals(stopWords[j].toLowerCase())) {
+					hasStopWord = true;
+					break;
+				}
+			}
+			if(hasStopWord == false) {
+				separetedWords.add(words[i]);
+			}
+		}
+		return separetedWords;
+	}
+
 	// END CLASSIFY BY ASSIGNMENT
 
 	// BEGIN CLASSIFY BY METHOD CALL

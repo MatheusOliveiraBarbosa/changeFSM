@@ -3,9 +3,9 @@ package br.com.changefsm.models;
 import java.util.ArrayList;
 
 public class State {
-	
-	private String name;
+
 	private String id;
+	private String name;
 	private StateType stateType;
 	private ArrayList<StateAction> actions;
 

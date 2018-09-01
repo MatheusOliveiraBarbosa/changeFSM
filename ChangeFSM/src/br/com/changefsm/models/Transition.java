@@ -6,8 +6,8 @@ public class Transition {
 	private String action;
 	private String guard;
 	private String event;
-	private State source;
-	private State target;
+	private State sourceState;
+	private State targetState;
 	
 	
 	public Transition () {
@@ -18,8 +18,8 @@ public class Transition {
 	
 	public Transition(String action, State source, State target) {
 		this.action = action;
-		this.source = source;
-		this.target = target;
+		this.sourceState = source;
+		this.targetState = target;
 		this.event = "";
 		this.guard = "";
 	}
@@ -29,8 +29,8 @@ public class Transition {
 		this.event = "";
 		this.guard = "";
 		this.action = action;
-		this.source = source;
-		this.target = target;
+		this.sourceState = source;
+		this.targetState = target;
 	}
 	
 	public String getAction() {
@@ -46,16 +46,16 @@ public class Transition {
 		this.id = id;
 	}
 	public State getTarget() {
-		return target;
+		return targetState;
 	}
 	public void setTarget(State target) {
-		this.target = target;
+		this.targetState = target;
 	}
 	public State getSource() {
-		return source;
+		return sourceState;
 	}
 	public void setSource(State source) {
-		this.source = source;
+		this.sourceState = source;
 	}
 	
 	@Override
