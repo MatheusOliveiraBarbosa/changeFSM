@@ -20,7 +20,8 @@ public class ClassifierUpdatesSM {
 	private final String IF_INSTANCE = "IF_STATEMENT";
 	private final String ELSE_INSTANCE = "ELSE_STATEMENT";
 	private final String ENUM_ENTITY = "FIELD";
-	// private final String SCAPE_RETURN = "SCAPE_RETURN";
+	private final String SCAPE_RETURN = "RETURN_STATEMENT";
+	private final String METHOD = "METHOD";
 
 	private final String UPDATE = "Update";
 	private final String DELETE = "Delete";
@@ -28,6 +29,7 @@ public class ClassifierUpdatesSM {
 	private final String ENUM = "ENUM";
 
 	private List<UpdateSM> updates;
+	private List<State> smStates;
 
 	private final Logger log = LogManager.getLogger(ClassifierUpdatesSM.class);
 
@@ -64,15 +66,52 @@ public class ClassifierUpdatesSM {
 			case ELSE_INSTANCE:
 				classifyByChangesIF(updateSM);
 				break;
-			// case SCAPE_RETURN:
-			// log.info("This change is in Scape Return");
-			// break;
+			case SCAPE_RETURN:
+				classifyByScapeReturn(updateSM);
+				break;
+			case METHOD:
+				classifyByMethod(updateSM);
+				break;
 			default:
 				break;
 			}
 		}
 	}
 
+	private void classifyByMethod(UpdateSM updateSM) {
+		if(updateSM.getCodeChange().toString().startsWith(INSERT) &&
+				updateSM.getCodeChange().getLabel().equals("ADDITIONAL_FUNCTIONALITY") ) {
+			updateSM.setUpdateSMType(UpdateSMType.ADD_EVENT);
+		}else if(updateSM.getCodeChange().toString().startsWith(DELETE) &&
+				updateSM.getCodeChange().getLabel().equals("REMOVED_FUNCTIONALITY") ) {
+			updateSM.setUpdateSMType(UpdateSMType.REMOVE_EVENT);
+		}
+
+	}
+
+	//BEGIN SCAPE RETURN
+	/**
+	 * Analysis whether scape return has relation with the states to indicate when is a composite state or not.
+	 * @param updateSM
+	 */
+	private void classifyByScapeReturn(UpdateSM updateSM) {
+		int indicateComposite = 0;
+		for (State state : this.smStates) {
+			if (updateSM.getCodeChange().toString().toLowerCase().contains(state.getName().toLowerCase())) {
+				indicateComposite++;
+				if (indicateComposite > 1 && updateSM.getCodeChange().toString().startsWith(INSERT)) {
+					updateSM.setUpdateSMType(UpdateSMType.ADD_COMPOSITE_STATE);
+				} else if (indicateComposite > 1 && updateSM.getCodeChange().toString().startsWith(DELETE)) {
+					updateSM.setUpdateSMType(UpdateSMType.REMOVE_COMPOSITE_STATE);
+				}else if (indicateComposite > 1 && updateSM.getCodeChange().toString().startsWith(UPDATE)) {
+					updateSM.setUpdateSMType(UpdateSMType.ALTER_BODY_COMPOSITE_STATE);
+				}
+			}
+		}
+
+	}
+	//END SCAPE RETURN
+	
 	/**
 	 * Analysis only have to updates in State of the StateMachine
 	 * 
@@ -84,7 +123,8 @@ public class ClassifierUpdatesSM {
 			UpdateSM updateSM = new UpdateSM(classChanged.getClassFile(), change, stateMachine);
 			if (change.getChangeType().toString().contains(ENUM)
 					&& change.getChangedEntity().getLabel().contains(ENUM_ENTITY)) {
-				classifyByChangesEnum(updateSM, stateMachine);
+				this.smStates = stateMachine.getStates();
+				classifyByChangesEnum(updateSM, this.smStates);
 			}
 		}
 	}
@@ -98,20 +138,19 @@ public class ClassifierUpdatesSM {
 	 * @param updateSM
 	 * @param stateMachine
 	 */
-	private void classifyByChangesEnum(UpdateSM updateSM, StateMachine stateMachine) {
+	private void classifyByChangesEnum(UpdateSM updateSM, List<State> states) {
 
 		String nameEnum = extractNameOfEnum(updateSM.getCodeChange().toString());
 		boolean exist = false;
-		for (State state : stateMachine.getStates()) {
+		for (State state : states) {
 			if (state.getName().contains(nameEnum)) {
 				exist = true;
 				break;
 			}
 		}
-
 		if (updateSM.getCodeChange().getChangeType().toString().contains("ADD") && exist == false) {
 			updateSM.setUpdateSMType(UpdateSMType.ADD_STATE);
-			stateMachine.getStates().add(new State(nameEnum));
+			states.add(new State(nameEnum));
 			updates.add(updateSM);
 		} else if (updateSM.getCodeChange().getChangeType().toString().contains("REMOVE") && exist == true) {
 			updateSM.setUpdateSMType(UpdateSMType.REMOVE_STATE);
@@ -138,20 +177,7 @@ public class ClassifierUpdatesSM {
 	 */
 	private void classifyByChangeAssignment(UpdateSM updateSM) {
 		// TODO Verify that is indication of a switch State
-		boolean isPossibleTransition = false;
-		for (State state : updateSM.getStateMachine().getStates()) {
-			if (updateSM.getCodeChange().toString().contains(state.getName())) {
-				isPossibleTransition = true;
-			} else if (state.getName().split(" ").length > 1) {
-				String[] words = state.getName().split(" ");
-				List<String> wordsSeparated = removeStopWords(words);
-				for (String word : wordsSeparated) {
-					if (updateSM.getCodeChange().toString().toLowerCase().contains(word.toLowerCase())) {
-						isPossibleTransition = true;
-					}
-				}
-			}
-		}
+		boolean isPossibleTransition = isPossibleTransition(updateSM);
 		if (isPossibleTransition) {
 			if (updateSM.getCodeChange().toString().startsWith(UPDATE)) {
 				log.info(updateSM.getCodeChange());
@@ -172,18 +198,38 @@ public class ClassifierUpdatesSM {
 		}
 
 	}
+
+	private boolean isPossibleTransition(UpdateSM updateSM) {
+		boolean isPossibleTransition = false;
+		for (State state : updateSM.getStateMachine().getStates()) {
+			if (updateSM.getCodeChange().toString().contains(state.getName())) {
+				isPossibleTransition = true;
+			} else if (state.getName().split(" ").length > 1) {
+				String[] words = state.getName().split(" ");
+				List<String> wordsSeparated = removeStopWords(words);
+				for (String word : wordsSeparated) {
+					if (updateSM.getCodeChange().toString().toLowerCase().contains(word.toLowerCase())) {
+						isPossibleTransition = true;
+					}
+				}
+			}
+		}
+		return isPossibleTransition;
+	}
+
 	private List<String> removeStopWords(String[] words) {
-		String[] stopWords = { "of", "the", "set", "get", "a", "an", "with", "to", "=", "true", "false", "state", "", " " };
+		String[] stopWords = { "of", "the", "set", "get", "a", "an", "with", "to", "=", "true", "false", "state", "",
+				" " };
 		List<String> separetedWords = new ArrayList<String>();
 		for (int i = 0; i < words.length; i++) {
 			boolean hasStopWord = false;
 			for (int j = 0; j < stopWords.length; j++) {
-				if(words[i].toLowerCase().equals(stopWords[j].toLowerCase())) {
+				if (words[i].toLowerCase().equals(stopWords[j].toLowerCase())) {
 					hasStopWord = true;
 					break;
 				}
 			}
-			if(hasStopWord == false) {
+			if (hasStopWord == false) {
 				separetedWords.add(words[i]);
 			}
 		}
