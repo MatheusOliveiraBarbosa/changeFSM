@@ -1,4 +1,4 @@
-package br.com.changefsm;
+package br.com.changefsm.extractor;
 
 import java.util.ArrayList;
 import java.util.List;

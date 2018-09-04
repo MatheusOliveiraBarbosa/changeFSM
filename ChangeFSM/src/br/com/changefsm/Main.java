@@ -10,6 +10,11 @@ import javax.xml.bind.JAXBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import br.com.changefsm.classifiersupdate.ClassifierUpdatesSM;
+import br.com.changefsm.extractor.ExtractChangesInClasses;
+import br.com.changefsm.extractor.ExtractME;
+import br.com.changefsm.extractor.ExtractorClasses;
+import br.com.changefsm.mapping.MappingChangesWithSM;
 import br.com.changefsm.models.ClassChanged;
 import br.com.changefsm.writerxml.WriterXML;
 

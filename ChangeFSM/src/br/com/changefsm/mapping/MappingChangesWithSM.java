@@ -1,4 +1,4 @@
-package br.com.changefsm;
+package br.com.changefsm.mapping;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

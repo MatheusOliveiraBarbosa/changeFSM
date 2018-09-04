@@ -53,7 +53,7 @@ public class StateMachine {
 
 	@Override
 	public String toString() {
-		return this.states.toString();
+		return this.name;
 	}
 
 }
