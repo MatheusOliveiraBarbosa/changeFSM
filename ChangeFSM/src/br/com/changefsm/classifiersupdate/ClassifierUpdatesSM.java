@@ -54,17 +54,17 @@ public class ClassifierUpdatesSM {
 			UpdateSM updateSM = new UpdateSM(classChanged.getClassFile(), change, stateMachine);
 			switch (change.getChangedEntity().getLabel()) {
 			case METHOD_CALL:
-				classifierUpdatesSM.classifyByMethodCall(updateSM);
+				classifierUpdatesSM.classifyByMethodCall(updateSM, statesForClassification);
 				break;
 			case ASSIGNMENT:
 				classifierUpdatesSM.classifyByAssignemt(updateSM, statesForClassification);
 				break;
-			case IF_INSTANCE:
-				classifierUpdatesSM.classifyByIF(updateSM);
-				break;
-			case ELSE_INSTANCE:
-				classifierUpdatesSM.classifyByELSE(updateSM);
-				break;
+//			case IF_INSTANCE:
+//				classifierUpdatesSM.classifyByIF(updateSM);
+//				break;
+//			case ELSE_INSTANCE:
+//				classifierUpdatesSM.classifyByELSE(updateSM);
+//				break;
 			case SCAPE_RETURN:
 				classifierUpdatesSM.classifyByScapeReturn(updateSM, statesForClassification);
 				break;

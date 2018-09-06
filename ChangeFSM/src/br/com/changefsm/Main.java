@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.JAXBException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,13 +15,13 @@ import br.com.changefsm.extractor.ExtractME;
 import br.com.changefsm.extractor.ExtractorClasses;
 import br.com.changefsm.mapping.MappingChangesWithSM;
 import br.com.changefsm.models.ClassChanged;
-import br.com.changefsm.writerxml.WriterXML;
 
 public class Main {
 
 	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
 	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
-	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";
+	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml";
+//	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";
 
 	private static ArrayList<File> classesOld = new ArrayList<File>();
 	private static ArrayList<File> classesNew = new ArrayList<File>();
@@ -60,12 +59,12 @@ public class Main {
 		ClassifierUpdatesSM cusm = new ClassifierUpdatesSM();
 		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses(), eme.getStateMachine());
 		
-		try {
-			WriterXML.writerXML(cusm.getUpdates());
-		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			WriterXML.writerXML(cusm.getUpdates());
+//		} catch (JAXBException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		
 	}

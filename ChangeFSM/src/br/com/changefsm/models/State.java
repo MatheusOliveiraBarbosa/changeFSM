@@ -1,29 +1,33 @@
 package br.com.changefsm.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class State {
 
 	private String id;
 	private String name;
 	private StateType stateType;
-	private ArrayList<StateAction> actions;
+	private List<StateAction> actions;
 
 	public State() {}
 	
 	public State(String name) {
 		this.name = name;
+		this.actions = new ArrayList<StateAction>();
 	}
 	
 	public State(String id, String name) {
 		this.id = id;
 		this.name = name;
+		this.actions = new ArrayList<StateAction>();
 	}
 	
 	public State(String id, String name, StateType stateType) {
 		this.id = id;
 		this.name = name;
 		this.stateType = stateType;
+		this.actions = new ArrayList<StateAction>();
 	}
 	
 	public State (String id, String name, ArrayList<StateAction> actions) {
@@ -60,7 +64,7 @@ public class State {
 		return this.name;
 	}
 
-	public ArrayList<StateAction> getActions() {
+	public List<StateAction> getActions() {
 		return actions;
 	}
 
