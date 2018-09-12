@@ -18,6 +18,12 @@ public class UpdateSM {
 		this.codeChange = codeChange;
 		this.stateMachine = stateMachine;
 	}
+	public UpdateSM(File classJava, SourceCodeChange codeChange, StateMachine stateMachine, UpdateSMType updateSMType) {
+		this.classJava = classJava;
+		this.codeChange = codeChange;
+		this.stateMachine = stateMachine;
+		this.updateSMType = updateSMType;
+	}
 	
 	public StateMachine getStateMachine() {
 		return stateMachine;

@@ -31,7 +31,7 @@ public class ClassifierByMethodCall extends ClassifierUpdate implements Interfac
 				if (hasStateInParameters(updateSM, statesForClassification)) {
 					updateSM.setUpdateSMType(UpdateSMType.REMOVE_TRANSITION);
 				}
-			}else {
+			} else {
 				classifyDeleteTypeStateAction(updateSM);
 			}
 		} else if (updateSM.getCodeChange().toString().startsWith(getUPDATE())) { // TO-DO UPDATE
@@ -40,44 +40,44 @@ public class ClassifierByMethodCall extends ClassifierUpdate implements Interfac
 	}
 
 	private void classifyDeleteTypeStateAction(UpdateSM updateSM) {
-		for(State state : updateSM.getStateMachine().getStates()) {
-			for(StateAction stateAction : state.getActions()) {
+		for (State state : updateSM.getStateMachine().getStates()) {
+			for (StateAction stateAction : state.getActions()) {
 				String nameAction = findAndRemoveSpecialCharacter(stateAction.getName()).toLowerCase();
 				String nameMethod = extractObjectWithNameMethod(updateSM).toLowerCase();
-				if(nameAction.split(" ").length > 1) {
+				if (nameAction.split(" ").length > 1) {
 					String[] wordsSeparated = nameAction.split(" ");
 					List<String> wordsSelected = removeStopWords(wordsSeparated);
-					for(String word : wordsSelected) {
+					for (String word : wordsSelected) {
 						if (nameMethod.contains(word)) {
 							classifyByStateAction(updateSM, stateAction);
 						}
 					}
-				}else {
+				} else {
 					if (nameMethod.contains(nameAction)) {
 						classifyByStateAction(updateSM, stateAction);
 					}
 				}
 			}
 		}
-		
+
 	}
 
 	private void classifyByStateAction(UpdateSM updateSM, StateAction stateAction) {
-		if(stateAction.getTypeStateAction() == TypeStateAction.DO) {
+		if (stateAction.getTypeStateAction() == TypeStateAction.DO) {
 			updateSM.setUpdateSMType(UpdateSMType.REMOVE_DOACTION_STATE);
-		} else if(stateAction.getTypeStateAction() == TypeStateAction.ENTRY) {
+		} else if (stateAction.getTypeStateAction() == TypeStateAction.ENTRY) {
 			updateSM.setUpdateSMType(UpdateSMType.REMOVE_ENTRYACTION_STATE);
-		} else if(stateAction.getTypeStateAction() == TypeStateAction.EXIT) {
+		} else if (stateAction.getTypeStateAction() == TypeStateAction.EXIT) {
 			updateSM.setUpdateSMType(UpdateSMType.REMOVE_EXITACTION_STATE);
 		}
 	}
 
 	private String findAndRemoveSpecialCharacter(String nameAction) {
-		if(nameAction.contains("(")) {
+		if (nameAction.contains("(")) {
 			nameAction = nameAction.substring(0, nameAction.indexOf("("));
-		} else if(nameAction.contains("[")) {
+		} else if (nameAction.contains("[")) {
 			nameAction = nameAction.substring(0, nameAction.indexOf("["));
-		} else if(nameAction.contains("{")) {
+		} else if (nameAction.contains("{")) {
 			nameAction = nameAction.substring(0, nameAction.indexOf("{"));
 		}
 		return nameAction;
@@ -85,29 +85,22 @@ public class ClassifierByMethodCall extends ClassifierUpdate implements Interfac
 
 	private boolean isTransitionAction(UpdateSM updateSM) {
 		String nameMethod = extractObjectWithNameMethod(updateSM);
-		List<String> words = convertArrayToList(nameMethod.split("."));
 		for (Transition transition : updateSM.getStateMachine().getTransitions()) {
-			for (String word : words) {
-				if (transition.getAction().toLowerCase().contains(word.toLowerCase())) {
-					return true;
-				}
+			if (transition.getAction().toLowerCase().contains(nameMethod.toLowerCase())) {
+				return true;
 			}
 		}
 		return false;
-	}
-
-	private List<String> convertArrayToList(String[] split) {
-		List<String> words = new ArrayList<String>();
-		for (int i = 0; i < split.length; i++) {
-			words.add(split[i]);
-		}
-		return words;
 	}
 
 	private String extractObjectWithNameMethod(UpdateSM updateSM) {
 		String nameMethod = updateSM.getCodeChange().getChangedEntity().getUniqueName();
 		int index = nameMethod.indexOf("(");
 		nameMethod = nameMethod.substring(0, index);
+		int indexObj = nameMethod.indexOf(".");
+		if (indexObj > 0) {
+			nameMethod = nameMethod.substring(indexObj);
+		}
 		return nameMethod;
 	}
 

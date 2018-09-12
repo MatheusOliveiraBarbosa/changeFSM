@@ -44,8 +44,8 @@ public class ClassifierFacade implements InterfaceClassifierFacade {
 	}
 
 	@Override
-	public void classifyByMethod(UpdateSM updateSM) {
-		this.classifierMethod.classifyByMethod(updateSM);
+	public List<UpdateSM> classifyByMethod(UpdateSM updateSM, List<State> statesForClassification) {
+		return classifierMethod.classifyByMethod(updateSM, statesForClassification);
 	}
 
 	@Override

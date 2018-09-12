@@ -16,8 +16,8 @@ public class ClassifierUpdatesSM {
 
 	private final String METHOD_CALL = "METHOD_INVOCATION";
 	private final String ASSIGNMENT = "ASSIGNMENT";
-	private final String IF_INSTANCE = "IF_STATEMENT";
-	private final String ELSE_INSTANCE = "ELSE_STATEMENT";
+//	private final String IF_INSTANCE = "IF_STATEMENT";
+//	private final String ELSE_INSTANCE = "ELSE_STATEMENT";
 	private final String ENUM_ENTITY = "FIELD";
 	private final String SCAPE_RETURN = "RETURN_STATEMENT";
 	private final String METHOD = "METHOD";
@@ -69,7 +69,7 @@ public class ClassifierUpdatesSM {
 				classifierUpdatesSM.classifyByScapeReturn(updateSM, statesForClassification);
 				break;
 			case METHOD:
-				classifierUpdatesSM.classifyByMethod(updateSM);
+				updates.addAll(classifierUpdatesSM.classifyByMethod(updateSM, statesForClassification));
 				break;
 			default:
 				break;

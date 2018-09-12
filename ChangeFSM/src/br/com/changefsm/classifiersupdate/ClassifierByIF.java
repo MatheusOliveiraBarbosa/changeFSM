@@ -32,8 +32,6 @@ public class ClassifierByIF extends ClassifierUpdate implements InterfaceClassif
 	}
 	
 	private boolean isGuard(UpdateSM updateSM) {
-		// TO-DO Verify the body if looking for the states to indicate that this
-		// transition is a guard
 		return true;
 	}
 

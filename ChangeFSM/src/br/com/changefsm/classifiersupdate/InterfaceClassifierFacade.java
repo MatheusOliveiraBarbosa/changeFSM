@@ -15,7 +15,7 @@ public interface InterfaceClassifierFacade {
 	
 	void classifyByScapeReturn(UpdateSM updateSM, List<State> statesForClassification);
 	
-	void classifyByMethod(UpdateSM updateSM);
+	List<UpdateSM> classifyByMethod(UpdateSM updateSM, List<State> statesForClassification);
 	
 	void classifyByMethodCall(UpdateSM updateSM, List<State> statesForClassification);
 	
