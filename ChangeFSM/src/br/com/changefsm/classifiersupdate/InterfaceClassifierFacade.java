@@ -7,9 +7,9 @@ import br.com.changefsm.models.UpdateSM;
 
 public interface InterfaceClassifierFacade {
 	
-	void classifyByIF(UpdateSM updateSM);
+	void classifyByIF(UpdateSM updateSM, List<State> statesForClassification);
 	
-	void classifyByELSE(UpdateSM updateSM);
+	void classifyByELSE(UpdateSM updateSM, List<State> statesForClassification);
 	
 	void classifyByEnum(UpdateSM updateSM, List<State> statesForClassification);
 	

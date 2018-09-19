@@ -43,13 +43,17 @@ public class ClassifierByMethodCall extends ClassifierUpdate implements Interfac
 		for (State state : updateSM.getStateMachine().getStates()) {
 			for (StateAction stateAction : state.getActions()) {
 				String nameAction = findAndRemoveSpecialCharacter(stateAction.getName()).toLowerCase();
+				log.info("classifyDeleteTypeStateAction:: " + nameAction);
 				String nameMethod = extractObjectWithNameMethod(updateSM).toLowerCase();
 				if (nameAction.split(" ").length > 1) {
 					String[] wordsSeparated = nameAction.split(" ");
 					List<String> wordsSelected = removeStopWords(wordsSeparated);
 					for (String word : wordsSelected) {
 						if (nameMethod.contains(word)) {
+							log.info("classifyDeleteTypeStateAction:: STATEACTION ::" + word);
+							log.info("classifyDeleteTypeStateAction:: NAMEMETHOD ::" + nameMethod);
 							classifyByStateAction(updateSM, stateAction);
+							log.info("classifyDeleteTypeStateAction:: Classification:: " + updateSM.getUpdateSMType());
 						}
 					}
 				} else {

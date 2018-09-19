@@ -16,8 +16,8 @@ public class ClassifierUpdatesSM {
 
 	private final String METHOD_CALL = "METHOD_INVOCATION";
 	private final String ASSIGNMENT = "ASSIGNMENT";
-//	private final String IF_INSTANCE = "IF_STATEMENT";
-//	private final String ELSE_INSTANCE = "ELSE_STATEMENT";
+	private final String IF_INSTANCE = "IF_STATEMENT";
+	private final String ELSE_INSTANCE = "ELSE_STATEMENT";
 	private final String ENUM_ENTITY = "FIELD";
 	private final String SCAPE_RETURN = "RETURN_STATEMENT";
 	private final String METHOD = "METHOD";
@@ -45,7 +45,7 @@ public class ClassifierUpdatesSM {
 			log.info("Looking for updates in another elements in the class: " + classChanged.getClassFile().getName());
 			analyseChanges(classChanged, stateMachine);
 		}
-		// log.info("The updates to realize are: " + updates);
+//		 log.info("The updates to realize are: " + updates);
 	}
 
 	private void analyseChanges(ClassChanged classChanged, StateMachine stateMachine) {
@@ -59,12 +59,12 @@ public class ClassifierUpdatesSM {
 			case ASSIGNMENT:
 				classifierUpdatesSM.classifyByAssignemt(updateSM, statesForClassification);
 				break;
-//			case IF_INSTANCE:
-//				classifierUpdatesSM.classifyByIF(updateSM);
-//				break;
-//			case ELSE_INSTANCE:
-//				classifierUpdatesSM.classifyByELSE(updateSM);
-//				break;
+			case IF_INSTANCE:
+				classifierUpdatesSM.classifyByIF(updateSM, statesForClassification);
+				break;
+			case ELSE_INSTANCE:
+				classifierUpdatesSM.classifyByELSE(updateSM, statesForClassification);
+				break;
 			case SCAPE_RETURN:
 				classifierUpdatesSM.classifyByScapeReturn(updateSM, statesForClassification);
 				break;

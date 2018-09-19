@@ -18,8 +18,7 @@ public class ClassifierByAssignment extends ClassifierUpdate implements Interfac
 	 */
 	@Override
 	public void classifyByAssignemt(UpdateSM updateSM, List<State> statesForClassification) {
-		boolean isPossibleTransition = isPossibleTransition(updateSM, statesForClassification);
-		if (isPossibleTransition) {
+		if (isPossibleTransition(updateSM, statesForClassification)) {
 			if (updateSM.getCodeChange().toString().startsWith(getUPDATE())) {
 				updateSM.setUpdateSMType(UpdateSMType.UPDATE_TRANSITION);
 			} else if (updateSM.getCodeChange().toString().startsWith(getDELETE())) {

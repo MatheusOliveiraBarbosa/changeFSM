@@ -24,13 +24,13 @@ public class ClassifierFacade implements InterfaceClassifierFacade {
 	}
 
 	@Override
-	public void classifyByIF(UpdateSM updateSM) {
-		this.classifierIF.classifyByIF(updateSM);
+	public void classifyByIF(UpdateSM updateSM, List<State> statesForClassification) {
+		this.classifierIF.classifyByIF(updateSM, statesForClassification);
 	}
 
 	@Override
-	public void classifyByELSE(UpdateSM updateSM) {
-		this.classifierIF.classifyByELSE(updateSM);
+	public void classifyByELSE(UpdateSM updateSM, List<State> statesForClassification) {
+		this.classifierIF.classifyByELSE(updateSM, statesForClassification);
 	}
 
 	@Override
