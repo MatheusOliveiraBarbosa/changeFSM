@@ -21,6 +21,7 @@ public class Main {
 	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
 	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
 //	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml";
+//	private static final String PATH_SM = "./data/statemachines/gumballmachine1.xml";
 	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";
 
 	private static ArrayList<File> classesOld = new ArrayList<File>();

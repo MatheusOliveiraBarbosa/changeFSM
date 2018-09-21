@@ -72,7 +72,6 @@ public class MappingChangesWithSM {
 		}
 		for (String word : wos) {
 			if (line.contains(word) && !this.candidateCodeClasses.contains(classChange)) {
-				System.out.println("Estados: " + word + " || " + line);
 				this.candidateCodeClasses.add(classChange);
 			}
 		}
@@ -188,8 +187,12 @@ public class MappingChangesWithSM {
 		wordsSelected.addAll(removeStopWords(wordToWordByState));
 		
 		for (StateAction stateAction : state.getActions()) {
-			String[] wordToWordBySAction = stateAction.getName().split(SPACE);
+			log.info("REMOVESTOPWORDS:: " + stateAction.getName());
+//			String stateActionName = stateAction.getName().replaceAll("\\([a-zA-Z0-9]+\\)|\\W[a-zA-Z]{1}\\W", "");
+			String stateActionName = stateAction.getName().replaceAll("\\([a-zA-Z0-9\\W]+\\)|\\[[a-zA-Z\\W]+\\]|[=]", "");
+			String[] wordToWordBySAction = stateActionName.split(" ");
 			wordsSelected.addAll(removeStopWords(wordToWordBySAction));
+			log.info("REMOVESTOPWORDS:: AFTER ::  " + wordsSelected);
 		}
 		return wordsSelected;
 	}
@@ -205,9 +208,8 @@ public class MappingChangesWithSM {
 		ArrayList<String> wordsSelected = new ArrayList<String>();
 		for (String word : wordToWord) {
 			boolean hasStopWord = false;
-			log.info("Verifying weather is a stopword: " + word);
 			for (String stopWord : this.stopWords) {
-				if(word.toLowerCase().equals(stopWord.toLowerCase())) {
+				if(word.toLowerCase().equals(stopWord.toLowerCase()) || word.length()==1 ) {
 					hasStopWord = true;
 					break;
 				}

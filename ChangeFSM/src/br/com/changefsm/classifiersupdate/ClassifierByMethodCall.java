@@ -3,76 +3,106 @@ package br.com.changefsm.classifiersupdate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import br.com.changefsm.models.State;
 import br.com.changefsm.models.StateAction;
 import br.com.changefsm.models.Transition;
 import br.com.changefsm.models.TypeStateAction;
 import br.com.changefsm.models.UpdateSM;
 import br.com.changefsm.models.UpdateSMType;
+import ch.uzh.ifi.seal.changedistiller.model.entities.Delete;
+import ch.uzh.ifi.seal.changedistiller.model.entities.Insert;
+import ch.uzh.ifi.seal.changedistiller.model.entities.Update;
 
 public class ClassifierByMethodCall extends ClassifierUpdate implements InterfaceClassifierByMethodCall {
 
-	private static final Logger log = LogManager.getLogger(ClassifierByMethodCall.class);
+	// private static final Logger log =
+	// LogManager.getLogger(ClassifierByMethodCall.class);
 
 	@Override
 	public void classifyByMethodCall(UpdateSM updateSM, List<State> statesForClassification) {
-		if (updateSM.getCodeChange().toString().startsWith(getINSERT())) { // INSERT
-			if (hasStateInParameters(updateSM, statesForClassification)) {
+		if (updateSM.getCodeChange() instanceof Insert) { // INSERT
+			if (hasStateInParameters(updateSM.getCodeChange().getChangedEntity().getUniqueName(),
+					statesForClassification)) {
 				updateSM.setUpdateSMType(UpdateSMType.ADD_TRANSITION);
-				log.info("After classifyByMethodCall: " + updateSM);
 			} // TO-DO INSERT STATE'S ACTIONS AND TRANSITION'S ACTIONS
 
-		} else if (updateSM.getCodeChange().toString().startsWith(getDELETE())) { // DELETE
+		} else if (updateSM.getCodeChange() instanceof Delete) { // DELETE
 			if (isTransitionAction(updateSM)) {
 				updateSM.setUpdateSMType(UpdateSMType.REMOVE_ACTION);
-				if (hasStateInParameters(updateSM, statesForClassification)) {
+				if (hasStateInParameters(updateSM.getCodeChange().getChangedEntity().getUniqueName(),
+						statesForClassification)) {
 					updateSM.setUpdateSMType(UpdateSMType.REMOVE_TRANSITION);
 				}
 			} else {
-				classifyDeleteTypeStateAction(updateSM);
+				classifyTypeStateAction(updateSM);
 			}
-		} else if (updateSM.getCodeChange().toString().startsWith(getUPDATE())) { // TO-DO UPDATE
+		} else if (updateSM.getCodeChange() instanceof Update) { // TO-DO UPDATE
+			if (isTransitionAction(updateSM)) {
+				if (hasStateInParameters(updateSM.getCodeChange().getChangedEntity().getUniqueName(),
+						statesForClassification)) {
+					if (hasStateInParameters(((Update) updateSM.getCodeChange()).getNewEntity().getUniqueName(),
+							statesForClassification)) {
+						updateSM.setUpdateSMType(UpdateSMType.UPDATE_TRANSITION);
+					} else {
+						updateSM.setUpdateSMType(UpdateSMType.REMOVE_TRANSITION);
+					}
+				} else if (hasStateInParameters(((Update) updateSM.getCodeChange()).getNewEntity().getUniqueName(),
+						statesForClassification)) {
+					updateSM.setUpdateSMType(UpdateSMType.ADD_TRANSITION);
+				} else {
+					updateSM.setUpdateSMType(UpdateSMType.UPDATE_ACTION);
+				}
 
+			} else if (hasStateInParameters(((Update) updateSM.getCodeChange()).getNewEntity().getUniqueName(),
+					statesForClassification)) {
+				updateSM.setUpdateSMType(UpdateSMType.ADD_TRANSITION);
+			} else {
+				classifyTypeStateAction(updateSM);
+			}
 		}
 	}
 
-	private void classifyDeleteTypeStateAction(UpdateSM updateSM) {
+	private void classifyTypeStateAction(UpdateSM updateSM) {
 		for (State state : updateSM.getStateMachine().getStates()) {
 			for (StateAction stateAction : state.getActions()) {
 				String nameAction = findAndRemoveSpecialCharacter(stateAction.getName()).toLowerCase();
-				log.info("classifyDeleteTypeStateAction:: " + nameAction);
 				String nameMethod = extractObjectWithNameMethod(updateSM).toLowerCase();
 				if (nameAction.split(" ").length > 1) {
 					String[] wordsSeparated = nameAction.split(" ");
 					List<String> wordsSelected = removeStopWords(wordsSeparated);
 					for (String word : wordsSelected) {
 						if (nameMethod.contains(word)) {
-							log.info("classifyDeleteTypeStateAction:: STATEACTION ::" + word);
-							log.info("classifyDeleteTypeStateAction:: NAMEMETHOD ::" + nameMethod);
-							classifyByStateAction(updateSM, stateAction);
-							log.info("classifyDeleteTypeStateAction:: Classification:: " + updateSM.getUpdateSMType());
+							classifyByStateAction(updateSM, stateAction.getTypeStateAction());
 						}
 					}
 				} else {
 					if (nameMethod.contains(nameAction)) {
-						classifyByStateAction(updateSM, stateAction);
+						classifyByStateAction(updateSM, stateAction.getTypeStateAction());
 					}
 				}
 			}
 		}
-
 	}
 
-	private void classifyByStateAction(UpdateSM updateSM, StateAction stateAction) {
-		if (stateAction.getTypeStateAction() == TypeStateAction.DO) {
-			updateSM.setUpdateSMType(UpdateSMType.REMOVE_DOACTION_STATE);
-		} else if (stateAction.getTypeStateAction() == TypeStateAction.ENTRY) {
-			updateSM.setUpdateSMType(UpdateSMType.REMOVE_ENTRYACTION_STATE);
-		} else if (stateAction.getTypeStateAction() == TypeStateAction.EXIT) {
-			updateSM.setUpdateSMType(UpdateSMType.REMOVE_EXITACTION_STATE);
+	private void classifyByStateAction(UpdateSM updateSM, TypeStateAction stateAction) {
+		if (stateAction.equals(TypeStateAction.DO)) {
+			if (updateSM.getCodeChange() instanceof Update) {
+				updateSM.setUpdateSMType(UpdateSMType.UPDATE_DOACTION_STATE);
+			} else if (updateSM.getCodeChange() instanceof Delete) {
+				updateSM.setUpdateSMType(UpdateSMType.REMOVE_DOACTION_STATE);
+			}
+		} else if (stateAction.equals(TypeStateAction.ENTRY)) {
+			if (updateSM.getCodeChange() instanceof Update) {
+				updateSM.setUpdateSMType(UpdateSMType.UPDATE_ENTRYACTION_STATE);
+			} else if (updateSM.getCodeChange() instanceof Delete) {
+				updateSM.setUpdateSMType(UpdateSMType.REMOVE_ENTRYACTION_STATE);
+			}
+		} else if (stateAction.equals(TypeStateAction.EXIT)) {
+			if (updateSM.getCodeChange() instanceof Update) {
+				updateSM.setUpdateSMType(UpdateSMType.UPDATE_EXITACTION_STATE);
+			} else if (updateSM.getCodeChange() instanceof Delete) {
+				updateSM.setUpdateSMType(UpdateSMType.REMOVE_EXITACTION_STATE);
+			}
 		}
 	}
 
@@ -99,28 +129,21 @@ public class ClassifierByMethodCall extends ClassifierUpdate implements Interfac
 
 	private String extractObjectWithNameMethod(UpdateSM updateSM) {
 		String nameMethod = updateSM.getCodeChange().getChangedEntity().getUniqueName();
-		int index = nameMethod.indexOf("(");
-		nameMethod = nameMethod.substring(0, index);
-		int indexObj = nameMethod.indexOf(".");
-		if (indexObj > 0) {
-			nameMethod = nameMethod.substring(indexObj);
-		}
+		nameMethod = nameMethod.replaceAll("\\([a-zA-Z0-9\\W]+\\);", " ");
 		return nameMethod;
 	}
 
-	private boolean hasStateInParameters(UpdateSM updateSM, List<State> statesForClassification) {
-		String param = updateSM.getCodeChange().getChangedEntity().getUniqueName();
-		int index = param.indexOf("(");
-		param = param.substring(index);
+	private boolean hasStateInParameters(String nameMethod, List<State> statesForClassification) {
+		int index = nameMethod.indexOf("(");
+		nameMethod = nameMethod.substring(index);
 		for (State state : statesForClassification) {
-			if (param.toLowerCase().contains(state.getName().toLowerCase())) {
+			if (nameMethod.toLowerCase().contains(state.getName().toLowerCase())) {
 				return true;
 			} else {
 				String[] wordsSeparated = state.getName().split(" ");
 				List<String> wordsSelected = removeStopWords(wordsSeparated);
 				for (String word : wordsSelected) {
-					if (param.toLowerCase().contains(word)) {
-						log.info(word);
+					if (nameMethod.toLowerCase().contains(word)) {
 						return true;
 					}
 				}
@@ -130,6 +153,7 @@ public class ClassifierByMethodCall extends ClassifierUpdate implements Interfac
 	}
 
 	private List<String> removeStopWords(String[] words) {
+		/* TRANFORMAR EM EXPRESSÃO REGULAR */
 		String[] stopWords = { "of", "the", "set", "get", "a", "an", "with", "to", "=", "true", "false", "state", "",
 				" " };
 		List<String> separetedWords = new ArrayList<String>();

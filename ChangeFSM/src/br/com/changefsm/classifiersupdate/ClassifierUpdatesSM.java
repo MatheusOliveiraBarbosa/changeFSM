@@ -99,6 +99,7 @@ public class ClassifierUpdatesSM {
 				classifierUpdatesSM.classifyByEnum(updateSM, statesForClassification);
 				if (updateSM.getUpdateSMType() != null) {
 					updates.add(updateSM);
+					log.info("The update to realize is: " + updateSM);
 				}
 			}
 		}

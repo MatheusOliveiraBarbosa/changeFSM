@@ -9,7 +9,10 @@ import br.com.changefsm.models.Transition;
 import br.com.changefsm.models.UpdateSM;
 import br.com.changefsm.models.UpdateSMType;
 import ch.uzh.ifi.seal.changedistiller.model.classifiers.java.JavaEntityType;
+import ch.uzh.ifi.seal.changedistiller.model.entities.Delete;
+import ch.uzh.ifi.seal.changedistiller.model.entities.Insert;
 import ch.uzh.ifi.seal.changedistiller.model.entities.SourceCodeChange;
+import ch.uzh.ifi.seal.changedistiller.model.entities.Update;
 import ch.uzh.ifi.seal.changedistiller.treedifferencing.Node;
 
 public class ClassifierByIF extends ClassifierUpdate implements InterfaceClassifierByIF {
@@ -26,11 +29,11 @@ public class ClassifierByIF extends ClassifierUpdate implements InterfaceClassif
 	 */
 	@Override
 	public void classifyByIF(UpdateSM updateSM, List<State> statesForClassification) {
-		if (updateSM.getCodeChange().toString().startsWith(getUPDATE()) && isGuard(updateSM)) {
+		if ( (updateSM.getCodeChange() instanceof Update) && isGuard(updateSM)) {
 			updateSM.setUpdateSMType(UpdateSMType.UPDATE_GUARD);
-		} else if (updateSM.getCodeChange().toString().startsWith(getDELETE()) && isGuard(updateSM)) {
+		} else if ((updateSM.getCodeChange() instanceof Delete) && isGuard(updateSM)) {
 			updateSM.setUpdateSMType(UpdateSMType.REMOVE_GUARD);
-		} else if (updateSM.getCodeChange().toString().startsWith(getINSERT())) {
+		} else if (updateSM.getCodeChange() instanceof Insert) {
 			Enumeration<?> enumerationByNode = updateSM.getCodeChange().getRootEntity().getBodyRigth()
 					.preorderEnumeration();
 			Node nodeChanged = findNodeChanged(enumerationByNode, updateSM);
