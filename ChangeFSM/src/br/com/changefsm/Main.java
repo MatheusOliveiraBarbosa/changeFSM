@@ -1,20 +1,24 @@
 package br.com.changefsm;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.itextpdf.text.DocumentException;
 
 import br.com.changefsm.classifiersupdate.ClassifierUpdatesSM;
 import br.com.changefsm.extractor.ExtractChangesInClasses;
 import br.com.changefsm.extractor.ExtractME;
 import br.com.changefsm.extractor.ExtractorClasses;
+import br.com.changefsm.generatorpdf.GeneratorPDF;
 import br.com.changefsm.mapping.MappingChangesWithSM;
 import br.com.changefsm.models.ClassChanged;
+import br.com.changefsm.models.UpdateSM;
 
 public class Main {
 
@@ -66,6 +70,16 @@ public class Main {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		
+		GeneratorPDF gPDf = new GeneratorPDF();
+		try {
+			ArrayList<UpdateSM> updates = (ArrayList<UpdateSM>) cusm.getUpdates();
+			gPDf.generatePDFUpdates(updates);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (DocumentException e) {
+			e.printStackTrace();
+		}
 		
 		
 	}

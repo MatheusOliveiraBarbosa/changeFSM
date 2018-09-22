@@ -42,7 +42,7 @@ public class ExtractME {
 		extractStates(nlS);
 		extractTransitions(nlT);
 		
-		setStateMachine(new StateMachine(path, states, transitions));
+		setStateMachine(new StateMachine(ReaderXML.getNameFile(), states, transitions));
 		log.info("Extraction of State Machine's elements was success.");
 		log.info("The State Machine can be represented this way: \n" + printStateMachine(getStateMachine()));
 	}

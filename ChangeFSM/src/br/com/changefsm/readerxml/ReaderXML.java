@@ -14,9 +14,11 @@ import org.xml.sax.SAXException;
 public class ReaderXML {
 
 	private static Document xml = null;
+	private static String nameFile;
 
 	public static Document readXML(String path) {
 		File xmlStateMachine = new File(path);
+		nameFile = xmlStateMachine.getName();
 		try {
 			DocumentBuilder dBuilder;
 			dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -39,12 +41,8 @@ public class ReaderXML {
 		return xml.getElementsByTagName(tagName);
 	}
 
-	public Document getXml() {
-		return xml;
-	}
-
-	public void setXml(Document xml) {
-		ReaderXML.xml = xml;
+	public static String getNameFile() {
+		return nameFile;
 	}
 
 }
