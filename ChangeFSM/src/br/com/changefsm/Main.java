@@ -22,11 +22,29 @@ import br.com.changefsm.models.UpdateSM;
 
 public class Main {
 
+	
+	/*  DESYSTEM - STATEMACHINES AND CODE  */
 	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
 	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
-//	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml";
-//	private static final String PATH_SM = "./data/statemachines/gumballmachine1.xml";
-	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";
+	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml"; // OK
+//	private static final String PATH_SM = "./data/statemachines/carpositionl_state_diagram.xml";  // Verify
+//	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";   // Ok
+//	private static final String PATH_SM = "./data/statemachines/doorcontrol_state_diagram.xml";   // Verify
+//	private static final String PATH_SM = "./data/statemachines/driveControl_state_diagram.xml"; // Verify
+//	private static final String PATH_SM = "./data/statemachines/hallbutton_state_diagram.xml";  // OK
+//	private static final String PATH_SM = "./data/statemachines/lanternControl_state_diagram.xml"; // Verify
+
+	
+	/*  DESING PATTERN - STATEMACHINES AND CODE */   //Verify Lucene
+//	private static final String PATH_PROJECT_OLD = "./data/design-pattern-indeepth-old/";
+//	private static final String PATH_PROJECT_NEW = "./data/design-pattern-indeepth-new/";
+//	private static final String PATH_SM = "./data/statemachines/gumballmachine.xml";
+	
+	
+	/* SMARTHOME - STATEMACHINES AND CODE */ //Verify Classification
+//	private static final String PATH_PROJECT_OLD = "./data/smarthome-first-version/";
+//	private static final String PATH_PROJECT_NEW = "./data/smarthome-master/";
+//	private static final String PATH_SM = "./data/statemachines/status-smarthome.xml";
 
 	private static ArrayList<File> classesOld = new ArrayList<File>();
 	private static ArrayList<File> classesNew = new ArrayList<File>();
@@ -74,7 +92,9 @@ public class Main {
 		GeneratorPDF gPDf = new GeneratorPDF();
 		try {
 			ArrayList<UpdateSM> updates = (ArrayList<UpdateSM>) cusm.getUpdates();
+			gPDf.openPdfWriter("");
 			gPDf.generatePDFUpdates(updates);
+			gPDf.closePdfWriter();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (DocumentException e) {
