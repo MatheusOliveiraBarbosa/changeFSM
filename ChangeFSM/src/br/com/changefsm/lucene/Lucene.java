@@ -87,7 +87,6 @@ public class Lucene implements IFLucene {
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
-			System.err.println(e.getMessage());
 			log.error("Didn't find the file!");
 		}
 		return fileToString;

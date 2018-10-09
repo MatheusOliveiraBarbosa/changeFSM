@@ -11,9 +11,8 @@ import br.com.changefsm.models.UpdateSM;
 
 public class WriterXML {
 	
-	private static final String PATH_FILE = "./output/updatesInStateMachine.xml"; 
-	
-	public static void writerXML(List<UpdateSM> updatesSM) throws JAXBException {
+	private static final String NAME_FILE = "updatesCHANGEFSM.xml";
+	public static void writerXML(List<UpdateSM> updatesSM, String path) throws JAXBException {
 		JAXBContext jaxbContext;
 		jaxbContext = JAXBContext.newInstance(UpdatesSMToXML.class);
 		Marshaller marshaller = jaxbContext.createMarshaller();
@@ -26,7 +25,7 @@ public class WriterXML {
 			idUpdate++;
 			updatesSMToXML.add(updateToXml);
 		}
-		marshaller.marshal(updatesSMToXML, new File(PATH_FILE));
+		marshaller.marshal(updatesSMToXML, new File(path + NAME_FILE));
 	}
 
 }

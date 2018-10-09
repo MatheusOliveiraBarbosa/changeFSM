@@ -25,13 +25,10 @@ public class ReaderXML {
 			xml = dBuilder.parse(xmlStateMachine);
 			xml.getDocumentElement().normalize();
 		} catch (ParserConfigurationException e) {
-			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (SAXException e) {
-			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		return xml;

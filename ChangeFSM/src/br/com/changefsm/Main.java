@@ -83,7 +83,8 @@ public class Main {
 		cusm.searchAndClassifySMUpdates(mcwsm.getCandidateCodeClasses(), eme.getStateMachine());
 		
 //		try {
-//			WriterXML.writerXML(cusm.getUpdates());
+//		String PATH_FILE = "./output/updatesInStateMachine.xml"
+//			WriterXML.writerXML(cusm.getUpdates(), PATH_FILE);
 //		} catch (JAXBException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();

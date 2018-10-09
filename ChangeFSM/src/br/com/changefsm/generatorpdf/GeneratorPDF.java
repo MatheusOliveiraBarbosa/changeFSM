@@ -148,6 +148,7 @@ public class GeneratorPDF {
 		addEmptyLine(emptyP, 2);
 		catPart.add(emptyP);
 		//Get = 0, because each list of updates is only one state machine
+		System.out.println(updates.get(0).getStateMachine().getName());
 		String nameStateMachine = updates.get(0).getStateMachine().getName().replaceAll("[\\W_]|(xml)", " ").toUpperCase();
 		Paragraph titleSection = new Paragraph("State Machine's NAME: ", SUBTITLE_FONT);
 		Paragraph paragNameSM =  new Paragraph(nameStateMachine, FOCUS_NAME_SM_FONT);

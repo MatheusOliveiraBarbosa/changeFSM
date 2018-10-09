@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -17,6 +18,12 @@ import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.xml.bind.JAXBException;
+
+import com.itextpdf.text.DocumentException;
+
+import br.com.changefsm.exceptions.ChangeFSMException;
+import br.com.changefsm.facade.ChangeFSM;
 
 public class JPanelChangeFSM extends JPanel implements ActionListener {
 
@@ -50,7 +57,10 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 
 	private final Border BLACK_BORDER = BorderFactory.createLineBorder(Color.black);
 
+	private ChangeFSM changeFSM;
+
 	public JPanelChangeFSM() {
+
 		guiPanel = new JPanel(new BorderLayout());
 
 		fileChooserProjects = new JFileChooser();
@@ -126,7 +136,7 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 
 		JLabel guiLabel_oldProject = new JLabel("Old Project:   ");
 
-		guiTextArea_pathOld = new JTextArea(1, 20);
+		guiTextArea_pathOld = new JTextArea(1, 30);
 		guiTextArea_pathOld.setEditable(false);
 		guiTextArea_pathOld.setBorder(BLACK_BORDER);
 
@@ -146,7 +156,7 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 
 		JLabel guiTopic = new JLabel("State Machine");
 		guiTopic.setHorizontalAlignment(SwingConstants.CENTER);
-		guiTopic.setFont(new Font("Arial", Font.BOLD, 20));
+		guiTopic.setFont(new Font("Arial", Font.BOLD, 30));
 
 		panelTopicStateMachine.add(guiTopic);
 		return panelTopicStateMachine;
@@ -158,7 +168,7 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 
 		JLabel guiLabel_StateMachine = new JLabel("State Machine (XML): ");
 
-		guiTextArea_pathStateMachine = new JTextArea(1, 20);
+		guiTextArea_pathStateMachine = new JTextArea(1, 30);
 		guiTextArea_pathStateMachine.setBorder(BLACK_BORDER);
 		guiTextArea_pathStateMachine.setEditable(false);
 
@@ -195,8 +205,8 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 		JPanel panelOutPut = new JPanel();
 		panelOutPut.setBackground(Color.WHITE);
 		guiTextArea_mainOutput = new JTextArea(3, 1);
-		guiTextArea_mainOutput.setFont(new Font("Arial", Font.BOLD, 20));
-		guiTextArea_mainOutput.setEditable(false);
+		guiTextArea_mainOutput.setFont(new Font("Arial", Font.BOLD, 16));
+		guiTextArea_mainOutput.setEditable(true);
 		panelOutPut.add(guiTextArea_mainOutput);
 
 		JPanel panelButtons = new JPanel();
@@ -208,7 +218,6 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 		guiButton_generateXML.setEnabled(false);
 		panelButtons.add(guiButton_generatePDF);
 		panelButtons.add(guiButton_generateXML);
-
 		panelOptionOutput.add(panelOutPut);
 		panelOptionOutput.add(panelButtons);
 
@@ -225,7 +234,7 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 		if (e.getSource().equals(guiButton_searchNewCode)) {
 			int selectedOption = fileChooserProjects.showOpenDialog(JPanelChangeFSM.this);
 
-			if (selectedOption == JFileChooser.APPROVE_OPTION) {
+			if (selectedOption == JFileChooser.APPROVE_OPTION) { // ------ BUTTON SEARCH NEW PATH(CODE)
 				guiTextArea_pathNew.setText("");
 				guiTextArea_pathNew.setText(fileChooserProjects.getSelectedFile().getAbsolutePath());
 				if (!guiTextArea_pathNew.getText().isEmpty() && !guiTextArea_pathOld.getText().isEmpty()
@@ -235,7 +244,7 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 				guiButton_cleanFields.setEnabled(true);
 				guiTextArea_mainOutput.setText("");
 			}
-		} else if (e.getSource().equals(guiButton_searchOldCode)) {
+		} else if (e.getSource().equals(guiButton_searchOldCode)) { // ------ BUTTON SEARCH OLD PATH(CODE)
 
 			int selectedOption = fileChooserProjects.showOpenDialog(JPanelChangeFSM.this);
 
@@ -250,7 +259,7 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 				guiTextArea_mainOutput.setText("");
 
 			}
-		} else if (e.getSource().equals(guiButton_searchStateMachine)) {
+		} else if (e.getSource().equals(guiButton_searchStateMachine)) { // ------ BUTTON SEARCH SM FILE (XML)
 
 			int selectedOption = fileChooserStateMachine.showOpenDialog(JPanelChangeFSM.this);
 
@@ -264,43 +273,65 @@ public class JPanelChangeFSM extends JPanel implements ActionListener {
 				guiButton_cleanFields.setEnabled(true);
 				guiTextArea_mainOutput.setText("");
 			}
-		} else if (e.getSource().equals(guiButton_cleanFields)) {
+		} else if (e.getSource().equals(guiButton_cleanFields)) { // ------ BUTTON CLEAN FIELDS
 			guiTextArea_pathNew.setText("");
 			guiTextArea_pathOld.setText("");
 			guiTextArea_pathStateMachine.setText("");
 			guiButton_runTech.setEnabled(false);
 			guiButton_generatePDF.setEnabled(false);
 			guiButton_generateXML.setEnabled(false);
-			guiButton_cleanFields.setEnabled(false);;
+			guiButton_cleanFields.setEnabled(false);
+			changeFSM = new ChangeFSM();
 			sendMessage(Color.orange, "\nCleaned Fields!");
 
-		} else if (e.getSource().equals(guiButton_runTech)) {
+		} else if (e.getSource().equals(guiButton_runTech)) { // ------ BUTTON RUN TECHNIQUE
 
 			// TO-DO CALL TECHNIQUES
-			guiButton_generatePDF.setEnabled(true);
-			guiButton_generateXML.setEnabled(true);
 			if (!guiTextArea_pathNew.getText().isEmpty() && !guiTextArea_pathOld.getText().isEmpty()
 					&& !guiTextArea_pathStateMachine.getText().isEmpty()) {
-				
-				sendMessage(Color.GREEN, "\nSuccess"); //<\n> is used to centralize the text
-				
+				try {
+					changeFSM = new ChangeFSM();
+					String pathOld = guiTextArea_pathOld.getText() + "\\"; // Because is a directory so need add <\>
+					String pathNew = guiTextArea_pathNew.getText() + "\\";
+					String pathSM = guiTextArea_pathStateMachine.getText();
+					changeFSM.identifyAndClassifyUpdateSM(pathOld, pathNew, pathSM);
+					sendMessage(Color.GREEN, "\nSuccess"); // <\n> is used to centralize the text
+					guiButton_generatePDF.setEnabled(true);
+					guiButton_generateXML.setEnabled(true);
+				} catch (ChangeFSMException cfe) {
+					sendMessage(Color.RED, cfe.getMessage());
+				} catch (Exception excep) {
+					sendMessage(Color.RED, "UNEXPECTED ERROR!");
+				} 
+
 			}
-		} else if (e.getSource().equals(guiButton_generatePDF)) {
-			
+		} else if (e.getSource().equals(guiButton_generatePDF)) { // ------ BUTTON GENERATE PDF
+
 			int selectedOption = fileChooserGeneratedPDF.showOpenDialog(JPanelChangeFSM.this);
 			if (selectedOption == JFileChooser.APPROVE_OPTION) {
-				sendMessage(Color.BLUE, "\nPDF Generated Successfully");
+				try {
+					changeFSM.generatePDF(fileChooserGeneratedPDF.getSelectedFile().getPath() + "\\");
+					sendMessage(Color.BLUE, "\nPDF Generated Successfully");
+				} catch (DocumentException e1) {
+					sendMessage(Color.RED, "ERROR during creation of the PDF file!");
+				} catch( FileNotFoundException fileExcep ) {
+					sendMessage(Color.RED, "This file is open. Please close it!");
+				}
 			}
 
-		} else if (e.getSource().equals(guiButton_generateXML)) {
+		} else if (e.getSource().equals(guiButton_generateXML)) { // ------ BUTTON GENERATE XML
 
 			int selectedOption = fileChooserGeneratedXML.showOpenDialog(JPanelChangeFSM.this);
 			if (selectedOption == JFileChooser.APPROVE_OPTION) {
-				sendMessage(Color.BLUE, "\nXML Generated Successfully");
+				try {
+					changeFSM.generateXML(fileChooserGeneratedXML.getSelectedFile().getPath() + "\\");
+					sendMessage(Color.BLUE, "\nXML Generated Successfully");
+				} catch (JAXBException e1) {
+					System.err.println(e1.getMessage());
+					sendMessage(Color.RED, "ERROR during creation of the XML file!");
+				}
 			}
-			
 		}
-
 	}
 
 	public JPanel getPanel() {
