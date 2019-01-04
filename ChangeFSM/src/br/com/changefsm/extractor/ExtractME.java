@@ -18,12 +18,15 @@ import br.com.changefsm.readerxml.ReaderXML;
 
 public class ExtractME {
 
-	private List<State> states = new ArrayList<State>();
-	private List<Transition> transitions = new ArrayList<Transition>();
+	private List<State> states;
+	private List<Transition> transitions;
 	private StateMachine stateMachine;
 	private Logger log = LogManager.getLogger(ExtractME.class);
 
-	public ExtractME() {}
+	public ExtractME() {
+		states = new ArrayList<State>();
+		transitions = new ArrayList<Transition>();
+	}
 
 	/**
 	 * Read a XML file and extract the values used in StateMachine like a State and
@@ -34,6 +37,8 @@ public class ExtractME {
 	 * @author Matheus de Oliveira
 	 */
 	public void extractElementsSM(String path) {
+		states = new ArrayList<State>();
+		transitions = new ArrayList<Transition>();
 		ReaderXML.readXML(path);
 		log.info("Preparing for extract elements of the State Machine");
 		NodeList nlT = ReaderXML.getNodeList("transition");
@@ -41,7 +46,7 @@ public class ExtractME {
 
 		extractStates(nlS);
 		extractTransitions(nlT);
-		
+
 		setStateMachine(new StateMachine(ReaderXML.getNameFile(), states, transitions));
 		log.info("Extraction of State Machine's elements was success.");
 		log.info("The State Machine can be represented this way: \n" + printStateMachine(getStateMachine()));
@@ -184,8 +189,7 @@ public class ExtractME {
 	}
 
 	// Getters and Setters
-	
-	
+
 	public List<State> getStates() {
 		return states;
 	}

@@ -109,22 +109,23 @@ public class Lucene implements IFLucene {
 		QueryBuilder qb = new QueryBuilder(this.analyzer);
 		Query query = qb.createBooleanQuery(CLAZZ, queryText);
 
-		TopDocs topDocs = searcher.search(query, 100);
+		//Quantidade de documentos a serem retornados no rank
+		TopDocs topDocs = searcher.search(query, 8);
 		List<ClassChanged> classesRelated = new ArrayList<ClassChanged>();
 
 		// To consider that a class is related, the class should has score >60% than the
 		// biggest score
-		double porcentToSelect = topDocs.getMaxScore() * (0.6);
+		// double porcentToSelect = topDocs.getMaxScore() * (0.6);
 
 		for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
-			if (porcentToSelect < scoreDoc.score) {
-				log.info("Score by Lucene in the class " + searcher.doc(scoreDoc.doc).getField(pathClass).stringValue()
-						+ " is: " + scoreDoc.score);
-				ClassChanged classRelated = new ClassChanged();
-				File file = new File(searcher.doc(scoreDoc.doc).getField(pathClass).stringValue());
-				classRelated.setClassFile(file);
-				classesRelated.add(classRelated);
-			}
+			// if (porcentToSelect < scoreDoc.score) {
+			log.info("Score by Lucene in the class " + searcher.doc(scoreDoc.doc).getField(pathClass).stringValue()
+					+ " is: " + scoreDoc.score);
+			ClassChanged classRelated = new ClassChanged();
+			File file = new File(searcher.doc(scoreDoc.doc).getField(pathClass).stringValue());
+			classRelated.setClassFile(file);
+			classesRelated.add(classRelated);
+			// }
 		}
 
 		return classesRelated;

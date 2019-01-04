@@ -2,6 +2,9 @@ package br.com.changefsm.classifiersupdate;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import br.com.changefsm.models.State;
 import br.com.changefsm.models.UpdateSM;
 import br.com.changefsm.models.UpdateSMType;
@@ -11,8 +14,8 @@ import ch.uzh.ifi.seal.changedistiller.model.entities.Update;
 
 public class ClassifierByAssignment extends ClassifierUpdate implements InterfaceClassifierByAssignemt {
 
-	// private static final Logger log =
-	// LogManager.getLogger(ClassifierByAssignment.class);
+	private static final Logger log = LogManager.getLogger(ClassifierByAssignment.class);
+
 	/**
 	 * Classify the updates in the SM by means of changes in Assignment
 	 * 

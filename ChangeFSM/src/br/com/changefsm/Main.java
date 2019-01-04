@@ -18,15 +18,14 @@ import br.com.changefsm.extractor.ExtractorClasses;
 import br.com.changefsm.generatorpdf.GeneratorPDF;
 import br.com.changefsm.mapping.MappingChangesWithSM;
 import br.com.changefsm.models.ClassChanged;
-import br.com.changefsm.models.UpdateSM;
 
 public class Main {
 
 	
 	/*  DESYSTEM - STATEMACHINES AND CODE  */
-	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
-	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
-	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml"; // OK
+//	private static final String PATH_PROJECT_OLD = "./data/DESystem-old/";
+//	private static final String PATH_PROJECT_NEW = "./data/DESystem-new/";
+//	private static final String PATH_SM = "./data/statemachines/carbuttoncontrol_state_diagram.xml"; // OK
 //	private static final String PATH_SM = "./data/statemachines/carpositionl_state_diagram.xml";  // Verify
 //	private static final String PATH_SM = "./data/statemachines/dispatcherl_state_diagram.xml";   // Ok
 //	private static final String PATH_SM = "./data/statemachines/doorcontrol_state_diagram.xml";   // Verify
@@ -36,10 +35,9 @@ public class Main {
 
 	
 	/*  DESING PATTERN - STATEMACHINES AND CODE */   //Verify Lucene
-//	private static final String PATH_PROJECT_OLD = "./data/design-pattern-indeepth-old/";
-//	private static final String PATH_PROJECT_NEW = "./data/design-pattern-indeepth-new/";
-//	private static final String PATH_SM = "./data/statemachines/gumballmachine.xml";
-	
+	private static final String PATH_PROJECT_OLD = "./data/design-pattern-indeepth-old/";
+	private static final String PATH_PROJECT_NEW = "./data/design-pattern-indeepth-new/";
+	private static final String PATH_SM = "./data/statemachines/gumballmachine.xml";
 	
 	/* SMARTHOME - STATEMACHINES AND CODE */ //Verify Classification
 //	private static final String PATH_PROJECT_OLD = "./data/smarthome-first-version/";
@@ -54,6 +52,7 @@ public class Main {
 	public static void main(String[] args) {
 	
 		// Extract the classes for the both versions
+		System.out.println("Initializing...");
 		ExtractorClasses ec = new ExtractorClasses();
 		ec.extractClasses(PATH_PROJECT_OLD, PATH_PROJECT_NEW);
 		classesNew = ec.getNewJavaClasses();
@@ -89,17 +88,19 @@ public class Main {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		
-		GeneratorPDF gPDf = new GeneratorPDF();
-		try {
-			ArrayList<UpdateSM> updates = (ArrayList<UpdateSM>) cusm.getUpdates();
-			gPDf.openPdfWriter("");
-			gPDf.generatePDFUpdates(updates);
-			gPDf.closePdfWriter();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (DocumentException e) {
-			e.printStackTrace();
+		if(cusm.getUpdates().size() > 0) {
+			System.out.println(cusm.getUpdates().size());
+			
+			GeneratorPDF gPDf = new GeneratorPDF();
+			try {
+				gPDf.openPdfWriter("");
+				gPDf.generatePDFUpdates(cusm.getUpdates());
+				gPDf.closePdfWriter();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (DocumentException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		

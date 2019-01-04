@@ -19,6 +19,11 @@ import br.com.changefsm.mapping.MappingChangesWithSM;
 import br.com.changefsm.models.UpdateSM;
 import br.com.changefsm.writerxml.WriterXML;
 
+/**
+ * This class provides the operations to its interface GUI
+ * @author mathe
+ *
+ */
 public class ChangeFSM {
 	
 	private ExtractorClasses extractorClasses;

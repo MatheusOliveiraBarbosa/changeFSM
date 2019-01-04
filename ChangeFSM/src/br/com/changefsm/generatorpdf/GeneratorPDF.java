@@ -4,8 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -69,7 +69,7 @@ public class GeneratorPDF {
 		addTitlePage(document);
 	}
 
-	public void generatePDFUpdates(ArrayList<UpdateSM> updates) throws DocumentException{
+	public void generatePDFUpdates(List<UpdateSM> updates) throws DocumentException{
 		addContent(document, updates);	
 	}
 	
@@ -139,7 +139,7 @@ public class GeneratorPDF {
 		// document.newPage();
 	}
 
-	private void addContent(Document document, ArrayList<UpdateSM> updates) throws DocumentException {
+	private void addContent(Document document, List<UpdateSM> updates) throws DocumentException {
 		Anchor anchor = new Anchor(TITLE_UPDATE_ANCHOR, TITLE_FONT);
 		anchor.setName(TITLE_UPDATE_ANCHOR);
 		Chapter catPart = new Chapter(new Paragraph(anchor), indexChapt);
@@ -222,12 +222,12 @@ public class GeneratorPDF {
 		paragChangedElem.setFont(IDENTIFIER_CODE_CHANGE_FONT);
 		cell.addElement(paragChangedElem);
 		Phrase phrase = new Phrase("      "+update.getCodeChange().getChangedEntity().getUniqueName());
-		Phrase phraseChangedEntity = new Phrase("      "+update.getCodeChange().getChangedEntity());
-		Phrase phraseChangeLabel = new Phrase("      Change Type: "+update.getCodeChange().getChangeType());
+//		Phrase phraseChangedEntity = new Phrase("      "+update.getCodeChange().getChangedEntity());
+//		Phrase phraseChangeLabel = new Phrase("      Change Type: "+update.getCodeChange().getChangeType());
 		phrase.setFont(FOCUS_FONT);
 		cell.addElement(phrase);
-		cell.addElement(phraseChangedEntity);
-		cell.addElement(phraseChangeLabel);
+//		cell.addElement(phraseChangedEntity);
+//		cell.addElement(phraseChangeLabel);
 
 		return cell;
 

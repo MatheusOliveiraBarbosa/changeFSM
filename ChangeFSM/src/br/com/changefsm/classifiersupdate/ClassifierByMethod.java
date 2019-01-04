@@ -14,10 +14,11 @@ import ch.uzh.ifi.seal.changedistiller.treedifferencing.Node;
 
 public class ClassifierByMethod extends ClassifierUpdate implements InterfaceClassifierByMethod {
 
-	private List<UpdateSM> updates = new ArrayList<UpdateSM>();
+	private List<UpdateSM> updates;
 
 	@Override
 	public List<UpdateSM> classifyByMethod(UpdateSM updateSM, List<State> statesForClassification) {
+		updates = new ArrayList<UpdateSM>();
 		searchForPossibleUpdates(updateSM, statesForClassification);
 		return updates;
 	}

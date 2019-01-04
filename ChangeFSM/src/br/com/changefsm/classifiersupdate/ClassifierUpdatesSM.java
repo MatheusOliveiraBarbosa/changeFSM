@@ -45,7 +45,7 @@ public class ClassifierUpdatesSM {
 			log.info("Looking for updates in another elements in the class: " + classChanged.getClassFile().getName());
 			analyseChanges(classChanged, stateMachine);
 		}
-//		 log.info("The updates to realize are: " + updates);
+		 log.info("The updates to realize are: " + updates);
 	}
 
 	private void analyseChanges(ClassChanged classChanged, StateMachine stateMachine) {
@@ -99,7 +99,7 @@ public class ClassifierUpdatesSM {
 				classifierUpdatesSM.classifyByEnum(updateSM, statesForClassification);
 				if (updateSM.getUpdateSMType() != null) {
 					updates.add(updateSM);
-					log.info("The update to realize is: " + updateSM);
+					log.info("analyseChangesToStates() : The update to realize is: " + updateSM);
 				}
 			}
 		}

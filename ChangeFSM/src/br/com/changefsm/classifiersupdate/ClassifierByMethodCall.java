@@ -15,8 +15,7 @@ import ch.uzh.ifi.seal.changedistiller.model.entities.Update;
 
 public class ClassifierByMethodCall extends ClassifierUpdate implements InterfaceClassifierByMethodCall {
 
-	// private static final Logger log =
-	// LogManager.getLogger(ClassifierByMethodCall.class);
+//	 private static final Logger log = LogManager.getLogger(ClassifierByMethodCall.class);
 
 	@Override
 	public void classifyByMethodCall(UpdateSM updateSM, List<State> statesForClassification) {
