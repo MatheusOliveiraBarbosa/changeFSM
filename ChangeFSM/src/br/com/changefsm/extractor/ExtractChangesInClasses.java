@@ -54,6 +54,9 @@ public class ExtractChangesInClasses {
 				File auxClass = GenerateClassToClassify.createEmptyClass(fileNew.getName());
 				fileDistiller.extractClassifiedSourceCodeChanges(auxClass, fileNew);
 				generateChangedClasses(fileDistiller, fileNew);
+				if(auxClass.delete()) {
+					log.info("extractChanges(): auxClass File was be removed!");
+				}
 			}
 		}
 
@@ -64,6 +67,9 @@ public class ExtractChangesInClasses {
 				File auxClass = GenerateClassToClassify.createEmptyClass(fileOld.getName());
 				fileDistiller.extractClassifiedSourceCodeChanges(fileOld, auxClass);
 				generateChangedClasses(fileDistiller, fileOld);
+				if(auxClass.delete()) {
+					log.info("extractChanges(): auxClass File was be removed!");
+				}
 			}
 		}
 
