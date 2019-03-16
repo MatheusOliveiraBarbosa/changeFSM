@@ -221,7 +221,12 @@ public class GeneratorPDF {
 		Paragraph paragChangedElem = new Paragraph("Changed Element:");
 		paragChangedElem.setFont(IDENTIFIER_CODE_CHANGE_FONT);
 		cell.addElement(paragChangedElem);
-		Phrase phrase = new Phrase("      "+update.getCodeChange().getChangedEntity().getUniqueName());
+		Phrase phrase;
+		if(update.getCodeChange().getChangedEntity().toString().startsWith("ELSE_STATEMENT")) {
+			phrase = new Phrase("      "+update.getCodeChange().getChangedEntity().toString());
+		}else {
+			phrase = new Phrase("      "+update.getCodeChange().getChangedEntity().getUniqueName());
+		}
 //		Phrase phraseChangedEntity = new Phrase("      "+update.getCodeChange().getChangedEntity());
 //		Phrase phraseChangeLabel = new Phrase("      Change Type: "+update.getCodeChange().getChangeType());
 		phrase.setFont(FOCUS_FONT);

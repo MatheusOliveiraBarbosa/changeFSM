@@ -55,7 +55,7 @@ public class ExtractChangesInClasses {
 				fileDistiller.extractClassifiedSourceCodeChanges(auxClass, fileNew);
 				generateChangedClasses(fileDistiller, fileNew);
 				if(auxClass.delete()) {
-					log.info("extractChanges(): auxClass File was be removed!");
+					log.info("extractChanges() - auxClass <"+ auxClass.getName() +"> file was be removed!");
 				}
 			}
 		}
